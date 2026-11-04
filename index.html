@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Configuratore Soffitti Radianti — Download</title>
+<meta name="description" content="Scarica il Configuratore Soffitti Radianti per Windows o per Mac: il download parte da solo per il tuo sistema.">
+<style>
+  :root {
+    --navy: #0D1B2A; --accento: #2A78D6; --accento-chiaro: #E8F1FC; --testo: #0F172A; --testo2: #52514E;
+    --linee: #E2E6EC; --carta: #F6F8FB; --bianco: #FFFFFF; --verde: #1BAF7A; --ambra: #B7791F; --ambra-chiaro: #FDF4E3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--carta); color: var(--testo);
+    font: 16px/1.55 "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .fascia { background: var(--navy); color: var(--bianco); padding: 56px 20px 112px; }
+  .contenitore { max-width: 880px; margin: 0 auto; }
+  .marchio { display: flex; align-items: center; gap: 14px; font-weight: 700; letter-spacing: .2px; }
+  .marchio svg { flex: none; }
+  .occhiello { margin-top: 36px; font-size: 13px; letter-spacing: 2.4px; text-transform: uppercase; color: #7FB3F5; font-weight: 600; }
+  h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.12; margin: 10px 0 14px; letter-spacing: -.5px; }
+  .sotto { color: #C9D7E8; font-size: 18px; max-width: 640px; margin: 0; }
+  .scheda {
+    position: relative; margin: -76px auto 0; max-width: 880px; background: var(--bianco); border-radius: 18px;
+    box-shadow: 0 18px 50px rgba(13, 27, 42, .14); padding: 34px 34px 30px;
+  }
+  .stato { display: flex; gap: 18px; align-items: flex-start; }
+  .icona-stato {
+    flex: none; width: 52px; height: 52px; border-radius: 14px; background: var(--accento-chiaro);
+    display: grid; place-items: center; color: var(--accento);
+  }
+  .stato h2 { margin: 2px 0 6px; font-size: 22px; }
+  .stato p { margin: 0; color: var(--testo2); }
+  .pulsanti { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  .pulsante {
+    display: inline-flex; align-items: center; gap: 10px; padding: 13px 20px; border-radius: 12px; font-weight: 600;
+    text-decoration: none; border: 1px solid var(--linee); color: var(--testo); background: var(--bianco);
+    transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+  }
+  .pulsante:hover { transform: translateY(-1px); border-color: var(--accento); box-shadow: 0 6px 18px rgba(42, 120, 214, .16); }
+  .pulsante.primario { background: var(--accento); border-color: var(--accento); color: var(--bianco); }
+  .pulsante.spento { opacity: .5; pointer-events: none; }
+  .passi { margin-top: 30px; border-top: 1px solid var(--linee); padding-top: 24px; }
+  .passi h3 { margin: 0 0 14px; font-size: 17px; }
+  .passi ol { margin: 0; padding-left: 0; list-style: none; counter-reset: passo; }
+  .passi li { counter-increment: passo; position: relative; padding: 0 0 14px 44px; color: var(--testo2); }
+  .passi li::before {
+    content: counter(passo); position: absolute; left: 0; top: -2px; width: 28px; height: 28px; border-radius: 50%;
+    background: var(--accento-chiaro); color: var(--accento); font-weight: 700; font-size: 14px; display: grid; place-items: center;
+  }
+  .passi li b { color: var(--testo); }
+  .nota { margin-top: 8px; background: var(--ambra-chiaro); border: 1px solid #F1D9AE; border-radius: 12px; padding: 14px 16px; font-size: 14.5px; color: #5C4310; }
+  .griglia { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; max-width: 880px; margin: 26px auto 0; }
+  .card { background: var(--bianco); border: 1px solid var(--linee); border-radius: 14px; padding: 18px 20px; }
+  .card h4 { margin: 0 0 6px; font-size: 15px; }
+  .card p { margin: 0; font-size: 14px; color: var(--testo2); }
+  footer { max-width: 880px; margin: 30px auto 48px; padding: 0 20px; font-size: 13px; color: #8A8F98; display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: space-between; }
+  .nascosto { display: none; }
+  @media (max-width: 640px) {
+    .fascia { padding: 40px 18px 100px; }
+    .scheda { margin: -70px 16px 0; padding: 26px 20px 22px; }
+    .griglia { margin: 22px 16px 0; }
+    .stato { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div class="fascia">
+  <div class="contenitore">
+    <div class="marchio">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="1" y="1" width="38" height="38" rx="10" fill="#2A78D6"/>
+        <path d="M9 13h22M9 20h22M9 27h22" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <path d="M31 13a3.5 3.5 0 0 1 0 7M9 20a3.5 3.5 0 0 0 0 7" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      Configuratore Soffitti Radianti
+    </div>
+    <div class="occhiello">Download</div>
+    <h1>Il progetto del soffitto radiante, dal DWG dell'architetto agli elaborati.</h1>
+    <p class="sotto">Per sistemi Messana Radius Active. Prova gratuita di 3 giorni o 2 progetti, con tutte le funzioni.</p>
+  </div>
+</div>
+
+<main class="scheda" id="scheda">
+  <div class="stato">
+    <div class="icona-stato" id="icona">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+    </div>
+    <div>
+      <h2 id="titolo">Preparo il download…</h2>
+      <p id="testo">Riconosco il tuo sistema e scelgo il programma giusto.</p>
+    </div>
+  </div>
+  <div class="pulsanti">
+    <a class="pulsante primario" id="principale" href="#">Scarica</a>
+    <a class="pulsante" id="win" href="#">⊞&nbsp; Scarica per Windows</a>
+    <a class="pulsante" id="mac" href="#">&nbsp;Scarica per Mac</a>
+  </div>
+
+  <section class="passi nascosto" id="passi-win">
+    <h3>Installazione su Windows 10 e 11</h3>
+    <ol>
+      <li>Apri il file scaricato <b>radius-project_install.exe</b>. Se il browser avvisa che il file non viene scaricato spesso, scegli <b>Mantieni</b>.</li>
+      <li>Se compare «Windows ha protetto il PC», premi <b>Ulteriori informazioni → Esegui comunque</b>: il programma non ha ancora la firma digitale.</li>
+      <li>Lascia spuntato <b>Scarica e installa ODA File Converter</b> (serve per leggere i DWG; Windows chiede una conferma).</li>
+      <li>Al primo avvio scegli la <b>prova gratuita</b> oppure attiva la licenza con il <b>codice dispositivo</b>; poi indica la tua regione per il prezzario.</li>
+    </ol>
+  </section>
+
+  <section class="passi nascosto" id="passi-mac">
+    <h3>Installazione su Mac</h3>
+    <ol>
+      <li>Apri il file scaricato <b>radius-project_mac.dmg</b> e trascina l'app nella cartella <b>Applicazioni</b>.</li>
+      <li>Al primo avvio il Mac avvisa che l'app è di uno sviluppatore non identificato: premi <b>Fine</b>, apri <b>Impostazioni di Sistema → Privacy e sicurezza</b> e in fondo premi <b>Apri comunque</b>. Serve una volta sola.</li>
+      <li>Sui Mac con chip Apple, se il Mac lo chiede, installa <b>Rosetta</b>.</li>
+      <li>Scegli la <b>prova gratuita</b> oppure attiva la licenza con il <b>codice dispositivo</b>; il programma installa da solo ODA File Converter dalla sezione <b>Aggiornamenti</b>.</li>
+    </ol>
+  </section>
+
+  <div class="nota nascosto" id="nota"></div>
+</main>
+
+<div class="griglia">
+  <div class="card"><h4>Legge il DWG</h4><p>Locali, altezze, travi e aree NO RADIUS riconosciuti da soli.</p></div>
+  <div class="card"><h4>Progetta tutto</h4><p>Struttura, moduli, circuiti a ritorno inverso, collettori, centrale e regolazione.</p></div>
+  <div class="card"><h4>Elaborati pronti</h4><p>Tavole A1, stampa A0–A4 per layer, preventivo PDF e computo Excel.</p></div>
+  <div class="card"><h4>Si aggiorna da solo</h4><p>Nuove versioni, ODA e prezzario regionale con un clic.</p></div>
+</div>
+
+<footer>
+  <span id="versione">Ultima versione</span>
+  <span>Windows 10/11 a 64 bit · macOS 11 o successivo</span>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var REPO = "iannelloservass-bot/radius-project";
+  var NOME_WIN = "radius-project_install.exe";
+  var NOME_MAC = "radius-project_mac.dmg";
+  var ULTIMA = "https://github.com/" + REPO + "/releases/latest/download/";
+  var $ = function (id) { return document.getElementById(id); };
+
+  function sistema() {
+    var ua = navigator.userAgent || "";
+    var piattaforma = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || "";
+    var tocco = (navigator.maxTouchPoints || 0) > 1;
+    if (/android|iphone|ipad|ipod/i.test(ua) || (/mac/i.test(piattaforma) && tocco)) return "mobile";
+    if (/win/i.test(piattaforma) || /windows/i.test(ua)) return "windows";
+    if (/mac/i.test(piattaforma) || /mac os x|macintosh/i.test(ua)) return "mac";
+    return "altro";
+  }
+
+  function data(iso) {
+    try { return new Date(iso).toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" }); }
+    catch (e) { return ""; }
+  }
+
+  function imposta(link, url) {
+    if (url) { link.href = url; link.classList.remove("spento"); }
+    else { link.removeAttribute("href"); link.classList.add("spento"); }
+  }
+
+  function scarica(url) {  // il file arriva come allegato: la pagina resta aperta con le istruzioni
+    setTimeout(function () { window.location.href = url; }, 900);
+  }
+
+  function mostra(rilascio) {
+    var os = sistema();
+    var urlWin = ULTIMA + NOME_WIN, urlMac = null, versione = "";
+    if (rilascio) {
+      versione = (rilascio.tag_name || "").replace(/^v/, "");
+      (rilascio.assets || []).forEach(function (a) {
+        if (a.name === NOME_WIN) urlWin = a.browser_download_url;
+        if (a.name === NOME_MAC) urlMac = a.browser_download_url;
+      });
+      $("versione").textContent = "Versione " + versione + (rilascio.published_at ? " · pubblicata il " + data(rilascio.published_at) : "");
+    } else {
+      urlMac = ULTIMA + NOME_MAC;  // informazioni non disponibili: si prova l'indirizzo stabile
+    }
+    imposta($("win"), urlWin);
+    imposta($("mac"), urlMac);
+    var principale = $("principale");
+    if (os === "windows") {
+      $("titolo").textContent = "Il download per Windows sta per partire";
+      $("testo").textContent = "Se non parte da solo, premi il pulsante qui sotto.";
+      principale.textContent = "Scarica per Windows" + (versione ? " · " + versione : "");
+      imposta(principale, urlWin);
+      $("passi-win").classList.remove("nascosto");
+      $("win").classList.add("nascosto");
+      scarica(urlWin);
+    } else if (os === "mac" && urlMac) {
+      $("titolo").textContent = "Il download per Mac sta per partire";
+      $("testo").textContent = "Se non parte da solo, premi il pulsante qui sotto.";
+      principale.textContent = "Scarica per Mac" + (versione ? " · " + versione : "");
+      imposta(principale, urlMac);
+      $("passi-mac").classList.remove("nascosto");
+      $("mac").classList.add("nascosto");
+      scarica(urlMac);
+    } else if (os === "mac") {
+      $("titolo").textContent = "La versione per Mac arriva a breve";
+      $("testo").textContent = "È in preparazione: riapri questo link fra qualche giorno. La versione per Windows è già disponibile.";
+      principale.classList.add("nascosto");
+      $("passi-mac").classList.remove("nascosto");
+    } else {
+      $("titolo").textContent = "Apri questo link da un computer";
+      $("testo").textContent = os === "mobile"
+        ? "Il programma si installa su un computer Windows o Mac: inviati il link per e-mail e aprilo dal computer, oppure scegli qui sotto."
+        : "Il programma è disponibile per Windows e per Mac: scegli qui sotto il sistema del computer su cui installarlo.";
+      principale.classList.add("nascosto");
+    }
+  }
+
+  var fatto = false;
+  var riserva = setTimeout(function () { if (!fatto) { fatto = true; mostra(null); } }, 4000);
+  fetch("https://api.github.com/repos/" + REPO + "/releases/latest", { headers: { Accept: "application/vnd.github+json" } })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (rilascio) { if (!fatto) { fatto = true; clearTimeout(riserva); mostra(rilascio); } })
+    .catch(function () { if (!fatto) { fatto = true; clearTimeout(riserva); mostra(null); } });
+})();
+</script>
+</body>
+</html>
