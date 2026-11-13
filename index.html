@@ -1,0 +1,1171 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capomastro — Soffitti radianti e Cartongesso · Download</title>
+<meta name="description" content="Capomastro (già Configuratore Soffitti Radianti), il programma per i soffitti radianti a moduli e per pareti, contropareti e controsoffitti in cartongesso: dal DWG dell'architetto a tavole, preventivo e computo. Scarica per Windows o per Mac, prova gratuita di 3 giorni o 2 progetti.">
+<meta name="theme-color" content="#f1f4f9">
+<meta name="color-scheme" content="light">
+<meta property="og:title" content="Capomastro — Soffitti radianti e Cartongesso">
+<meta property="og:description" content="Dal DWG dell'architetto al soffitto radiante e al cartongesso: struttura, moduli, circuiti, pareti, controsoffitti, tavole, preventivo e computo.">
+<meta property="og:image" content="img/radius-r-1100.webp">
+<link rel="icon" type="image/png" href="img/icona-64.png">
+<link rel="apple-touch-icon" href="img/icona-180.png">
+<link rel="preload" href="font/inter-latin-opsz.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/radius-r-1100.webp" as="image" type="image/webp" imagesrcset="img/radius-r-640.webp 640w, img/radius-r-1100.webp 1100w" imagesizes="(max-width: 900px) 86vw, 600px">
+<style>
+  /* Inter variabile (pesi e asse ottico), solo latino: stessa del programma (font/LICENSE-Inter.txt, OFL) */
+  @font-face {
+    font-family: "Inter Variable";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 900;
+    src: url(font/inter-latin-opsz.woff2) format("woff2-variations");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* token del programma (ui/src/stili/token.css, tema chiaro) */
+  :root {
+    color-scheme: light;
+    --font: "Inter Variable", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --sfondo: #f1f4f9;
+    --sfondo-2: #e8edf5;
+    --superficie: #ffffff;
+    --superficie-2: #f8fafd;
+    --bordo: #e2e8f0;
+    --bordo-2: #d3dbe7;
+    --testo: #0a1426;
+    --testo-2: #45526a;
+    --testo-3: #626e85;
+    --accento: #1f6fe5;
+    --accento-hover: #1a63d4;
+    --accento-press: #1655b8;
+    --accento-tenue: #ebf2fe;
+    --accento-tenue-2: #d7e5fc;
+    --accento-testo: #1556c0;
+    --acqua: #0aa5c2;
+    --acqua-tenue: #e3f6fa;
+    --acqua-testo: #087d93;
+    --successo: #0f9f6e;
+    --successo-tenue: #e2f6ee;
+    --successo-testo: #0a7a54;
+    --avviso-tenue: #fff3d9;
+    --avviso-testo: #8a5400;
+    --mandata: #ea4a3c;
+    --ritorno: #2a78d6;
+    --rame: #b4642f;
+    --rame-chiaro: #f6e3d3;
+    --grad-accento: linear-gradient(180deg, #3a85f2 0%, #1f6fe5 55%, #1a62d4 100%);
+    --grad-titolo: linear-gradient(100deg, #1f6fe5 0%, #2a7df0 40%, #0aa5c2 100%);
+    --grad-sfondo:
+      radial-gradient(1100px 600px at 12% -10%, rgba(31, 111, 229, 0.075), transparent 70%),
+      radial-gradient(900px 500px at 100% 110%, rgba(10, 165, 194, 0.06), transparent 70%), #f1f4f9;
+    --elev-1: 0 1px 1px rgba(10, 20, 38, 0.04), 0 1px 3px rgba(10, 20, 38, 0.05);
+    --elev-2: 0 1px 1px rgba(10, 20, 38, 0.04), 0 3px 8px -2px rgba(10, 20, 38, 0.07), 0 10px 24px -8px rgba(10, 20, 38, 0.09);
+    --elev-3: 0 1px 2px rgba(10, 20, 38, 0.05), 0 8px 18px -6px rgba(10, 20, 38, 0.1), 0 24px 48px -16px rgba(10, 20, 38, 0.16);
+    --elev-4: 0 2px 4px rgba(10, 20, 38, 0.05), 0 16px 32px -10px rgba(10, 20, 38, 0.16), 0 40px 80px -24px rgba(10, 20, 38, 0.28);
+    --ombra-accento: 0 1px 2px rgba(20, 70, 160, 0.25), 0 8px 22px -8px rgba(31, 111, 229, 0.6);
+    --bordo-luce: inset 0 0 0 1px rgba(10, 20, 38, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    --anello: rgba(31, 111, 229, 0.32);
+    --r-sm: 7px;
+    --r-md: 10px;
+    --r-lg: 14px;
+    --r-xl: 20px;
+    --r-2xl: 26px;
+    --r-full: 999px;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --molla: cubic-bezier(0.22, 1.12, 0.36, 1);
+    --traccia-titolo: -0.028em;
+    --traccia-occhiello: 0.09em;
+    --larga: 1180px;
+    --gutter: clamp(16px, 4vw, 40px);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--grad-sfondo); color: var(--testo);
+    font: 16px/1.6 var(--font); font-feature-settings: "cv11", "ss01"; -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility; overflow-x: hidden;
+  }
+  img, video { display: block; max-width: 100%; height: auto; }
+  a { color: var(--accento-testo); text-underline-offset: 3px; }
+  :focus-visible { outline: 3px solid var(--anello); outline-offset: 3px; border-radius: 6px; }
+  .salta { position: absolute; left: 12px; top: -60px; background: var(--testo); color: #fff; padding: 10px 14px; border-radius: var(--r-md); z-index: 20; }
+  .salta:focus { top: 12px; }
+  .contenitore { max-width: var(--larga); margin: 0 auto; padding: 0 var(--gutter); }
+  .nascosto { display: none !important; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* --- barra in alto: vetro ---------------------------------------------------------------------------------- */
+  .barra {
+    position: sticky; top: 0; z-index: 10; background: rgba(241, 244, 249, 0.72);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4); backdrop-filter: blur(18px) saturate(1.4);
+    border-bottom: 1px solid rgba(10, 20, 38, 0.06);
+  }
+  .barra .contenitore { display: flex; align-items: center; gap: 24px; height: 64px; }
+  .marchio { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--testo); font-weight: 700; letter-spacing: -0.01em; }
+  .marchio img { width: 34px; height: 34px; }
+  .marchio small { display: block; font-size: 11.5px; font-weight: 500; color: var(--testo-3); letter-spacing: 0; line-height: 1.2; }
+  .marchio span { line-height: 1.15; }
+  .menu { display: flex; gap: 4px; margin-left: auto; }
+  .menu a { color: var(--testo-2); text-decoration: none; font-weight: 550; font-size: 14.5px; padding: 8px 12px; border-radius: var(--r-full); transition: background .15s, color .15s; }
+  .menu a:hover { background: rgba(10, 20, 38, 0.05); color: var(--testo); }
+
+  /* --- pulsanti -------------------------------------------------------------------------------------------- */
+  .pulsante {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 12px 22px;
+    border-radius: var(--r-lg); font: inherit; font-weight: 640; font-size: 16px; text-decoration: none; cursor: pointer;
+    color: var(--testo); background: var(--superficie); border: 1px solid var(--bordo-2); box-shadow: var(--elev-1);
+    transition: transform .25s var(--molla), box-shadow .2s, border-color .2s, background .2s;
+  }
+  .pulsante:hover { transform: translateY(-1px); border-color: var(--accento); box-shadow: var(--elev-2); }
+  .pulsante:active { transform: translateY(0) scale(.99); }
+  .pulsante svg { flex: none; }
+  .pulsante.primario { color: #fff; background: var(--grad-accento); border-color: transparent; box-shadow: var(--ombra-accento), inset 0 1px 0 rgba(255,255,255,.25); }
+  .pulsante.primario:hover { box-shadow: 0 1px 2px rgba(20,70,160,.25), 0 14px 30px -10px rgba(31,111,229,.7), inset 0 1px 0 rgba(255,255,255,.25); }
+  .pulsante.grande { min-height: 58px; padding: 14px 28px; font-size: 17px; border-radius: 16px; }
+  .pulsante.piccolo { min-height: 38px; padding: 8px 16px; font-size: 14.5px; border-radius: var(--r-full); }
+  .pulsante.spento { opacity: .5; pointer-events: none; }
+  .pulsante .meta { font-weight: 500; opacity: .85; }
+
+  /* --- eroe --------------------------------------------------------------------------------------------------- */
+  .eroe { position: relative; padding: clamp(36px, 7vw, 88px) 0 clamp(40px, 6vw, 72px); overflow: hidden; }
+  .eroe::before {
+    /* il motivo del serpentino: la testata vera di un modulo 240, appena accennata */
+    content: ""; position: absolute; inset: 0; background: url(img/motivo.svg) 0 0 / 96px 53px repeat; opacity: .38;
+    -webkit-mask-image: radial-gradient(60% 70% at 72% 40%, #000 0%, transparent 75%); mask-image: radial-gradient(60% 70% at 72% 40%, #000 0%, transparent 75%);
+    pointer-events: none;
+  }
+  .eroe .griglia-eroe { position: relative; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
+  .pillola {
+    display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 8px; border-radius: var(--r-full);
+    background: var(--superficie); box-shadow: var(--elev-1), var(--bordo-luce); font-size: 13.5px; font-weight: 600; color: var(--testo-2);
+  }
+  .pillola b { background: var(--accento-tenue); color: var(--accento-testo); border-radius: var(--r-full); padding: 2px 8px; font-size: 12px; letter-spacing: .02em; }
+  h1 {
+    margin: 18px 0 18px; font-size: clamp(36px, 4.9vw, 62px); line-height: 1.04; letter-spacing: var(--traccia-titolo);
+    font-weight: 760; font-variation-settings: "opsz" 32;
+  }
+  h1 .grad { display: block; background: var(--grad-titolo); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: .06em; }
+  .sotto { margin: 0; font-size: clamp(17px, 1.6vw, 19.5px); color: var(--testo-2); max-width: 560px; }
+  .scarica {
+    margin-top: 30px; padding: 22px; border-radius: var(--r-2xl); background: rgba(255, 255, 255, 0.78);
+    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); box-shadow: var(--elev-3), var(--bordo-luce); max-width: 560px;
+  }
+  .stato { display: flex; gap: 14px; align-items: flex-start; }
+  .stato .ic { flex: none; width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--accento-tenue); color: var(--accento); }
+  .stato h2 { margin: 0; font-size: 17px; font-weight: 680; letter-spacing: -0.01em; }
+  .stato p { margin: 2px 0 0; font-size: 14.5px; color: var(--testo-2); }
+  .pulsanti { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+  .pulsanti .pulsante:not(.primario) { min-height: 48px; }
+  .versione { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--testo-3); }
+  .versione span { display: inline-flex; align-items: center; gap: 6px; }
+  .punto { width: 7px; height: 7px; border-radius: 50%; background: var(--successo); box-shadow: 0 0 0 3px var(--successo-tenue); }
+
+  /* la R in rame: luce che scorre, leggera fluttuazione e parallasse con il puntatore */
+  .oggetto { position: relative; perspective: 1200px; justify-self: center; width: min(100%, 620px); }
+  .oggetto::before {
+    content: ""; position: absolute; inset: 6% 2% 0; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(255, 179, 128, .38), rgba(255, 179, 128, 0) 70%),
+                radial-gradient(closest-side at 60% 70%, rgba(31, 111, 229, .16), transparent 75%);
+    filter: blur(10px); z-index: 0;
+  }
+  .fluttua { position: relative; animation: fluttua 7s ease-in-out infinite; z-index: 1; }
+  .inclina { position: relative; transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transform-style: preserve-3d; transition: transform .6s var(--ease-out); will-change: transform; }
+  .inclina img { width: 100%; aspect-ratio: 1463 / 1135; filter: drop-shadow(0 30px 40px rgba(60, 30, 10, .12)); }
+  .luce {
+    position: absolute; inset: 0; pointer-events: none; mix-blend-mode: soft-light;
+    background: linear-gradient(105deg, transparent 38%, rgba(255, 246, 236, .95) 48%, rgba(255, 255, 255, .0) 58%) 0 0 / 260% 100% no-repeat;
+    -webkit-mask: url(img/radius-r-640.webp) center / 100% 100% no-repeat; mask: url(img/radius-r-640.webp) center / 100% 100% no-repeat;
+    animation: luce 6.5s ease-in-out infinite 1.2s;
+  }
+  @keyframes fluttua { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+  @keyframes luce { 0% { background-position: 130% 0; } 55%, 100% { background-position: -40% 0; } }
+  .comparsa { animation: comparsa .9s var(--ease-out) both; }
+  .comparsa.d1 { animation-delay: .08s; } .comparsa.d2 { animation-delay: .16s; } .comparsa.d3 { animation-delay: .24s; }
+  @keyframes comparsa { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+  /* --- fiducia -------------------------------------------------------------------------------------------------- */
+  .fiducia { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: clamp(28px, 4vw, 48px); }
+  .fiducia div { display: flex; gap: 12px; align-items: center; padding: 14px 16px; border-radius: var(--r-xl); background: rgba(255,255,255,.6); box-shadow: var(--bordo-luce); font-size: 14px; color: var(--testo-2); }
+  .fiducia b { display: block; color: var(--testo); font-size: 14.5px; font-weight: 650; }
+  .fiducia svg { flex: none; color: var(--accento); }
+
+  /* --- sezioni ------------------------------------------------------------------------------------------------- */
+  section.blocco { padding: clamp(56px, 8vw, 104px) 0; }
+  .testa { max-width: 760px; margin: 0 auto clamp(32px, 5vw, 56px); text-align: center; }
+  .occhiello { font-size: 12.5px; font-weight: 700; letter-spacing: var(--traccia-occhiello); text-transform: uppercase; color: var(--accento-testo); }
+  h2.titolo { margin: 10px 0 12px; font-size: clamp(30px, 4.2vw, 46px); line-height: 1.08; letter-spacing: var(--traccia-titolo); font-weight: 740; font-variation-settings: "opsz" 32; }
+  .testa p { margin: 0; color: var(--testo-2); font-size: 17.5px; }
+
+  .funzione { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
+  .funzione + .funzione { margin-top: clamp(56px, 8vw, 104px); }
+  .funzione.inversa .testo { order: 2; }
+  .funzione h3 { margin: 10px 0 12px; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.15; letter-spacing: -0.02em; font-weight: 720; }
+  .funzione p { margin: 0 0 16px; color: var(--testo-2); font-size: 16.5px; }
+  .funzione ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .funzione li { position: relative; padding-left: 30px; color: var(--testo-2); font-size: 15.5px; }
+  .funzione li::before {
+    content: ""; position: absolute; left: 0; top: 3px; width: 20px; height: 20px; border-radius: 50%; background: var(--accento-tenue)
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.6 2.6L14 7.6' fill='none' stroke='%231f6fe5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 20px no-repeat;
+  }
+  .numero { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 10px; background: var(--grad-accento); color: #fff; font-weight: 700; font-size: 14px; box-shadow: var(--ombra-accento); }
+  .finestra { border-radius: 16px; background: var(--superficie); box-shadow: var(--elev-4), var(--bordo-luce); overflow: hidden; }
+  .finestra .barretta { display: flex; gap: 7px; align-items: center; height: 30px; padding: 0 12px; background: linear-gradient(#fbfcfe, #f3f6fa); border-bottom: 1px solid var(--bordo); }
+  .finestra .barretta i { width: 11px; height: 11px; border-radius: 50%; background: #e3e7ee; box-shadow: inset 0 0 0 1px rgba(10,20,38,.08); }
+  .finestra .barretta i:nth-child(1) { background: #ff6159; } .finestra .barretta i:nth-child(2) { background: #ffbd2e; } .finestra .barretta i:nth-child(3) { background: #28c941; }
+  .finestra .barretta span { margin-left: 10px; font-size: 12px; color: var(--testo-3); font-weight: 550; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .finestra img { width: 100%; aspect-ratio: 16 / 10; }
+
+  /* --- video -------------------------------------------------------------------------------------------------- */
+  .video { position: relative; max-width: 1040px; margin: 0 auto; }
+  .video .finestra video { width: 100%; aspect-ratio: 16 / 10; background: #fbfcfe; }
+  .video figcaption { margin-top: 14px; text-align: center; font-size: 14px; color: var(--testo-3); }
+
+  /* --- novità ------------------------------------------------------------------------------------------------- */
+  .griglia { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .carta { padding: 22px; border-radius: var(--r-xl); background: var(--superficie); box-shadow: var(--elev-2), var(--bordo-luce); transition: transform .3s var(--molla), box-shadow .3s; }
+  .carta:hover { transform: translateY(-3px); box-shadow: var(--elev-3), var(--bordo-luce); }
+  .carta .ic { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: var(--accento-tenue); color: var(--accento); margin-bottom: 14px; }
+  .carta .ic.acqua { background: var(--acqua-tenue); color: var(--acqua-testo); }
+  .carta .ic.rame { background: var(--rame-chiaro); color: var(--rame); }
+  .griglia.due { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .carta .modulo-nota { margin-top: 10px; font-size: 13.5px; color: var(--testo-2); }
+  .carta h3 { margin: 0 0 6px; font-size: 16.5px; font-weight: 680; letter-spacing: -0.01em; }
+  .carta p { margin: 0; font-size: 14.5px; color: var(--testo-2); }
+  .tasto { display: inline-block; min-width: 22px; padding: 0 6px; border-radius: 6px; background: var(--sfondo); box-shadow: inset 0 -1px 0 var(--bordo-2), inset 0 0 0 1px var(--bordo); font-size: 12.5px; font-weight: 600; text-align: center; color: var(--testo); }
+
+  /* --- licenze ------------------------------------------------------------------------------------------------ */
+  .prova {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; padding: 20px 24px; margin-bottom: 22px;
+    border-radius: var(--r-xl); background: linear-gradient(100deg, var(--accento-tenue), var(--acqua-tenue)); box-shadow: var(--bordo-luce);
+  }
+  .prova b.etichetta { display: inline-block; padding: 4px 10px; border-radius: var(--r-full); background: var(--accento); color: #fff; font-size: 12px; letter-spacing: .08em; margin-right: 10px; }
+  .prova span { font-weight: 600; }
+  /* R-350: ogni modulo con i suoi piani, sotto il suo nome (i moduli si vendono separati) */
+  .testa-modulo { margin: 34px 0 28px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+  .testa-modulo.primo { margin-top: 6px; }
+  .testa-modulo .nome-modulo { margin: 0; font-size: 21px; font-weight: 720; letter-spacing: -0.015em; }
+  .testa-modulo p { margin: 0; color: var(--testo-2); font-size: 15px; }
+  .piani { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
+  .piano { position: relative; display: flex; flex-direction: column; padding: 26px 22px 22px; border-radius: var(--r-2xl); background: var(--superficie); box-shadow: var(--elev-2), var(--bordo-luce); }
+  .piano h3 { margin: 0; font-size: 16px; font-weight: 650; color: var(--testo-2); }
+  .piano .prezzo { margin-top: 10px; font-size: 42px; line-height: 1; font-weight: 760; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+  .piano .prezzo small { font-size: 20px; font-weight: 650; margin-left: 2px; }
+  .piano .iva { margin-top: 6px; font-size: 12.5px; color: var(--testo-3); }
+  .piano .mese { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--bordo); display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; }
+  .risparmio { padding: 2px 8px; border-radius: var(--r-full); background: var(--accento-tenue); color: var(--accento-testo); font-size: 12.5px; font-weight: 700; }
+  .piano ul { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 8px; font-size: 14.5px; color: var(--testo-2); }
+  .piano li { position: relative; padding-left: 24px; }
+  .piano li::before { content: ""; position: absolute; left: 0; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--accento-tenue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.6 8.4l2.1 2.1L11.4 5.8' fill='none' stroke='%231f6fe5' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px no-repeat; }
+  .piano li:first-child { color: var(--testo); font-weight: 650; }
+  .piano.consigliato { background: linear-gradient(170deg, #0f1e38 0%, #0a1426 60%); color: #fff; box-shadow: var(--elev-4), 0 0 0 1px rgba(255,255,255,.06) inset; transform: translateY(-8px); }
+  .piano.consigliato h3, .piano.consigliato .iva, .piano.consigliato ul { color: #b9c6db; }
+  .piano.consigliato li:first-child { color: #fff; }
+  .piano.consigliato .mese { border-color: rgba(255,255,255,.12); }
+  .piano.consigliato .risparmio { background: var(--accento); color: #fff; }
+  .piano.consigliato li::before { background-color: rgba(31, 111, 229, .3); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.6 8.4l2.1 2.1L11.4 5.8' fill='none' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+  .nastro { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); padding: 5px 12px; border-radius: var(--r-full); background: var(--grad-accento); color: #fff; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; white-space: nowrap; box-shadow: var(--ombra-accento); }
+  .in-tutte { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; padding: 18px 22px; border-radius: var(--r-xl); background: var(--avviso-tenue); box-shadow: inset 0 0 0 1px #f1d9ae; color: #5c4310; }
+  .in-tutte b.etichetta { font-size: 12px; letter-spacing: .12em; color: var(--avviso-testo); }
+  .note-licenze { margin-top: 16px; font-size: 14px; color: var(--testo-3); text-align: center; }
+  .attiva { margin-top: 34px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; counter-reset: passo; }
+  .attiva div { counter-increment: passo; position: relative; padding: 18px 18px 18px 60px; border-radius: var(--r-xl); background: rgba(255,255,255,.6); box-shadow: var(--bordo-luce); font-size: 14.5px; color: var(--testo-2); }
+  .attiva div::before { content: counter(passo); position: absolute; left: 18px; top: 18px; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--accento-tenue); color: var(--accento-testo); font-weight: 700; font-size: 14px; }
+  .attiva b { display: block; color: var(--testo); font-size: 15px; }
+  .azioni { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+
+  /* --- requisiti e installazione ----------------------------------------------------------------------------- */
+  .sistemi { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .sistema { position: relative; padding: 26px; border-radius: var(--r-2xl); background: var(--superficie); box-shadow: var(--elev-2), var(--bordo-luce); transition: box-shadow .3s; }
+  .sistema.tuo { box-shadow: var(--elev-3), 0 0 0 2px var(--accento); }
+  .sistema .tuo-etichetta { display: none; position: absolute; top: 22px; right: 22px; padding: 3px 10px; border-radius: var(--r-full); background: var(--accento-tenue); color: var(--accento-testo); font-size: 12px; font-weight: 700; }
+  .sistema.tuo .tuo-etichetta { display: inline-block; }
+  .sistema h3 { margin: 0 0 4px; font-size: 21px; font-weight: 720; letter-spacing: -0.015em; display: flex; align-items: center; gap: 10px; }
+  .sistema .req { margin: 0 0 18px; color: var(--testo-2); font-size: 15px; }
+  .sistema ol { margin: 0; padding: 0; list-style: none; counter-reset: p; display: grid; gap: 12px; }
+  .sistema li { counter-increment: p; position: relative; padding-left: 38px; color: var(--testo-2); font-size: 14.5px; }
+  .sistema li::before { content: counter(p); position: absolute; left: 0; top: 0; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--sfondo); box-shadow: inset 0 0 0 1px var(--bordo-2); color: var(--testo); font-weight: 700; font-size: 13px; }
+  .sistema li b { color: var(--testo); }
+  .nota { margin-top: 18px; padding: 14px 16px; border-radius: var(--r-lg); background: var(--avviso-tenue); color: #5c4310; font-size: 14.5px; }
+  .rete { margin-top: 18px; text-align: center; color: var(--testo-3); font-size: 14px; }
+
+  /* --- documenti e piè di pagina ------------------------------------------------------------------------------ */
+  .documenti { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .documento { display: flex; gap: 14px; align-items: center; padding: 18px 20px; border-radius: var(--r-xl); background: var(--superficie); box-shadow: var(--elev-1), var(--bordo-luce); text-decoration: none; color: var(--testo); transition: transform .3s var(--molla), box-shadow .3s; }
+  .documento:hover { transform: translateY(-2px); box-shadow: var(--elev-3), var(--bordo-luce); }
+  .documento .ic { flex: none; width: 44px; height: 52px; border-radius: 8px; display: grid; place-items: end center; padding-bottom: 7px; background: linear-gradient(#fff, #f1f4f9); box-shadow: inset 0 0 0 1px var(--bordo-2); color: #d23f31; font-size: 10.5px; font-weight: 800; letter-spacing: .04em; }
+  .documento b { display: block; font-weight: 650; color: var(--testo); }
+  .documento .desc { display: block; font-size: 13.5px; color: var(--testo-3); }
+  footer { margin-top: clamp(24px, 4vw, 40px); border-top: 1px solid var(--bordo); background: rgba(255,255,255,.55); }
+  footer .contenitore { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; justify-content: space-between; padding-top: 28px; padding-bottom: 36px; font-size: 13.5px; color: var(--testo-3); }
+  footer .marchio { font-size: 15px; }
+  footer nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  footer nav a { color: var(--testo-2); text-decoration: none; }
+  footer nav a:hover { color: var(--accento-testo); }
+  .credito { width: 100%; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 18px; padding-top: 14px; border-top: 1px solid var(--bordo); }
+
+  /* --- comparsa allo scorrimento ------------------------------------------------------------------------------ */
+  .rivela { opacity: 0; transform: translateY(22px); transition: opacity .8s var(--ease-out), transform .8s var(--ease-out); }
+  .rivela.vista { opacity: 1; transform: none; }
+  .js-assente .rivela { opacity: 1; transform: none; }
+
+  /* --- pulsante principale vivo: un respiro e un riflesso di luce, solo trasformazioni e opacità; fermo con il movimento
+         ridotto e quando non si vede (la classe .in-vista la mette lo script) ---------------------------------------- */
+  .pulsante.vivo { position: relative; overflow: hidden; animation: respiro 3.8s ease-in-out infinite; animation-play-state: paused; }
+  .pulsante.vivo.in-vista { animation-play-state: running; }
+  .pulsante.vivo::after {
+    content: ""; position: absolute; top: -10%; left: 0; width: 34%; height: 120%; pointer-events: none; opacity: 0;
+    background: linear-gradient(100deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.42) 50%, rgba(255,255,255,0) 100%);
+    transform: translateX(-130%) skewX(-18deg); animation: riflesso 4.8s ease-in-out infinite; animation-play-state: paused;
+  }
+  .pulsante.vivo.in-vista::after { animation-play-state: running; }
+  .pulsante.vivo:hover { animation: none; }
+  .pulsante.vivo:hover::after { animation: none; opacity: 0; }
+  @keyframes respiro { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.022); } }
+  @keyframes riflesso {
+    0%, 52% { transform: translateX(-130%) skewX(-18deg); opacity: 0; }
+    60% { opacity: 1; }
+    88% { opacity: 1; }
+    100% { transform: translateX(380%) skewX(-18deg); opacity: 0; }
+  }
+
+  /* --- video tutorial: un video alla volta, i capitoli cliccabili (media/tutorial/tutorial.json) ------------------- */
+  .tutorial-schede { display: flex; gap: 6px; width: max-content; max-width: 100%; margin: 0 auto 24px; padding: 5px; border-radius: var(--r-full); background: var(--superficie); box-shadow: var(--elev-1), var(--bordo-luce); }
+  .tutorial-schede button {
+    display: flex; align-items: center; gap: 8px; padding: 10px 20px; border: 0; border-radius: var(--r-full); background: transparent;
+    font: inherit; font-weight: 620; font-size: 15px; color: var(--testo-2); cursor: pointer; transition: background .2s, color .2s;
+  }
+  .tutorial-schede button:hover { background: rgba(10, 20, 38, 0.05); color: var(--testo); }
+  .tutorial-schede button[aria-selected="true"] { background: var(--grad-accento); color: #fff; box-shadow: var(--ombra-accento); }
+  .tutorial-schede button:focus-visible, .capitoli button:focus-visible { outline: 2px solid var(--accento); outline-offset: 2px; }
+  .tutorial-schede .tag { font-size: 11.5px; font-weight: 650; padding: 2px 8px; border-radius: var(--r-full); background: var(--avviso-tenue); color: var(--avviso-testo); }
+  .tutorial-corpo { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(250px, 1fr); gap: 22px; align-items: start; }
+  .tutorial-video { margin: 0; }
+  .tutorial-video video, .tutorial-video .segnaposto { display: block; width: 100%; aspect-ratio: 16 / 9; background: #0a1426; }
+  .tutorial-video .segnaposto { display: grid; place-items: center; padding: 24px; text-align: center; color: #cdd6e6; font-weight: 600; font-size: 18px; }
+  .tutorial-video .segnaposto small { display: block; margin-top: 6px; font-weight: 450; font-size: 14px; color: #93a0b8; }
+  .tutorial-testa { margin-top: 16px; }
+  .tutorial-testa h3 { margin: 0; font-size: 21px; letter-spacing: -0.01em; }
+  .tutorial-testa .durata { margin-top: 4px; font-size: 14px; font-weight: 600; color: var(--testo-3); }
+  .tutorial-testa p { margin: 8px 0 0; color: var(--testo-2); font-size: 15px; max-width: 62ch; }
+  .capitoli { padding: 10px; border-radius: var(--r-xl); background: var(--superficie); box-shadow: var(--elev-2), var(--bordo-luce); max-height: 470px; overflow-y: auto; }
+  .capitoli h4 { margin: 4px 8px 8px; font-size: 12px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; color: var(--testo-3); }
+  .capitoli ol { list-style: none; margin: 0; padding: 0; }
+  .capitoli button {
+    display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 8px; width: 100%; padding: 9px 10px; border: 0; border-radius: 12px; background: transparent;
+    text-align: left; font: inherit; font-size: 14.5px; color: var(--testo-2); cursor: pointer; transition: background .15s, color .15s;
+  }
+  .capitoli button:hover { background: var(--superficie-2); color: var(--testo); }
+  .capitoli button[aria-current="true"] { background: var(--accento-tenue); color: var(--accento-testo); font-weight: 600; }
+  .capitoli .tc { font-variant-numeric: tabular-nums; font-size: 13px; font-weight: 600; color: var(--testo-3); padding-top: 1px; }
+  .capitoli button[aria-current="true"] .tc { color: var(--accento-testo); }
+  .capitoli .vuoto { margin: 6px 8px 10px; font-size: 14.5px; color: var(--testo-2); }
+  .capitoli .vuoto a { color: var(--accento-testo); font-weight: 600; }
+  @media (max-width: 900px) { .tutorial-corpo { grid-template-columns: minmax(0, 1fr); } .capitoli { max-height: 340px; } }
+  @media (max-width: 560px) { .tutorial-schede button { padding: 9px 14px; font-size: 14px; } .tutorial-testa h3 { font-size: 19px; } }
+  @media (prefers-reduced-motion: reduce) {
+    .pulsante.vivo, .pulsante.vivo::after { animation: none !important; }
+    .pulsante.vivo::after { opacity: 0; }
+    .tutorial-schede button, .capitoli button { transition: none; }
+  }
+
+  /* --- misure ------------------------------------------------------------------------------------------------- */
+  @media (max-width: 1080px) {
+    .griglia { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .piani { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 26px; }
+    .piano.consigliato { transform: none; }
+    .fiducia { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 900px) {
+    .eroe .griglia-eroe { grid-template-columns: minmax(0, 1fr); }
+    .oggetto { order: -1; width: min(86%, 460px); margin-bottom: -8px; }
+    .funzione, .funzione.inversa { grid-template-columns: minmax(0, 1fr); }
+    .funzione.inversa .testo { order: 0; }
+    .sistemi, .documenti, .attiva { grid-template-columns: minmax(0, 1fr); }
+    .menu { display: none; }
+    .barra .scarica-barra { margin-left: auto; }
+  }
+  @media (max-width: 560px) {
+    .griglia, .griglia.due, .piani, .fiducia { grid-template-columns: minmax(0, 1fr); }
+    .scarica { padding: 18px; }
+    .pulsanti .pulsante { flex: 1 1 100%; }
+    .marchio small { display: none; }
+    .pillola { font-size: 12.5px; }
+    .oggetto { width: min(76%, 340px); }
+    .prova { padding: 18px; }
+    .sistema { padding: 22px 18px; }
+    .finestra .barretta span { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .fluttua, .luce, .comparsa { animation: none !important; }
+    .inclina { transform: none !important; transition: none; }
+    .rivela { opacity: 1; transform: none; transition: none; }
+    .pulsante, .carta, .documento { transition: none; }
+  }
+</style>
+</head>
+<body class="js-assente">
+<a class="salta" href="#principale-contenuto">Vai al contenuto</a>
+
+<header class="barra">
+  <div class="contenitore">
+    <a class="marchio" href="#">
+      <img src="img/icona-64.png" width="34" height="34" alt="">
+      <span>Capomastro<small>Soffitti radianti e Cartongesso</small></span>
+    </a>
+    <nav class="menu" aria-label="Sezioni">
+      <a href="#moduli">Moduli</a>
+      <a href="#funzioni">Funzioni</a>
+      <a href="#tutorial">Tutorial</a>
+      <a href="#novita">Novità 3.0</a>
+      <a href="#licenze">Licenze</a>
+      <a href="#requisiti">Requisiti</a>
+    </nav>
+    <a class="pulsante primario piccolo scarica-barra" href="#scarica">Scarica</a>
+  </div>
+</header>
+
+<main id="principale-contenuto">
+  <section class="eroe" id="scarica" aria-labelledby="titolo-eroe">
+    <div class="contenitore griglia-eroe">
+      <div>
+        <div class="pillola comparsa"><b>NUOVO</b> Modulo Cartongesso · pareti, contropareti e controsoffitti</div>
+        <h1 id="titolo-eroe" class="comparsa d1">Dal DWG dell'architetto <span class="grad">al progetto finito.</span></h1>
+        <p class="sotto comparsa d2">Capomastro legge il disegno, progetta struttura e moduli, dimensiona i circuiti a ritorno inverso e prepara tavole, preventivo e computo. Con il Modulo Cartongesso fa lo stesso per pareti, contropareti e controsoffitti. Tutto sul tuo computer, in pochi minuti.</p>
+
+        <div class="scarica comparsa d3">
+          <div class="stato" aria-live="polite">
+            <div class="ic" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+            </div>
+            <div>
+              <h2 id="titolo">Scarica Capomastro</h2>
+              <p id="testo">Riconosco il tuo sistema e ti propongo il programma giusto.</p>
+            </div>
+          </div>
+          <div class="pulsanti">
+            <a class="pulsante primario grande vivo" id="principale" href="#scarica">Scarica</a>
+            <a class="pulsante" id="win" href="#">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M3 5.1l7.4-1v7.2H3zM11.3 4l9.7-1.4v8.6h-9.7zM3 12.6h7.4v7.3L3 18.9zM11.3 12.6H21v8.7l-9.7-1.4z"/></svg>
+              Windows
+            </a>
+            <a class="pulsante" id="mac" href="#">
+              <svg width="17" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.5 0 2 .8 3.3.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.1c.7-.8 1.2-2 1-3.1-1 .1-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z"/></svg>
+              Mac
+            </a>
+          </div>
+          <div class="versione">
+            <span><i class="punto" aria-hidden="true"></i><span id="versione">Ultima versione</span></span>
+            <span>Prova gratuita: 3 giorni o 2 progetti, tutte le funzioni</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="oggetto" id="oggetto">
+        <div class="fluttua">
+          <div class="inclina" id="inclina">
+            <img src="img/radius-r-1100.webp" srcset="img/radius-r-640.webp 640w, img/radius-r-1100.webp 1100w" sizes="(max-width: 900px) 86vw, 600px" width="1100" height="853" alt="Il marchio di Capomastro: la C, un tubo in rame che si avvolge a partire dal serpentino di un modulo radiante, su un'orditura di profili a C, con gli attacchi di mandata e ritorno" fetchpriority="high">
+            <div class="luce" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contenitore">
+      <div class="fiducia" role="list">
+        <div role="listitem"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><span><b>Tutto offline</b>Disegni e progetti restano sul computer</span></div>
+        <div role="listitem"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Disegno intatto</b>Il DWG dell'architetto non si tocca</span></div>
+        <div role="listitem"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span><b>Solo prezzi veri</b>Il tuo listino e i prezzari regionali</span></div>
+        <div role="listitem"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><span><b>Si aggiorna da solo</b>Programma, ODA e prezzario, firmati</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blocco" id="moduli" aria-labelledby="titolo-moduli" style="padding-bottom:0">
+    <div class="contenitore">
+      <div class="testa rivela">
+        <div class="occhiello">Due moduli</div>
+        <h2 class="titolo" id="titolo-moduli">Un programma, due modi di progettare.</h2>
+        <p>Ogni modulo ha il suo percorso guidato, i suoi elaborati e la sua licenza. Se hai tutti e due, scegli all'avvio quale usare e puoi passare dall'uno all'altro con lo stesso disegno.</p>
+      </div>
+      <div class="griglia due rivela">
+        <div class="carta">
+          <div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <h3>Capomastro · Soffitti radianti</h3>
+          <p>Dal DWG dell'architetto a struttura, moduli, circuiti a ritorno inverso, collettori, centrale e regolazione: tavole A1, preventivo e computo.</p>
+          <figure class="finestra" style="margin:18px 0 0">
+            <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>Pannelli · Posa e orientamento</span></div>
+            <img src="img/pannelli-960.webp" srcset="img/pannelli-960.webp 960w, img/pannelli-1600.webp 1600w" sizes="(max-width: 900px) 86vw, 520px" width="1600" height="1000" loading="lazy" decoding="async" alt="Soffitti radianti: la posa dei moduli nei locali del progetto d'esempio, con la superficie attiva e la copertura">
+          </figure>
+        </div>
+        <div class="carta">
+          <div class="ic rame" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M3 12h18M3 16h18M9 8v13M15 8v13"/></svg></div>
+          <h3>Capomastro · Cartongesso</h3>
+          <p>Pareti, contropareti e controsoffitti disegnati sulla pianta o dai lati di un locale; orditura, lastre e viti dai dati del produttore, con edizione e fonte. Tavole CG-01…CG-03, preventivo e computo.</p>
+          <p class="modulo-nota">Un precontrollo a tre stati sui dati documentati, mai un «conforme»: la verifica strutturale resta del progettista.</p>
+          <figure class="finestra" style="margin:18px 0 0">
+            <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>Controsoffitti · Progetto_Rossi.dwg</span></div>
+            <img src="img/cartongesso-960.webp" srcset="img/cartongesso-960.webp 960w, img/cartongesso-1600.webp 1600w" sizes="(max-width: 900px) 86vw, 520px" width="1600" height="1000" loading="lazy" decoding="async" alt="Cartongesso: i controsoffitti dei locali del progetto d'esempio con l'orditura e il pannello dei dati del sistema">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blocco" id="funzioni" aria-labelledby="titolo-funzioni">
+    <div class="contenitore">
+      <div class="testa rivela">
+        <div class="occhiello">Come funziona</div>
+        <h2 class="titolo" id="titolo-funzioni">Un percorso guidato, una pianta sempre davanti.</h2>
+        <p>Rispondi a poche domande: il programma progetta, tu controlli e correggi sulla pianta. Ogni modifica si annulla con un tasto.</p>
+      </div>
+
+      <article class="funzione rivela">
+        <div class="testo">
+          <span class="numero" aria-hidden="true">1</span>
+          <h3>Legge il DWG dell'architetto</h3>
+          <p>Locali, superfici, altezze, travi e aree NO RADIUS riconosciuti da soli, anche su più piani. Quello che manca lo completi sulla pianta, con un clic.</p>
+          <ul>
+            <li>DWG e DXF, con ODA File Converter installato dal programma</li>
+            <li>Unità di misura e altezze controllate prima di progettare</li>
+            <li>Il disegno originale resta intatto</li>
+          </ul>
+        </div>
+        <figure class="finestra" style="margin:0">
+          <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>Riepilogo della lettura · Progetto_Rossi.dwg</span></div>
+          <img src="img/lettura-960.webp" srcset="img/lettura-960.webp 960w, img/lettura-1600.webp 1600w" sizes="(max-width: 900px) 92vw, 680px" width="1600" height="1000" loading="lazy" decoding="async" alt="Riepilogo della lettura: la pianta del progetto d'esempio con i locali riconosciuti, le altezze e i dati da completare">
+        </figure>
+      </article>
+
+      <article class="funzione inversa rivela">
+        <div class="testo">
+          <span class="numero" aria-hidden="true">2</span>
+          <h3>Posa struttura e moduli</h3>
+          <p>Moduli radianti nei formati da 240, 120 e 86 posati locale per locale, con l'orientamento migliore e le file allineate; struttura con portanti, giunti e scavalchi delle travi.</p>
+          <ul>
+            <li>Superficie attiva e copertura sempre in vista</li>
+            <li>Orientamento per locale, automatico o scelto da te</li>
+            <li>Moduli, collettori e accessori dalla tua libreria di blocchi</li>
+          </ul>
+        </div>
+        <figure class="finestra" style="margin:0">
+          <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>Pannelli · Posa e orientamento</span></div>
+          <img src="img/pannelli-960.webp" srcset="img/pannelli-960.webp 960w, img/pannelli-1600.webp 1600w" sizes="(max-width: 900px) 92vw, 680px" width="1600" height="1000" loading="lazy" decoding="async" alt="Posa dei pannelli: moduli da 240, 120 e 86 nei locali, con la copertura e l'orientamento di ogni locale">
+        </figure>
+      </article>
+
+      <article class="funzione rivela">
+        <div class="testo">
+          <span class="numero" aria-hidden="true">3</span>
+          <h3>Circuiti e collettori, senza incroci</h3>
+          <p>Circuiti a ritorno inverso numerati a ventaglio dal collettore, tubi a fascio ordinato. Sposti un collettore e i tubi si ricalcolano in sottofondo, mentre continui a lavorare.</p>
+          <ul>
+            <li>Mandata rossa, ritorno blu tratteggiato, come nelle tavole</li>
+            <li>Portata e lunghezza di ogni circuito sotto controllo</li>
+            <li>Calcolo in un processo separato: la pianta resta fluida</li>
+          </ul>
+        </div>
+        <figure class="finestra" style="margin:0">
+          <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>D4 · Collettori</span></div>
+          <img src="img/collettori-960.webp" srcset="img/collettori-960.webp 960w, img/collettori-1600.webp 1600w" sizes="(max-width: 900px) 92vw, 680px" width="1600" height="1000" loading="lazy" decoding="async" alt="Collettori: i circuiti numerati nei locali e la posa dei tubi in corso">
+        </figure>
+      </article>
+
+      <article class="funzione inversa rivela">
+        <div class="testo">
+          <span class="numero" aria-hidden="true">4</span>
+          <h3>Centrale, linea primaria e colonne</h3>
+          <p>Posizioni pompa di calore, accumulo e gruppo di rilancio, tracci la linea primaria a soffitto o a pavimento; poi il dimensionamento delle colonne come il foglio «COLONNE RA», con lo schema della rete in 3D e le curve delle pompe.</p>
+          <ul>
+            <li>Linea primaria con i nodi, tracciata sulla pianta</li>
+            <li>Diametri, portate, velocità e perdite di carico spiegati</li>
+            <li>Gruppo di rilancio e accumulo fra i modelli adatti</li>
+          </ul>
+        </div>
+        <figure class="finestra" style="margin:0">
+          <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>D5 · Centrale e linea primaria</span></div>
+          <img src="img/centrale-960.webp" srcset="img/centrale-960.webp 960w, img/centrale-1600.webp 1600w" sizes="(max-width: 900px) 92vw, 680px" width="1600" height="1000" loading="lazy" decoding="async" alt="Centrale e linea primaria: pompa di calore, gruppo di rilancio e linea verso il collettore sulla pianta del progetto d'esempio">
+        </figure>
+      </article>
+
+      <article class="funzione rivela">
+        <div class="testo">
+          <span class="numero" aria-hidden="true">5</span>
+          <h3>Elaborati pronti, stampa per squadra</h3>
+          <p>DWG e DXF dell'impianto con le tavole, preventivo e studio di fattibilità in PDF per il cliente, computo Excel con le formule. Stampi dalla A0 alla A4 le tavole che servono a ogni squadra.</p>
+          <ul>
+            <li>Tavole per gruppi di layer, con cartiglio e legenda</li>
+            <li>Preventivo che vende: sintesi, piante e totali</li>
+            <li>Prezzi dal tuo listino e dal prezzario della tua regione</li>
+          </ul>
+        </div>
+        <figure class="finestra" style="margin:0">
+          <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>Stampa elaborati grafici</span></div>
+          <img src="img/stampa-960.webp" srcset="img/stampa-960.webp 960w, img/stampa-1600.webp 1600w" sizes="(max-width: 900px) 92vw, 680px" width="1600" height="1000" loading="lazy" decoding="async" alt="Stampa degli elaborati: scelta delle tavole, anteprima, formato e scala">
+        </figure>
+      </article>
+    </div>
+  </section>
+
+  <section class="blocco" id="tutorial" aria-labelledby="titolo-tutorial" style="padding-top:0">
+    <div class="contenitore">
+      <div class="testa rivela">
+        <div class="occhiello">Video tutorial</div>
+        <h2 class="titolo" id="titolo-tutorial">Guarda come si fa, un passo alla volta.</h2>
+        <p>Un tutorial completo per ogni modulo, sul progetto d'esempio «Mario Rossi». Scegli il modulo e salta al capitolo che ti serve: un clic sul capitolo porta il video a quel punto.</p>
+      </div>
+      <div class="rivela" id="tutorial-app">
+        <div class="tutorial-schede" role="tablist" aria-label="Modulo del tutorial" id="tutorial-schede"></div>
+        <div class="tutorial-corpo" id="tutorial-corpo" role="tabpanel" aria-live="polite">
+          <p class="rete" id="tutorial-attesa">Carico i tutorial…</p>
+        </div>
+        <noscript><p class="rete">Per vedere i video tutorial serve JavaScript attivo nel browser. Nel manuale d'uso trovi gli stessi passi con le schermate.</p></noscript>
+      </div>
+    </div>
+  </section>
+
+  <section class="blocco" id="novita" aria-labelledby="titolo-novita" style="padding-top:0">
+    <div class="contenitore">
+      <div class="testa rivela">
+        <div class="occhiello">Novità della 3.0</div>
+        <h2 class="titolo" id="titolo-novita">Un programma, due moduli.</h2>
+        <p>Il modulo Soffitti radianti è quello che conosci: regole, calcoli, prezzi ed elaborati non cambiano. Arriva il Cartongesso, con il suo percorso in otto passi. Chi ha già il programma si aggiorna da solo e ritrova licenza, listini e progetti.</p>
+      </div>
+      <div class="griglia rivela">
+        <div class="carta">
+          <div class="ic rame" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-7h6v7M3 12h18"/></svg></div>
+          <h3>Modulo Cartongesso</h3>
+          <p>Pareti, contropareti e controsoffitti disegnati sulla pianta o dai lati di un locale; orditura, lastre e viti dai dati del produttore, con edizione e fonte.</p>
+        </div>
+        <div class="carta">
+          <div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="8" height="16" rx="2"/><rect x="13" y="4" width="8" height="16" rx="2"/></svg></div>
+          <h3>Due moduli, una licenza per ciascuno</h3>
+          <p>Scegli il modulo all'avvio e passa all'altro con lo stesso disegno. Ogni licenza vale per un modulo: prendi solo quello che ti serve.</p>
+        </div>
+        <div class="carta">
+          <div class="ic acqua" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Mai un «conforme»</h3>
+          <p>Un precontrollo a tre stati sui dati documentati: compatibile, incompatibile o non verificabile, con la causa e il rimedio. La verifica strutturale resta del progettista.</p>
+        </div>
+        <div class="carta">
+          <div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div>
+          <h3>Tavole e preventivo</h3>
+          <p>Le tavole A1 CG-01, CG-02 e CG-03, il preventivo per il cliente senza prezzi unitari e il computo in Excel con le formule.</p>
+        </div>
+        <div class="carta">
+          <div class="ic acqua" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+          <h3>Prezzi dal prezzario, con la tua conferma</h3>
+          <p>Ogni voce viene dal prezzario della tua regione, da una tua conferma o da un prezzo scritto da te con fonte e data. Gli oneri della sicurezza li dichiari tu.</p>
+        </div>
+        <div class="carta">
+          <div class="ic rame" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6a8 8 0 1 0 0 12"/></svg></div>
+          <h3>Capomastro, con una C nuova</h3>
+          <p>Nome e icona nuovi: la C in rame che nasce dal serpentino di un modulo radiante.</p>
+        </div>
+        <div class="carta">
+          <div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5l5 2.5-5 2.5z" fill="currentColor"/></svg></div>
+          <h3>Video tutorial</h3>
+          <p>Un tutorial completo per ogni modulo, con i capitoli: guardi quello che ti serve, quando ti serve.</p>
+        </div>
+        <div class="carta">
+          <div class="ic acqua" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/><path d="M8 9h8M8 13h6"/></svg></div>
+          <h3>Manuale e standard aggiornati</h3>
+          <p>Il manuale ha il capitolo del Cartongesso e c'è lo standard per l'architetto anche per il Cartongesso: il disegno arriva già pronto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blocco" id="licenze" aria-labelledby="titolo-licenze" style="padding-top:0">
+    <div class="contenitore">
+      <div class="testa rivela">
+        <div class="occhiello">Licenze</div>
+        <h2 class="titolo" id="titolo-licenze">Prima provi gratis, poi scegli.</h2>
+        <p>Ogni modulo ha la sua licenza. Ogni licenza vale per un computer e per un numero di progetti: un progetto è un disegno diverso, e rigenerarlo non conta.</p>
+      </div>
+      <div class="prova rivela">
+        <div><b class="etichetta">PROVA GRATUITA</b><span>3 giorni o 2 progetti, con tutte le funzioni.</span> Poi scegli la licenza.</div>
+        <a class="pulsante primario piccolo" href="#scarica">Scarica e prova</a>
+      </div>
+      <!-- Piani per modulo (R-350: i moduli si vendono separati, ognuno con la sua licenza): gli stessi di
+           csr/assets/licenze_offerta.json (e della brochure), i nomi dei moduli quelli di csr/licensing/moduli.py (NOMI);
+           li controlla csr/tests/test_sito.py -->
+      <div class="testa-modulo primo rivela" data-modulo="radius">
+        <h3 class="nome-modulo">Modulo Soffitti radianti</h3>
+        <p>Soffitti radianti a moduli: dal DWG dell'architetto a struttura, moduli, circuiti, elaborati e preventivo.</p>
+      </div>
+      <div class="piani rivela" id="piani">
+        <article class="piano" data-modulo="radius" data-giorni="30" data-prezzo="99" data-mese="99" data-progetti="5" data-help-desk-ore="0" data-risparmio="">
+          <h3>1 mese</h3>
+          <div class="prezzo">99<small>&nbsp;€</small></div>
+          <div class="iva">IVA esclusa</div>
+          <div class="mese">99 € al mese</div>
+          <ul><li>5 progetti</li><li>Tutte le funzioni</li><li>1 h di formazione</li><li>Help Desk 25 €/h (non incluso)</li><li>1 computer</li></ul>
+        </article>
+        <article class="piano" data-modulo="radius" data-giorni="60" data-prezzo="179" data-mese="90" data-progetti="10" data-help-desk-ore="1" data-risparmio="−10 %">
+          <h3>2 mesi</h3>
+          <div class="prezzo">179<small>&nbsp;€</small></div>
+          <div class="iva">IVA esclusa</div>
+          <div class="mese">90 € al mese <span class="risparmio">−10 %</span></div>
+          <ul><li>10 progetti</li><li>Tutte le funzioni</li><li>1 h di formazione</li><li>Help Desk: 1 h inclusa, poi 25 €/h</li><li>1 computer</li></ul>
+        </article>
+        <article class="piano" data-modulo="radius" data-giorni="90" data-prezzo="249" data-mese="83" data-progetti="20" data-help-desk-ore="2" data-risparmio="−16 %">
+          <h3>3 mesi</h3>
+          <div class="prezzo">249<small>&nbsp;€</small></div>
+          <div class="iva">IVA esclusa</div>
+          <div class="mese">83 € al mese <span class="risparmio">−16 %</span></div>
+          <ul><li>20 progetti</li><li>Tutte le funzioni</li><li>1 h di formazione</li><li>Help Desk: 2 h incluse, poi 25 €/h</li><li>1 computer</li></ul>
+        </article>
+        <article class="piano consigliato" data-modulo="radius" data-giorni="365" data-prezzo="840" data-mese="70" data-progetti="100" data-help-desk-ore="6" data-risparmio="−29 %" data-consigliato="true">
+          <span class="nastro">CONSIGLIATA</span>
+          <h3>1 anno</h3>
+          <div class="prezzo">840<small>&nbsp;€</small></div>
+          <div class="iva">IVA esclusa</div>
+          <div class="mese">70 € al mese <span class="risparmio">−29 %</span></div>
+          <ul><li>100 progetti</li><li>Tutte le funzioni</li><li>1 h di formazione</li><li>Help Desk: 6 h incluse, poi 25 €/h</li><li>1 computer</li></ul>
+        </article>
+      </div>
+      <div class="testa-modulo rivela" data-modulo="cartongesso">
+        <h3 class="nome-modulo">Modulo Cartongesso</h3>
+        <p>Pareti, contropareti e controsoffitti in cartongesso. Si acquista a parte, con la sua licenza.</p>
+      </div>
+      <div class="piani rivela" id="piani-cartongesso">
+        <article class="piano" data-modulo="cartongesso" data-giorni="30" data-prezzo="69" data-mese="69" data-progetti="10" data-help-desk-ore="0" data-risparmio="">
+          <h3>1 mese</h3>
+          <div class="prezzo">69<small>&nbsp;€</small></div>
+          <div class="iva">IVA esclusa</div>
+          <div class="mese">69 € al mese</div>
+          <ul><li>10 progetti</li><li>Tutte le funzioni</li><li>1 h di formazione</li><li>Help Desk 25 €/h (non incluso)</li><li>1 computer</li></ul>
+        </article>
+        <article class="piano" data-modulo="cartongesso" data-giorni="60" data-prezzo="125" data-mese="63" data-progetti="20" data-help-desk-ore="1" data-risparmio="−9 %">
+          <h3>2 mesi</h3>
+          <div class="prezzo">125<small>&nbsp;€</small></div>
+          <div class="iva">IVA esclusa</div>
+          <div class="mese">63 € al mese <span class="risparmio">−9 %</span></div>
+          <ul><li>20 progetti</li><li>Tutte le funzioni</li><li>1 h di formazione</li><li>Help Desk: 1 h inclusa, poi 25 €/h</li><li>1 computer</li></ul>
+        </article>
+        <article class="piano" data-modulo="cartongesso" data-giorni="90" data-prezzo="175" data-mese="58" data-progetti="40" data-help-desk-ore="2" data-risparmio="−15 %">
+          <h3>3 mesi</h3>
+          <div class="prezzo">175<small>&nbsp;€</small></div>
+          <div class="iva">IVA esclusa</div>
+          <div class="mese">58 € al mese <span class="risparmio">−15 %</span></div>
+          <ul><li>40 progetti</li><li>Tutte le funzioni</li><li>1 h di formazione</li><li>Help Desk: 2 h incluse, poi 25 €/h</li><li>1 computer</li></ul>
+        </article>
+        <article class="piano consigliato" data-modulo="cartongesso" data-giorni="365" data-prezzo="590" data-mese="49" data-progetti="200" data-help-desk-ore="6" data-risparmio="−29 %" data-consigliato="true">
+          <span class="nastro">CONSIGLIATA</span>
+          <h3>1 anno</h3>
+          <div class="prezzo">590<small>&nbsp;€</small></div>
+          <div class="iva">IVA esclusa</div>
+          <div class="mese">49 € al mese <span class="risparmio">−29 %</span></div>
+          <ul><li>200 progetti</li><li>Tutte le funzioni</li><li>1 h di formazione</li><li>Help Desk: 6 h incluse, poi 25 €/h</li><li>1 computer</li></ul>
+        </article>
+      </div>
+      <div class="in-tutte rivela" id="in-tutte" data-formazione-ore="1" data-tariffa-help-desk="25">
+        <b class="etichetta">IN TUTTE LE LICENZE</b>
+        <span><b>Aggiornamenti sempre inclusi.</b> <b>Formazione:</b> 1 h di formazione generale all'uso, in videochiamata, con la simulazione della creazione di un progetto. <b>Help Desk:</b> oltre le ore comprese 25 €/h.</span>
+      </div>
+      <p class="note-licenze" id="note-licenze" data-sconto-secondo-pc="−30 %">Secondo computer dello stesso studio: −30 %. Prezzi IVA esclusa. Licenza legata al computer; internet serve solo per gli aggiornamenti.</p>
+      <div class="attiva rivela">
+        <div><b>Installa</b>Un solo setup per Windows, con ODA File Converter; sul Mac un dmg.</div>
+        <div><b>Prova o attiva</b>Scegli la prova gratuita oppure invia il codice dispositivo che il programma ti mostra.</div>
+        <div><b>Ricevi la chiave</b>Incollala nel programma e lavora: la licenza resta sul tuo computer.</div>
+      </div>
+      <div class="azioni">
+        <a class="pulsante" href="documenti/Licenze_Capomastro.pdf">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M12 12v6M9 15l3 3 3-3"/></svg>
+          Scarica le licenze in PDF
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="blocco" id="requisiti" aria-labelledby="titolo-requisiti" style="padding-top:0">
+    <div class="contenitore">
+      <div class="testa rivela">
+        <div class="occhiello">Requisiti e installazione</div>
+        <h2 class="titolo" id="titolo-requisiti">Windows o Mac, in tre minuti.</h2>
+        <p>Un solo file da scaricare. Internet serve solo per gli aggiornamenti: il resto funziona offline.</p>
+      </div>
+      <div class="sistemi rivela">
+        <section class="sistema" id="passi-win" aria-labelledby="titolo-win">
+          <span class="tuo-etichetta">Il tuo sistema</span>
+          <h3 id="titolo-win"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M3 5.1l7.4-1v7.2H3zM11.3 4l9.7-1.4v8.6h-9.7zM3 12.6h7.4v7.3L3 18.9zM11.3 12.6H21v8.7l-9.7-1.4z"/></svg>Windows</h3>
+          <p class="req">Windows 10 o 11 a 64 bit · file <b>radius-project_install.exe</b></p>
+          <ol>
+            <li>Apri il file scaricato. Se il browser avvisa che il file non viene scaricato spesso, scegli <b>Mantieni</b>.</li>
+            <li>Se compare «Windows ha protetto il PC», premi <b>Ulteriori informazioni → Esegui comunque</b>: il programma non ha ancora la firma digitale.</li>
+            <li>Lascia spuntato <b>Scarica e installa ODA File Converter</b> (serve per leggere i DWG; Windows chiede una conferma).</li>
+            <li>Al primo avvio scegli la <b>prova gratuita</b> oppure attiva la licenza con il <b>codice dispositivo</b>; poi indica la tua regione per il prezzario.</li>
+          </ol>
+        </section>
+        <section class="sistema" id="passi-mac" aria-labelledby="titolo-mac">
+          <span class="tuo-etichetta">Il tuo sistema</span>
+          <h3 id="titolo-mac"><svg width="19" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.5 0 2 .8 3.3.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.1c.7-.8 1.2-2 1-3.1-1 .1-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z"/></svg>Mac</h3>
+          <p class="req">macOS 14.4 (Sonoma) o successivo, Intel e chip Apple · file <b>radius-project_mac.dmg</b></p>
+          <ol>
+            <li>Apri il file scaricato e trascina l'app nella cartella <b>Applicazioni</b>.</li>
+            <li>Al primo avvio il Mac avvisa che l'app è di uno sviluppatore non identificato: premi <b>Fine</b>, apri <b>Impostazioni di Sistema → Privacy e sicurezza</b> e in fondo premi <b>Apri comunque</b>. Serve una volta sola.</li>
+            <li>Sui Mac con chip Apple, se il Mac lo chiede, installa <b>Rosetta</b>.</li>
+            <li>Scegli la <b>prova gratuita</b> oppure attiva la licenza con il <b>codice dispositivo</b>, poi in <b>Aggiornamenti → ODA File Converter</b> premi <b>Aggiorna</b>: il programma lo installa da solo, senza password.</li>
+          </ol>
+        </section>
+      </div>
+      <div class="nota nascosto" id="nota" role="status"></div>
+      <p class="rete">Chi ha già il programma non deve scaricare niente: la 3.0 arriva con l'aggiornamento automatico.</p>
+    </div>
+  </section>
+
+  <section class="blocco" id="documenti" aria-labelledby="titolo-documenti" style="padding-top:0;padding-bottom:clamp(24px,4vw,48px)">
+    <div class="contenitore">
+      <div class="testa rivela">
+        <div class="occhiello">Documenti</div>
+        <h2 class="titolo" id="titolo-documenti">Tutto quello che serve sapere.</h2>
+      </div>
+      <div class="documenti rivela">
+        <a class="documento" href="documenti/Manuale_utente_Capomastro.pdf">
+          <span class="ic" aria-hidden="true">PDF</span>
+          <span><b>Manuale d'uso</b><span class="desc">Ogni passo con le schermate, dall'installazione alla stampa</span></span>
+        </a>
+        <a class="documento" href="documenti/Licenze_Capomastro.pdf">
+          <span class="ic" aria-hidden="true">PDF</span>
+          <span><b>Licenze e prezzi</b><span class="desc">Durate, progetti, formazione e Help Desk</span></span>
+        </a>
+        <a class="documento" href="documenti/Standard_disegno_per_architetto.pdf">
+          <span class="ic" aria-hidden="true">PDF</span>
+          <span><b>Standard per l'architetto · Soffitti radianti</b><span class="desc">Come preparare il DWG perché si legga da solo</span></span>
+        </a>
+        <a class="documento" href="documenti/Standard_disegno_per_architetto_Cartongesso.pdf">
+          <span class="ic" aria-hidden="true">PDF</span>
+          <span><b>Standard per l'architetto · Cartongesso</b><span class="desc">Cosa scrivere nel DWG perché locali e quote si leggano bene</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="contenitore">
+    <a class="marchio" href="#">
+      <img src="img/icona-64.png" width="30" height="30" alt="" loading="lazy">
+      <span>Capomastro<small>Soffitti radianti e Cartongesso</small></span>
+    </a>
+    <nav aria-label="Piè di pagina">
+      <a href="#scarica">Scarica</a>
+      <a href="#moduli">Moduli</a>
+      <a href="#funzioni">Funzioni</a>
+      <a href="#tutorial">Tutorial</a>
+      <a href="#novita">Novità</a>
+      <a href="#licenze">Licenze</a>
+      <a href="#requisiti">Requisiti</a>
+      <a href="documenti/Manuale_utente_Capomastro.pdf">Manuale</a>
+    </nav>
+    <div class="credito">
+      <span>Software sviluppato da Angelo Iannello</span>
+      <span>Windows 10/11 a 64 bit · macOS 14.4 (Sonoma) o successivo · esempi con il progetto anonimo «Mario Rossi»</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  document.body.classList.remove("js-assente");
+  var REPO = "iannelloservass-bot/radius-project";
+  var NOME_WIN = "radius-project_install.exe";
+  var NOME_MAC = "radius-project_mac.dmg";
+  var ULTIMA = "https://github.com/" + REPO + "/releases/latest/download/";
+  var $ = function (id) { return document.getElementById(id); };
+  var quieto = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Nessuna navigazione automatica: il download parte solo da un clic sul pulsante, la pagina non si sposta da sola.
+
+  function sistema() {
+    var ua = navigator.userAgent || "";
+    var piattaforma = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || "";
+    var tocco = (navigator.maxTouchPoints || 0) > 1;
+    if (/android|iphone|ipad|ipod/i.test(ua) || (/mac/i.test(piattaforma) && tocco)) return "mobile";
+    if (/win/i.test(piattaforma) || /windows/i.test(ua)) return "windows";
+    if (/mac/i.test(piattaforma) || /mac os x|macintosh/i.test(ua)) return "mac";
+    return "altro";
+  }
+
+  function data(iso) {
+    try { return new Date(iso).toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" }); }
+    catch (e) { return ""; }
+  }
+
+  function imposta(link, url) {
+    if (url) { link.href = url; link.classList.remove("spento"); link.removeAttribute("aria-disabled"); }
+    else { link.removeAttribute("href"); link.classList.add("spento"); link.setAttribute("aria-disabled", "true"); }
+  }
+
+  function mostra(rilascio) {
+    var os = sistema();
+    var urlWin = ULTIMA + NOME_WIN, urlMac = null, versione = "";
+    if (rilascio) {
+      versione = (rilascio.tag_name || "").replace(/^v/, "");
+      (rilascio.assets || []).forEach(function (a) {
+        if (a.name === NOME_WIN) urlWin = a.browser_download_url;
+        if (a.name === NOME_MAC) urlMac = a.browser_download_url;
+      });
+      $("versione").textContent = "Versione " + versione + (rilascio.published_at ? " · pubblicata il " + data(rilascio.published_at) : "");
+    } else {
+      urlMac = ULTIMA + NOME_MAC;  // informazioni non disponibili: si prova l'indirizzo stabile
+    }
+    imposta($("win"), urlWin);
+    imposta($("mac"), urlMac);
+    var principale = $("principale");
+    if (os === "windows") {
+      $("titolo").textContent = "Pronto per Windows";
+      $("testo").textContent = "Premi il pulsante per scaricare Capomastro. Le istruzioni per l'installazione sono più in basso.";
+      principale.textContent = "Scarica per Windows" + (versione ? " · " + versione : "");
+      imposta(principale, urlWin);
+      $("passi-win").classList.add("tuo");
+      $("win").classList.add("nascosto");
+    } else if (os === "mac" && urlMac) {
+      $("titolo").textContent = "Scarica Capomastro per Mac";
+      $("testo").textContent = "Premi il pulsante per scaricare il programma. Le istruzioni per l'installazione sono più in basso.";
+      principale.textContent = "Scarica per Mac" + (versione ? " · " + versione : "");
+      imposta(principale, urlMac);
+      $("passi-mac").classList.add("tuo");
+      $("mac").classList.add("nascosto");
+    } else if (os === "mac") {
+      $("titolo").textContent = "La versione per Mac arriva a breve";
+      $("testo").textContent = "È in preparazione: riapri questo link fra qualche giorno. La versione per Windows è già disponibile.";
+      principale.classList.add("nascosto");
+      $("passi-mac").classList.add("tuo");
+    } else {
+      $("titolo").textContent = "Apri questo link da un computer";
+      $("testo").textContent = os === "mobile"
+        ? "Il programma si installa su un computer Windows o Mac: inviati il link per e-mail e aprilo dal computer, oppure scegli qui sotto."
+        : "Il programma è disponibile per Windows e per Mac: scegli qui sotto il sistema del computer su cui installarlo.";
+      principale.classList.add("nascosto");
+    }
+  }
+
+  var fatto = false;
+  var riserva = setTimeout(function () { if (!fatto) { fatto = true; mostra(null); } }, 4000);
+  fetch("https://api.github.com/repos/" + REPO + "/releases/latest", { headers: { Accept: "application/vnd.github+json" } })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (rilascio) { if (!fatto) { fatto = true; clearTimeout(riserva); mostra(rilascio); } })
+    .catch(function () { if (!fatto) { fatto = true; clearTimeout(riserva); mostra(null); } });
+
+  // --- movimento: comparse allo scorrimento, parallasse della R, video solo quando si vede -------------------------
+  var osserva = "IntersectionObserver" in window;
+  var rivela = document.querySelectorAll(".rivela");
+  if (osserva && !quieto) {
+    var io = new IntersectionObserver(function (voci) {
+      voci.forEach(function (v) { if (v.isIntersecting) { v.target.classList.add("vista"); io.unobserve(v.target); } });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    rivela.forEach(function (el) { io.observe(el); });
+  } else {
+    rivela.forEach(function (el) { el.classList.add("vista"); });
+  }
+
+  var inclina = $("inclina"), oggetto = $("oggetto");
+  if (!quieto && window.matchMedia("(pointer: fine)").matches) {
+    var attesa = 0, px = 0, py = 0;
+    window.addEventListener("pointermove", function (e) {
+      px = e.clientX / window.innerWidth - 0.5;
+      py = e.clientY / window.innerHeight - 0.5;
+      if (!attesa) attesa = requestAnimationFrame(function () {
+        attesa = 0;
+        inclina.style.setProperty("--ry", (px * 14).toFixed(2) + "deg");
+        inclina.style.setProperty("--rx", (-py * 10).toFixed(2) + "deg");
+      });
+    }, { passive: true });
+  }
+
+  // pulsante principale: respira e riflette la luce solo quando si vede (movimento ridotto: fermo, vedi il CSS)
+  var vivo = $("principale");
+  if (vivo && osserva && !quieto) {
+    new IntersectionObserver(function (voci) {
+      voci.forEach(function (v) { vivo.classList.toggle("in-vista", v.isIntersecting); });
+    }, { threshold: 0.2 }).observe(vivo);
+  }
+
+  // --- video tutorial: media/tutorial/tutorial.json (titolo, file, locandina, durata, capitoli) -------------------------
+  // Un video alla volta; i capitoli portano il video al loro tempo (mai lo scorrimento della pagina). Un tutorial senza
+  // file (o con il file non ancora pubblicato) è «in arrivo»: nessun collegamento rotto, e si completa da solo appena c'è.
+  var CARTELLA_TUTORIAL = "media/tutorial/";
+  var schede = $("tutorial-schede"), corpo = $("tutorial-corpo");
+  var elenco = [], scelto = 0, video = null;
+
+  function el(tag, classe, testo) {
+    var e = document.createElement(tag);
+    if (classe) e.className = classe;
+    if (testo != null) e.textContent = testo;
+    return e;
+  }
+  function tempo(sec) {
+    sec = Math.max(0, Math.floor(sec));
+    var m = Math.floor(sec / 60), s = sec % 60;
+    return m + ":" + (s < 10 ? "0" : "") + s;
+  }
+  function durataTesto(sec) {
+    if (!sec) return "";
+    var m = Math.round(sec / 60);
+    return m < 1 ? "meno di un minuto" : m + (m === 1 ? " minuto" : " minuti");
+  }
+
+  function fermaVideo() {
+    if (!video) return;
+    try { video.pause(); video.removeAttribute("src"); video.load(); } catch (e) { /* già scarico */ }
+    video = null;
+  }
+
+  function vai(t) {
+    if (!video) return;
+    var parti = function () {
+      video.currentTime = t;
+      var p = video.play();
+      if (p && p.catch) p.catch(function () { video.controls = true; });
+    };
+    if (video.readyState >= 1) parti();
+    else { video.addEventListener("loadedmetadata", parti, { once: true }); video.preload = "metadata"; video.load(); }
+  }
+
+  function disegna() {
+    var t = elenco[scelto];
+    fermaVideo();
+    corpo.textContent = "";
+    var colonna = el("div");
+    var figura = el("figure", "tutorial-video");
+    figura.style.margin = "0";
+    var finestra = el("div", "finestra");
+    var barretta = el("div", "barretta");
+    barretta.setAttribute("aria-hidden", "true");
+    barretta.appendChild(el("i")); barretta.appendChild(el("i")); barretta.appendChild(el("i"));
+    barretta.appendChild(el("span", "", "Capomastro · " + t.titolo + " · esempio «Mario Rossi»"));
+    finestra.appendChild(barretta);
+    if (t.disponibile) {
+      video = document.createElement("video");
+      video.controls = true; video.preload = "none"; video.setAttribute("playsinline", "");
+      if (t.locandina) video.poster = CARTELLA_TUTORIAL + t.locandina;
+      video.setAttribute("aria-label", "Tutorial «" + t.titolo + "»");
+      video.src = CARTELLA_TUTORIAL + t.file;
+      if (t.sottotitoli) {
+        var traccia = document.createElement("track");
+        traccia.kind = "subtitles"; traccia.srclang = "it"; traccia.label = "Italiano"; traccia.src = CARTELLA_TUTORIAL + t.sottotitoli;
+        video.appendChild(traccia);
+      }
+      finestra.appendChild(video);
+    } else {
+      var segnaposto = el("div", "segnaposto");
+      var testo = el("div", "", "Il tutorial del modulo " + t.titolo + " è in arrivo");
+      testo.appendChild(el("small", "", "Nel frattempo trovi tutti i passi, con le schermate, nel manuale d'uso."));
+      segnaposto.appendChild(testo);
+      finestra.appendChild(segnaposto);
+    }
+    figura.appendChild(finestra);
+    colonna.appendChild(figura);
+    var testa = el("div", "tutorial-testa");
+    testa.appendChild(el("h3", "", "Soffitti radianti" === t.titolo || "Cartongesso" === t.titolo ? "Capomastro · " + t.titolo : t.titolo));
+    var d = durataTesto(t.durata);
+    testa.appendChild(el("div", "durata", t.disponibile ? (d ? "Durata: " + d : "Video tutorial") : "In arrivo"));
+    if (t.descrizione) testa.appendChild(el("p", "", t.descrizione));
+    colonna.appendChild(testa);
+    corpo.appendChild(colonna);
+
+    var lista = el("div", "capitoli");
+    lista.appendChild(el("h4", "", "Capitoli"));
+    var capitoli = t.disponibile ? (t.capitoli || []) : [];
+    if (capitoli.length) {
+      var ol = document.createElement("ol");
+      var voci = capitoli.map(function (c) {
+        var li = document.createElement("li");
+        var b = document.createElement("button");
+        b.type = "button";
+        b.appendChild(el("span", "tc", tempo(c.inizio)));
+        b.appendChild(el("span", "", c.titolo));
+        b.addEventListener("click", function () { vai(c.inizio); });
+        li.appendChild(b); ol.appendChild(li);
+        return b;
+      });
+      lista.appendChild(ol);
+      var attivo = -1;
+      video.addEventListener("timeupdate", function () {
+        var ora = video.currentTime, k = -1;
+        for (var n = 0; n < capitoli.length; n++) if (capitoli[n].inizio <= ora + 0.25) k = n;
+        if (k === attivo) return;
+        if (attivo >= 0) voci[attivo].removeAttribute("aria-current");
+        attivo = k;
+        if (k >= 0) {
+          voci[k].setAttribute("aria-current", "true");
+          // solo la lista dei capitoli si muove, mai la pagina; non se la stai usando con il mouse
+          if (!lista.matches(":hover")) lista.scrollTop = Math.max(0, voci[k].offsetTop - lista.clientHeight / 2 + voci[k].offsetHeight / 2);
+        }
+      });
+    } else {
+      var vuoto = el("p", "vuoto");
+      vuoto.appendChild(document.createTextNode(t.disponibile ? "Questo video non ha capitoli: scorri la barra del lettore." : "I capitoli compariranno con il video. Intanto, "));
+      if (!t.disponibile) {
+        var a = document.createElement("a");
+        a.href = "documenti/Manuale_utente_Capomastro.pdf"; a.textContent = "apri il manuale d'uso";
+        vuoto.appendChild(a); vuoto.appendChild(document.createTextNode("."));
+      }
+      lista.appendChild(vuoto);
+    }
+    corpo.appendChild(lista);
+  }
+
+  function schedeTutorial() {
+    schede.textContent = "";
+    elenco.forEach(function (t, i) {
+      var b = document.createElement("button");
+      b.type = "button"; b.setAttribute("role", "tab");
+      b.setAttribute("aria-selected", i === scelto ? "true" : "false");
+      b.tabIndex = i === scelto ? 0 : -1;
+      b.appendChild(document.createTextNode(t.titolo));
+      if (!t.disponibile) b.appendChild(el("span", "tag", "in arrivo"));
+      b.addEventListener("click", function () {
+        if (i === scelto) return;
+        scelto = i; schedeTutorial(); disegna();
+        schede.querySelector('[aria-selected="true"]').focus();
+      });
+      b.addEventListener("keydown", function (e) {
+        var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+        if (!d) return;
+        e.preventDefault();
+        scelto = (scelto + d + elenco.length) % elenco.length;
+        schedeTutorial(); disegna();
+        schede.querySelector('[aria-selected="true"]').focus();
+      });
+      schede.appendChild(b);
+    });
+  }
+
+  function esiste(url) {  // il file c'è davvero? (un tutorial annunciato nel JSON ma non ancora pubblicato è «in arrivo»)
+    return fetch(url, { method: "HEAD", cache: "no-store" }).then(function (r) { return r.ok; }, function () { return false; });
+  }
+
+  if (schede && corpo) {
+    fetch(CARTELLA_TUTORIAL + "tutorial.json", { cache: "no-cache" })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("tutorial.json")); })
+      .then(function (dati) {
+        var voci = (dati && dati.tutorial) || [];
+        return Promise.all(voci.map(function (t) {
+          // pubblicato = nel JSON ci sono file e durata (le scrive tools/sito.py --tutorial); si controlla anche che il file ci sia
+          return (t.file && t.durata ? esiste(CARTELLA_TUTORIAL + t.file) : Promise.resolve(false)).then(function (ok) { t.disponibile = ok; return t; });
+        }));
+      })
+      .then(function (voci) {
+        elenco = voci;
+        if (!elenco.length) throw new Error("nessun tutorial");
+        // un tutorial disponibile per primo; il modulo si può scegliere con l'indirizzo #tutorial-cartongesso
+        var voluto = location.hash.indexOf("#tutorial-") === 0 ? location.hash.slice(10) : "";
+        var k = elenco.findIndex(function (t) { return t.id === voluto; });
+        scelto = k >= 0 ? k : Math.max(0, elenco.findIndex(function (t) { return t.disponibile; }));
+        schedeTutorial(); disegna();
+      })
+      .catch(function () {
+        corpo.textContent = "";
+        corpo.appendChild(el("p", "rete", "I video tutorial non si caricano in questo momento: riprova fra poco. Nel manuale d'uso trovi gli stessi passi con le schermate."));
+      });
+  }
+  if (oggetto && quieto) oggetto.classList.add("fermo");
+})();
+</script>
+</body>
+</html>

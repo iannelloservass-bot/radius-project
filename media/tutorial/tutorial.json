@@ -1,0 +1,171 @@
+{
+ "nota": "Elenco dei video tutorial della pagina (#tutorial): la pagina legge questo file, aggiungere o cambiare un video non tocca l'HTML. File e locandina stanno in questa cartella; durata in secondi, capitoli con il tempo d'inizio in secondi. Un tutorial senza file pubblicato (o con il file non ancora nella cartella) si mostra «in arrivo», senza collegamenti.",
+ "tutorial": [
+  {
+   "id": "soffitti-radianti",
+   "titolo": "Soffitti radianti",
+   "descrizione": "Dal DWG dell'architetto agli elaborati: lettura, quota di posa, pannelli, collettori, centrale, regolazione, prezzi, documento e stampa, sul progetto d'esempio «Mario Rossi».",
+   "file": "Tutorial_Capomastro_Soffitti_radianti_web.mp4",
+   "locandina": "locandina_soffitti_radianti.webp",
+   "sottotitoli": "Tutorial_Capomastro_Soffitti_radianti.vtt",
+   "durata": 654.3,
+   "capitoli": [
+    {
+     "titolo": "Apertura",
+     "inizio": 0.0
+    },
+    {
+     "titolo": "Il percorso",
+     "inizio": 24.46
+    },
+    {
+     "titolo": "Caricare il disegno",
+     "inizio": 60.61
+    },
+    {
+     "titolo": "Il riepilogo della lettura",
+     "inizio": 96.16
+    },
+    {
+     "titolo": "D1 · Altezza di posa",
+     "inizio": 164.78
+    },
+    {
+     "titolo": "D2 · Travi e scavalchi",
+     "inizio": 201.0
+    },
+    {
+     "titolo": "D3 · Controsoffitto nei NO RADIUS",
+     "inizio": 228.99
+    },
+    {
+     "titolo": "Pannelli · Posa e orientamento",
+     "inizio": 247.62
+    },
+    {
+     "titolo": "D4 · Collettori",
+     "inizio": 285.38
+    },
+    {
+     "titolo": "D5 · Centrale e linea primaria",
+     "inizio": 327.65
+    },
+    {
+     "titolo": "D6 · Regolazione",
+     "inizio": 385.52
+    },
+    {
+     "titolo": "D7 · Prezzi",
+     "inizio": 417.76
+    },
+    {
+     "titolo": "D8 · Documento",
+     "inizio": 462.41
+    },
+    {
+     "titolo": "Anteprima",
+     "inizio": 491.0
+    },
+    {
+     "titolo": "Genera",
+     "inizio": 522.79
+    },
+    {
+     "titolo": "Stampa degli elaborati",
+     "inizio": 548.4
+    },
+    {
+     "titolo": "Listino, Prezzari e Impostazioni",
+     "inizio": 572.43
+    },
+    {
+     "titolo": "Le scorciatoie",
+     "inizio": 610.73
+    },
+    {
+     "titolo": "Chiusura",
+     "inizio": 638.08
+    }
+   ]
+  },
+  {
+   "id": "cartongesso",
+   "titolo": "Cartongesso",
+   "descrizione": "Pareti, contropareti e controsoffitti in cartongesso: dal DWG dell'architetto a tavole, preventivo e computo, sul progetto d'esempio «Mario Rossi».",
+   "file": "Tutorial_Capomastro_Cartongesso_web.mp4",
+   "locandina": "locandina_cartongesso.webp",
+   "sottotitoli": "Tutorial_Capomastro_Cartongesso.vtt",
+   "durata": 603.4,
+   "capitoli": [
+    {
+     "titolo": "Apertura",
+     "inizio": 0.0
+    },
+    {
+     "titolo": "Il percorso",
+     "inizio": 25.02
+    },
+    {
+     "titolo": "Caricare il disegno",
+     "inizio": 62.33
+    },
+    {
+     "titolo": "Il riepilogo della lettura",
+     "inizio": 87.04
+    },
+    {
+     "titolo": "La parete",
+     "inizio": 131.23
+    },
+    {
+     "titolo": "Le contropareti",
+     "inizio": 176.82
+    },
+    {
+     "titolo": "Più pareti insieme",
+     "inizio": 213.78
+    },
+    {
+     "titolo": "I controsoffitti",
+     "inizio": 248.98
+    },
+    {
+     "titolo": "Fori, velette e zone escluse",
+     "inizio": 301.31
+    },
+    {
+     "titolo": "Calcolo e verifiche",
+     "inizio": 348.83
+    },
+    {
+     "titolo": "Distinta, taglio e struttura",
+     "inizio": 395.46
+    },
+    {
+     "titolo": "Prezzi e preventivo",
+     "inizio": 421.09
+    },
+    {
+     "titolo": "Documento",
+     "inizio": 494.49
+    },
+    {
+     "titolo": "Genera",
+     "inizio": 517.65
+    },
+    {
+     "titolo": "Stampa degli elaborati",
+     "inizio": 544.97
+    },
+    {
+     "titolo": "Il catalogo e i parametri",
+     "inizio": 561.13
+    },
+    {
+     "titolo": "Chiusura",
+     "inizio": 586.86
+    }
+   ]
+  }
+ ]
+}

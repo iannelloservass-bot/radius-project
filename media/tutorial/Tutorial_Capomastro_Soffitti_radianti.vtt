@@ -1,0 +1,675 @@
+WEBVTT
+
+1
+00:00:15.001 --> 00:00:16.851
+Ciao, e benvenuto in Capomastro.
+
+2
+00:00:16.871 --> 00:00:20.731
+Progettiamo insieme un soffitto
+radiante, passo dopo passo,
+
+3
+00:00:20.751 --> 00:00:24.056
+sul progetto d'esempio
+del signor Mario Rossi.
+
+4
+00:00:26.432 --> 00:00:31.042
+Il programma legge il DWG, ti fa
+poche domande e progetta l'impianto:
+
+5
+00:00:31.142 --> 00:00:35.902
+struttura, moduli, circuiti,
+collettori, centrale e regolazione.
+
+6
+00:00:36.249 --> 00:00:40.409
+Alla fine hai le tavole, il preventivo
+e il computo completo in Excel.
+
+7
+00:00:40.429 --> 00:00:43.029
+E il disegno dell'architetto
+resta intatto.
+
+8
+00:00:43.296 --> 00:00:46.756
+Il lavoro segue un percorso
+a passi: disegno, riepilogo,
+
+9
+00:00:46.776 --> 00:00:51.216
+progetto, prezzi e documento,
+anteprima e genera.
+
+10
+00:00:51.370 --> 00:00:53.958
+Li ritrovi in alto,
+nella barra del percorso.
+
+11
+00:00:53.978 --> 00:00:59.663
+A sinistra, le sezioni: Listino,
+Prezzari, Aggiornamenti e Impostazioni.
+
+12
+00:01:03.493 --> 00:01:08.797
+Tutto comincia dal disegno: lo scegli
+con “Scegli un file”, o con Comando O.
+
+13
+00:01:08.958 --> 00:01:12.568
+Un lavoro salvato si riapre
+con “Apri un progetto”:
+
+14
+00:01:12.588 --> 00:01:14.698
+non consuma progetti della licenza.
+
+15
+00:01:14.946 --> 00:01:17.816
+Prima del rilievo, manda
+all'architetto lo standard:
+
+16
+00:01:17.836 --> 00:01:21.196
+due pagine con le convenzioni
+che la lettura riconosce da sola.
+
+17
+00:01:21.429 --> 00:01:26.872
+Il modo più rapido? Trascina il DWG
+nella zona centrale. Va bene anche un DXF.
+
+18
+00:01:27.212 --> 00:01:34.461
+La lettura parte da sola: locali, altezze,
+travi e aree NO RADIUS, in pochi secondi.
+
+19
+00:01:39.006 --> 00:01:41.936
+Ecco il riepilogo: al centro la pianta,
+
+20
+00:01:41.956 --> 00:01:45.036
+a destra il pannello
+del passo con gli indicatori.
+
+21
+00:01:45.227 --> 00:01:49.017
+Verde: il locale è pronto.
+Rosso: manca un dato.
+
+22
+00:01:49.291 --> 00:01:52.312
+Prima di progettare,
+completa il riquadro rosso.
+
+23
+00:01:52.672 --> 00:01:58.252
+L'unità di misura viene dalle superfici
+scritte: controlla, e premi “Conferma”.
+
+24
+00:01:58.464 --> 00:02:03.412
+Tre locali non hanno l'altezza:
+scrivi tre metri e premi “Applica a tutti”.
+
+25
+00:02:04.284 --> 00:02:10.367
+Un clic su un locale apre la sua scheda:
+stato, tipo, altezza e orditura del solaio.
+
+26
+00:02:10.948 --> 00:02:12.607
+Un locale da escludere?
+
+27
+00:02:12.627 --> 00:02:16.457
+Con “Area NO RADIUS” togli tutto
+il locale, o solo una porzione:
+
+28
+00:02:16.477 --> 00:02:20.017
+senza moduli, vuoto nel soffitto
+o sotto un soppalco.
+
+29
+00:02:20.286 --> 00:02:25.359
+Qui togliamo tutto il ripostiglio:
+ora è grigio, senza impianto.
+
+30
+00:02:25.799 --> 00:02:29.263
+Se la lettura non ha trovato qualcosa,
+lo correggi qui: aggiungi un
+
+31
+00:02:29.283 --> 00:02:34.083
+locale o una trave, unisci due locali,
+o spegni i layer che disturbano.
+
+32
+00:02:34.623 --> 00:02:38.019
+Ogni correzione si annulla con Comando Z.
+
+33
+00:02:38.039 --> 00:02:43.835
+I dati sono completi: “Avanti” si
+accende, e il prossimo passo è D1.
+
+34
+00:02:47.625 --> 00:02:49.723
+D1 è l'altezza di posa.
+
+35
+00:02:49.743 --> 00:02:51.713
+Prima scegli se i soffitti
+sono tutti piani,
+
+36
+00:02:51.733 --> 00:02:54.755
+o se alcuni sono inclinati,
+come nelle mansarde.
+
+37
+00:02:54.845 --> 00:02:58.981
+Poi scrivi la quota generale:
+il programma la controlla mentre scrivi.
+
+38
+00:02:59.001 --> 00:03:05.407
+Servono almeno 2,60 m nei locali abitabili,
+2,40 m nei servizi, e 9 cm di plenum.
+
+39
+00:03:06.125 --> 00:03:09.678
+Sulla pianta, verde va bene,
+blu ha una quota propria,
+
+40
+00:03:09.698 --> 00:03:14.208
+rosso va corretto: accanto
+trovi la soluzione, con un clic.
+
+41
+00:03:14.673 --> 00:03:19.023
+Oppure premi “Usa la proposta”:
+la quota più alta che va bene per tutti.
+
+42
+00:03:23.838 --> 00:03:28.221
+D2 compare solo se una trave
+scende a meno di 10 cm dalla
+
+43
+00:03:28.241 --> 00:03:31.520
+quota di posa, con l'impianto
+da tutti e due i lati.
+
+44
+00:03:31.610 --> 00:03:35.692
+Con lo scavalco, consigliato,
+i tubi superano la trave senza forarla:
+
+45
+00:03:35.712 --> 00:03:41.132
+premi “Aggiungi scavalco” e clicca sulla trave,
+nel punto in cui devono passare.
+
+46
+00:03:42.196 --> 00:03:45.016
+Con “No, circuiti separati”,
+la trave resta
+
+47
+00:03:45.036 --> 00:03:48.037
+una barriera, e ogni
+parte ha i suoi circuiti.
+
+48
+00:03:51.827 --> 00:03:56.873
+D3 compare se ci sono locali
+NO RADIUS: per ognuno decidi
+
+49
+00:03:56.893 --> 00:03:59.944
+se il controsoffitto continua
+anche lì, senza moduli.
+
+50
+00:04:00.249 --> 00:04:02.969
+Con “Sì”, struttura e lastre proseguono,
+
+51
+00:04:02.989 --> 00:04:06.169
+e la linea primaria
+a soffitto ci può passare.
+
+52
+00:04:10.459 --> 00:04:13.008
+Prima dei collettori vedi
+la posa dei moduli in
+
+53
+00:04:13.028 --> 00:04:19.067
+tutti i locali: blu il 240,
+ambra il 120, verde l'86.
+
+54
+00:04:19.157 --> 00:04:24.906
+In alto, la superficie attiva e la copertura,
+con l'obiettivo del 70 %.
+
+55
+00:04:24.996 --> 00:04:29.331
+Per girare i moduli di un locale,
+cliccalo sulla pianta: ruotano di 90°.
+
+56
+00:04:29.351 --> 00:04:32.681
+L'automatico segue l'orditura
+del solaio, se c'è.
+
+57
+00:04:33.870 --> 00:04:38.541
+Sulla pianta, la rotellina fa
+lo zoom e il tasto F inquadra tutto.
+
+58
+00:04:38.841 --> 00:04:43.834
+Con i livelli scegli che cosa vedere,
+e il tasto L mostra o nasconde i cartellini.
+
+59
+00:04:48.224 --> 00:04:50.756
+In D4 decidi dove stanno i collettori.
+
+60
+00:04:51.036 --> 00:04:53.976
+La proposta del programma
+ha il contorno tratteggiato.
+
+61
+00:04:54.179 --> 00:04:59.720
+Per cambiarla, premi “Posiziona” e clicca
+sulla pianta, o trascina il collettore.
+
+62
+00:04:59.900 --> 00:05:01.480
+Con il tasto destro lo ruoti.
+
+63
+00:05:02.606 --> 00:05:07.769
+Ogni ambiente sta su un solo collettore,
+e i collettori che metti tu comandano.
+
+64
+00:05:08.018 --> 00:05:10.028
+Intanto i tubi si posano da soli:
+
+65
+00:05:10.048 --> 00:05:13.301
+la barra mostra l'avanzamento,
+e tu continui a lavorare.
+
+66
+00:05:13.991 --> 00:05:18.250
+I tubi escono nell'ordine delle vie
+e corrono nelle fasce libere:
+
+67
+00:05:18.410 --> 00:05:21.990
+niente incroci, e mai sopra
+i moduli dei locali abitabili.
+
+68
+00:05:22.606 --> 00:05:26.702
+Il numero nel cerchietto è l'uscita
+del circuito sul collettore.
+
+69
+00:05:30.492 --> 00:05:32.538
+D5 è la centrale.
+
+70
+00:05:32.558 --> 00:05:37.604
+Posiziona sulla pianta la pompa di calore,
+l'accumulo e il gruppo di rilancio.
+
+71
+00:05:38.494 --> 00:05:42.050
+Il programma calcola la potenza
+consigliata e suggerisce il
+
+72
+00:05:42.070 --> 00:05:45.710
+modello più piccolo che basta:
+lo confermi con “Usa questa”.
+
+73
+00:05:46.471 --> 00:05:49.931
+Poi traccia la linea primaria,
+a soffitto o a pavimento:
+
+74
+00:05:50.311 --> 00:05:54.754
+ogni clic è un vertice, e un clic
+sul collettore chiude il ramo.
+
+75
+00:05:56.296 --> 00:05:59.057
+Ora premi “Calcola il dimensionamento”.
+
+76
+00:06:00.407 --> 00:06:05.407
+A sinistra, sempre in vista, la rete
+in 3D: mandata rossa, ritorno blu.
+
+77
+00:06:05.427 --> 00:06:09.707
+A destra i valori chiave:
+portata, perdite di carico,
+
+78
+00:06:09.727 --> 00:06:12.767
+velocità e circolatore consigliato.
+
+79
+00:06:13.210 --> 00:06:16.090
+Per ogni tratto scegli
+il diametro; “Come sono
+
+80
+00:06:16.110 --> 00:06:19.826
+calcolati?” mostra ogni
+formula con i tuoi numeri.
+
+81
+00:06:20.516 --> 00:06:23.570
+Poi “Usa questi valori
+e scegli il gruppo”.
+
+82
+00:06:28.360 --> 00:06:32.201
+In D6 c'è la regolazione:
+una sonda a soffitto per ambiente,
+
+83
+00:06:32.221 --> 00:06:35.509
+il quadro elettrico
+con la centralina e il display touch.
+
+84
+00:06:35.736 --> 00:06:40.702
+Quadro e display sono proposti:
+li posizioni con un clic, o li trascini.
+
+85
+00:06:41.401 --> 00:06:45.121
+Le sonde le metti tu: ognuna
+ha il suo pulsante “Posiziona”.
+
+86
+00:06:45.321 --> 00:06:49.161
+Qui vedi solo i contorni dei moduli,
+per lavorare con la pianta pulita.
+
+87
+00:06:49.970 --> 00:06:53.317
+I cavi partono dal quadro,
+passano da sonda a sonda
+
+88
+00:06:53.337 --> 00:06:56.597
+e corrono solo nelle fasce,
+mai sopra i moduli.
+
+89
+00:07:00.605 --> 00:07:02.585
+D7 è il prezzo, in due parti.
+
+90
+00:07:02.605 --> 00:07:04.955
+La merce viene dal tuo Listino personale:
+
+91
+00:07:04.975 --> 00:07:08.165
+ricarica, trasporto,
+manodopera e sicurezza.
+
+92
+00:07:08.446 --> 00:07:13.206
+Il resto viene dal prezzario regionale,
+già completo: qui applichi solo il ribasso.
+
+93
+00:07:13.666 --> 00:07:15.006
+Se il tuo Listino ha tutte le voci,
+
+94
+00:07:15.026 --> 00:07:18.766
+i prezzi vengono tutti da lì
+e questa parte si disattiva.
+
+95
+00:07:19.062 --> 00:07:23.882
+In alto, utile d'impresa,
+totale e costo al metro quadro.
+
+96
+00:07:23.902 --> 00:07:26.882
+Se scrivi l'utile che vuoi,
+la ricarica si calcola da sola.
+
+97
+00:07:27.635 --> 00:07:30.485
+Se il ribasso supera l'utile,
+l'utile diventa rosso e
+
+98
+00:07:30.505 --> 00:07:33.727
+un avviso ti dice il ribasso
+massimo per non perdere.
+
+99
+00:07:36.287 --> 00:07:39.037
+Senza Listino personale
+il computo è una simulazione.
+
+100
+00:07:39.057 --> 00:07:41.337
+E i prezzi non si inventano mai.
+
+101
+00:07:45.247 --> 00:07:48.969
+D8 è il documento: committente
+e cantiere sono obbligatori;
+
+102
+00:07:48.989 --> 00:07:52.889
+poi progettista, revisione, data e logo.
+
+103
+00:07:54.039 --> 00:07:57.372
+Scegli la cartella
+e gli elaborati: preventivo,
+
+104
+00:07:57.392 --> 00:08:01.192
+studio di fattibilità,
+computo Excel e report.
+
+105
+00:08:01.518 --> 00:08:04.588
+Le Opzioni avanzate raccolgono
+i parametri tecnici,
+
+106
+00:08:04.608 --> 00:08:09.128
+con i valori consigliati: li cerchi
+per nome e li filtri per argomento.
+
+107
+00:08:13.845 --> 00:08:17.967
+L'anteprima riassume il progetto:
+superficie e copertura, moduli,
+
+108
+00:08:17.987 --> 00:08:22.846
+circuiti, collettori e totale,
+con la pianta e il computo.
+
+109
+00:08:22.936 --> 00:08:27.591
+Se manca un prezzo, “Inserisci i prezzi
+mancanti” te li chiede uno per uno.
+
+110
+00:08:28.306 --> 00:08:30.736
+Qui scriviamo i prezzi del committente,
+
+111
+00:08:30.756 --> 00:08:34.226
+come il forfait per cablare
+e configurare la regolazione.
+
+112
+00:08:35.640 --> 00:08:38.365
+In fondo, i materiali
+da ordinare: struttura
+
+113
+00:08:38.385 --> 00:08:41.375
+e lastre, con le quantità,
+fuori dai totali.
+
+114
+00:08:45.835 --> 00:08:48.715
+Ora premi “Genera”, oppure Comando Invio.
+
+115
+00:08:50.766 --> 00:08:54.356
+Nella cartella trovi il DWG
+con le tavole, il preventivo e lo
+
+116
+00:08:54.376 --> 00:08:59.012
+studio di fattibilità in PDF,
+e il computo Excel con le formule.
+
+117
+00:08:59.502 --> 00:09:03.647
+Il programma verifica anche che il disegno
+dell'architetto sia rimasto identico.
+
+118
+00:09:03.887 --> 00:09:07.367
+Con Comando S salvi il progetto,
+per riaprirlo quando vuoi.
+
+119
+00:09:11.292 --> 00:09:16.175
+Con “Stampa elaborati”, o Comando P,
+prepari le tavole per chi lavora in cantiere.
+
+120
+00:09:17.065 --> 00:09:20.323
+Spunta quelle che servono:
+l'orditura per chi monta la struttura,
+
+121
+00:09:20.343 --> 00:09:24.123
+i circuiti per l'idraulico,
+la regolazione per l'elettricista.
+
+122
+00:09:24.942 --> 00:09:30.621
+Scegli formato e scala, guarda l'anteprima,
+poi “Crea PDF” o “Stampa”.
+
+123
+00:09:35.339 --> 00:09:38.129
+Nel Listino carichi
+i tuoi prezzi da Excel:
+
+124
+00:09:38.329 --> 00:09:42.429
+ogni importazione è una versione
+datata, e una sola è attiva.
+
+125
+00:09:43.060 --> 00:09:47.041
+In Prezzari consulti il prezzario
+della tua regione, per capitoli.
+
+126
+00:09:47.653 --> 00:09:50.321
+In Impostazioni ci sono
+il convertitore ODA,
+
+127
+00:09:50.341 --> 00:09:54.941
+i dati dello studio con il logo,
+il tema e la guida passo passo.
+
+128
+00:09:55.684 --> 00:09:59.224
+Aggiornamenti tiene al passo
+il convertitore, il prezzario
+
+129
+00:09:59.244 --> 00:10:03.684
+e il programma stesso: licenza,
+progetti e listini restano.
+
+130
+00:10:04.287 --> 00:10:09.646
+La licenza la trovi qui: la attivi o la rinnovi,
+e vedi quali moduli comprende.
+
+131
+00:10:13.629 --> 00:10:15.349
+Due tasti da ricordare.
+
+132
+00:10:15.369 --> 00:10:20.229
+Comando K apre la palette: scrivi
+un comando, anche a metà, e premi Invio.
+
+133
+00:10:21.596 --> 00:10:26.656
+Comando Z annulla l'ultima modifica,
+e il progetto si salva da solo mentre lavori.
+
+134
+00:10:26.996 --> 00:10:29.616
+Su Windows, al posto
+di Comando, usa Control.
+
+135
+00:10:30.260 --> 00:10:32.749
+Il punto di domanda mostra
+tutte le scorciatoie,
+
+136
+00:10:32.769 --> 00:10:36.234
+e F1 apre la guida passo
+passo della pagina.
+
+137
+00:10:38.927 --> 00:10:42.397
+Ecco fatto: dal DWG
+dell'architetto al progetto
+
+138
+00:10:42.417 --> 00:10:46.107
+esecutivo, con tavole,
+preventivo e computo.
+
+139
+00:10:46.890 --> 00:10:50.789
+Il manuale d'uso è sempre qui,
+accanto a questo video. Buon lavoro!
