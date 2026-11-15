@@ -1,5 +1,5 @@
 {
- "nota": "Elenco dei video tutorial della pagina (#tutorial): la pagina legge questo file, aggiungere o cambiare un video non tocca l'HTML. File e locandina stanno in questa cartella; durata in secondi, capitoli con il tempo d'inizio in secondi. Un tutorial senza file pubblicato (o con il file non ancora nella cartella) si mostra «in arrivo», senza collegamenti.",
+ "nota": "Elenco dei video tutorial della pagina (#tutorial): la pagina legge questo file, aggiungere o cambiare un video non tocca l'HTML. File e locandina stanno in questa cartella; durata in secondi, capitoli con il tempo d'inizio in secondi. Un tutorial senza file pubblicato (o con il file non ancora nella cartella) si mostra «in arrivo», senza collegamenti. «girato_su» è la versione del programma su cui è girato il tutorial completo. «novita» è l'elenco dei video brevi dedicati a una novità, dal più recente (data ISO, poi «ordine» crescente per i video della stessa versione): ogni voce ha id, versione, data, titolo, durata, video, sottotitoli, locandina, capitoli e, se serve, una riga di descrizione. Si gestisce con tools/sito.py (--novita, --rimuovi-novita), mai a mano.",
  "tutorial": [
   {
    "id": "soffitti-radianti",
@@ -9,6 +9,7 @@
    "locandina": "locandina_soffitti_radianti.webp",
    "sottotitoli": "Tutorial_Capomastro_Soffitti_radianti.vtt",
    "durata": 654.3,
+   "girato_su": "3.1.1",
    "capitoli": [
     {
      "titolo": "Apertura",
@@ -86,6 +87,110 @@
      "titolo": "Chiusura",
      "inizio": 638.08
     }
+   ],
+   "novita": [
+    {
+     "id": "moduli-e-circuiti-a-mano",
+     "versione": "3.2.0",
+     "data": "2026-11-15",
+     "titolo": "Moduli a mano e circuiti a mano",
+     "descrizione": "Sposta, togli e aggiungi i moduli a mano, e scegli tu i circuiti di ogni locale e il punto di mandata.",
+     "durata": 141.7,
+     "video": "Novita_Capomastro_Soffitti_radianti_3_2_0_moduli_e_circuiti_a_mano_web.mp4",
+     "sottotitoli": "Novita_Capomastro_Soffitti_radianti_3_2_0_moduli_e_circuiti_a_mano.vtt",
+     "locandina": "locandina_novita_soffitti_radianti_3_2_0_moduli_e_circuiti_a_mano.webp",
+     "capitoli": [
+      {
+       "titolo": "Apertura",
+       "inizio": 0.0
+      },
+      {
+       "titolo": "Pannelli · Moduli a mano",
+       "inizio": 9.91
+      },
+      {
+       "titolo": "D4 · Accorpare e bilanciare",
+       "inizio": 72.85
+      },
+      {
+       "titolo": "D4 · Circuiti a mano",
+       "inizio": 90.69
+      },
+      {
+       "titolo": "Chiusura",
+       "inizio": 135.4
+      }
+     ],
+     "ordine": 1
+    },
+    {
+     "id": "tubi-nel-plenum-fori-e-materiale",
+     "versione": "3.2.0",
+     "data": "2026-11-15",
+     "titolo": "Tubi nel plenum, fori e materiale da ordinare",
+     "descrizione": "Tubi sovrapposti nel plenum da confermare, fori nei muri contati per fascio e materiale da ordinare in PDF ed Excel.",
+     "durata": 142.4,
+     "video": "Novita_Capomastro_Soffitti_radianti_3_2_0_tubi_nel_plenum_fori_e_materiale_web.mp4",
+     "sottotitoli": "Novita_Capomastro_Soffitti_radianti_3_2_0_tubi_nel_plenum_fori_e_materiale.vtt",
+     "locandina": "locandina_novita_soffitti_radianti_3_2_0_tubi_nel_plenum_fori_e_materiale.webp",
+     "capitoli": [
+      {
+       "titolo": "Apertura",
+       "inizio": 0.0
+      },
+      {
+       "titolo": "D4 · Tubi nel plenum",
+       "inizio": 10.16
+      },
+      {
+       "titolo": "D8 · Documento",
+       "inizio": 67.84
+      },
+      {
+       "titolo": "Anteprima · Rotoli e fori",
+       "inizio": 81.18
+      },
+      {
+       "titolo": "Genera · Materiale da ordinare",
+       "inizio": 101.19
+      },
+      {
+       "titolo": "Chiusura",
+       "inizio": 136.16
+      }
+     ],
+     "ordine": 2
+    },
+    {
+     "id": "pompa-di-calore-display-e-sonde",
+     "versione": "3.2.0",
+     "data": "2026-11-15",
+     "titolo": "Pompa di calore, display e sonde",
+     "descrizione": "Il collegamento alla pompa di calore secondo il costruttore, la linea divisa per sezione e il display con più di tre circuiti.",
+     "durata": 118.3,
+     "video": "Novita_Capomastro_Soffitti_radianti_3_2_0_pompa_di_calore_display_e_sonde_web.mp4",
+     "sottotitoli": "Novita_Capomastro_Soffitti_radianti_3_2_0_pompa_di_calore_display_e_sonde.vtt",
+     "locandina": "locandina_novita_soffitti_radianti_3_2_0_pompa_di_calore_display_e_sonde.webp",
+     "capitoli": [
+      {
+       "titolo": "Apertura",
+       "inizio": 0.0
+      },
+      {
+       "titolo": "D5 · Collegamento alla pompa di calore",
+       "inizio": 10.84
+      },
+      {
+       "titolo": "D6 · Display e sonde",
+       "inizio": 83.85
+      },
+      {
+       "titolo": "Chiusura",
+       "inizio": 112.05
+      }
+     ],
+     "ordine": 3
+    }
    ]
   },
   {
@@ -96,6 +201,7 @@
    "locandina": "locandina_cartongesso.webp",
    "sottotitoli": "Tutorial_Capomastro_Cartongesso.vtt",
    "durata": 603.4,
+   "girato_su": "3.1.1",
    "capitoli": [
     {
      "titolo": "Apertura",
@@ -165,7 +271,8 @@
      "titolo": "Chiusura",
      "inizio": 586.86
     }
-   ]
+   ],
+   "novita": []
   }
  ]
 }

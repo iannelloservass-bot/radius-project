@@ -1,0 +1,108 @@
+WEBVTT
+
+00:00.951 --> 00:03.111
+Ciao, e benvenuto in Capomastro.
+
+00:03.131 --> 00:06.671
+Oggi vedi come la pompa di calore
+comanda il collegamento,
+
+00:06.691 --> 00:09.690
+e come lavorano il display e le sonde.
+
+00:12.780 --> 00:16.019
+Nell'Excel del Listino c'è
+una colonna “Attacchi”:
+
+00:16.239 --> 00:19.959
+per ogni pompa di calore scrivi
+la misura degli attacchi, in pollici.
+
+00:20.722 --> 00:25.022
+In D5 posiziona la pompa di calore
+e scegli un modello di cui
+
+00:25.042 --> 00:28.531
+il Listino riporta gli attacchi:
+il programma li legge da lì.
+
+00:30.321 --> 00:33.668
+Con gli attacchi da 1 pollice,
+il costruttore indica una linea da 1
+
+00:33.688 --> 00:38.048
+pollice e un quarto: una taglia sopra,
+e il programma la dimensiona così.
+
+00:38.606 --> 00:40.666
+Per gli altri modelli è un'ipotesi:
+
+00:40.686 --> 00:43.526
+la nota ti ricorda di confermarla
+con il costruttore.
+
+00:44.058 --> 00:48.337
+Nel gruppo “Collegamento alla pompa
+di calore”, per mandata e ritorno:
+
+00:48.357 --> 00:53.817
+valvola a sfera, raccordo a tre pezzi,
+valvola antigelo, nipplo e riduzione.
+
+00:54.632 --> 00:57.509
+Il giunto antivibrante,
+sugli attacchi della pompa,
+
+00:57.529 --> 01:00.149
+ha lo stesso diametro: da 1 pollice.
+
+01:00.750 --> 01:04.366
+La linea del circuito
+secondario è divisa per sezione:
+
+01:04.706 --> 01:08.146
+ogni diametro ha i suoi metri,
+e la coppella dove serve.
+
+01:08.997 --> 01:11.882
+Le righe che il Listino
+non ha restano senza prezzo:
+
+01:11.942 --> 01:15.242
+le aggiungi tu, e il programma
+le ritrova per tipo e misura.
+
+01:15.853 --> 01:19.145
+Le stesse righe vanno
+nel computo, nella categoria
+
+01:19.165 --> 01:21.895
+della centrale,
+e nel materiale da ordinare.
+
+01:26.692 --> 01:30.299
+In D6 il display ha una sonda
+incorporata, e comanda al
+
+01:30.319 --> 01:33.777
+massimo tre circuiti:
+lo stabilisce il relè del quadro.
+
+01:34.408 --> 01:38.598
+La cucina ha quattro circuiti:
+il programma aggiunge una sonda
+
+01:38.618 --> 01:42.646
+Bioset nello stesso ambiente,
+e te lo segnala fra gli avvisi.
+
+01:43.268 --> 01:46.388
+Ogni sonda porta nella targhetta
+anche il collettore
+
+01:46.408 --> 01:50.198
+dei suoi circuiti: così sonde
+e testine corrispondono.
+
+01:53.406 --> 01:55.496
+Tutto qui: alla prossima novità!

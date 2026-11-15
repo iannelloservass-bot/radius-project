@@ -269,6 +269,7 @@
   .in-tutte { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; padding: 18px 22px; border-radius: var(--r-xl); background: var(--avviso-tenue); box-shadow: inset 0 0 0 1px #f1d9ae; color: #5c4310; }
   .in-tutte b.etichetta { font-size: 12px; letter-spacing: .12em; color: var(--avviso-testo); }
   .note-licenze { margin-top: 16px; font-size: 14px; color: var(--testo-3); text-align: center; }
+  .note-licenze + .note-licenze { margin-top: 8px; }
   .attiva { margin-top: 34px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; counter-reset: passo; }
   .attiva div { counter-increment: passo; position: relative; padding: 18px 18px 18px 60px; border-radius: var(--r-xl); background: rgba(255,255,255,.6); box-shadow: var(--bordo-luce); font-size: 14.5px; color: var(--testo-2); }
   .attiva div::before { content: counter(passo); position: absolute; left: 18px; top: 18px; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--accento-tenue); color: var(--accento-testo); font-weight: 700; font-size: 14px; }
@@ -361,13 +362,48 @@
   .capitoli .tc { font-variant-numeric: tabular-nums; font-size: 13px; font-weight: 600; color: var(--testo-3); padding-top: 1px; }
   .capitoli button[aria-current="true"] .tc { color: var(--accento-testo); }
   .capitoli .vuoto { margin: 6px 8px 10px; font-size: 14.5px; color: var(--testo-2); }
+  .tutorial-corpo { scroll-margin-top: 92px; }  /* l'ancora del lettore non finisce sotto la barra fissa */
+  .tutorial-testa .girato-su { margin-top: 10px; font-size: 14px; color: var(--testo-3); }
+  .tutorial-testa .torna { margin-top: 14px; }
   .capitoli .vuoto a { color: var(--accento-testo); font-weight: 600; }
+  /* --- novità: i video brevi, dal più recente, sotto il tutorial completo (media/tutorial/tutorial.json → «novita») ---- */
+  .novita-video { margin-top: clamp(44px, 6vw, 72px); scroll-margin-top: 92px; }
+  .novita-testa { margin-bottom: 22px; }
+  .novita-testa h3 { margin: 6px 0 0; font-size: clamp(22px, 3vw, 26px); letter-spacing: -0.015em; }
+  .novita-testa p { margin: 8px 0 0; color: var(--testo-2); font-size: 15px; max-width: 62ch; }
+  .novita-lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); gap: 18px; }
+  .novita-carta {
+    display: flex; flex-direction: column; border-radius: var(--r-xl); background: var(--superficie); overflow: hidden; color: inherit; text-decoration: none;
+    box-shadow: var(--elev-2), var(--bordo-luce); transition: transform .3s var(--molla), box-shadow .3s;
+  }
+  a.novita-carta:hover { transform: translateY(-3px); box-shadow: var(--elev-3), var(--bordo-luce); }
+  a.novita-carta:focus-visible { outline: 3px solid var(--anello); outline-offset: 3px; }
+  .novita-carta[aria-current="true"] { box-shadow: var(--elev-3), 0 0 0 2px var(--accento); }
+  .novita-carta .miniatura { position: relative; aspect-ratio: 16 / 9; background: #0a1426; }
+  .novita-carta .miniatura img { width: 100%; height: 100%; object-fit: cover; }
+  .novita-carta .gioca {
+    position: absolute; right: 12px; bottom: 12px; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center;
+    background: rgba(10, 20, 38, 0.72); color: #fff;
+  }
+  .novita-carta .minuti {
+    position: absolute; left: 12px; bottom: 12px; padding: 2px 9px; border-radius: var(--r-full); background: rgba(10, 20, 38, 0.72); color: #fff;
+    font-size: 12.5px; font-weight: 650; font-variant-numeric: tabular-nums;
+  }
+  .novita-carta .corpo { padding: 14px 16px 18px; }
+  .novita-carta .quando { font-size: 12.5px; font-weight: 700; letter-spacing: .02em; color: var(--accento-testo); }
+  .novita-carta h4 { margin: 4px 0 0; font-size: 16.5px; line-height: 1.3; letter-spacing: -0.005em; }
+  .novita-carta p { margin: 6px 0 0; font-size: 14px; color: var(--testo-2); }
+  .novita-carta.in-arrivo .miniatura { display: grid; place-items: center; color: #93a0b8; font-weight: 600; font-size: 15px; }
+  .novita-carta.in-arrivo .quando { color: var(--avviso-testo); }
+  .novita-vuota { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 20px 22px; border-radius: var(--r-xl); background: var(--superficie); box-shadow: var(--elev-1), var(--bordo-luce); color: var(--testo-2); font-size: 15px; grid-column: 1 / -1; }
+  .novita-vuota .tag { font-size: 11.5px; font-weight: 650; padding: 2px 8px; border-radius: var(--r-full); background: var(--avviso-tenue); color: var(--avviso-testo); }
   @media (max-width: 900px) { .tutorial-corpo { grid-template-columns: minmax(0, 1fr); } .capitoli { max-height: 340px; } }
   @media (max-width: 560px) { .tutorial-schede button { padding: 9px 14px; font-size: 14px; } .tutorial-testa h3 { font-size: 19px; } }
   @media (prefers-reduced-motion: reduce) {
     .pulsante.vivo, .pulsante.vivo::after { animation: none !important; }
     .pulsante.vivo::after { opacity: 0; }
-    .tutorial-schede button, .capitoli button { transition: none; }
+    .tutorial-schede button, .capitoli button, .novita-carta { transition: none; }
+    a.novita-carta:hover { transform: none; }
   }
 
   /* --- misure ------------------------------------------------------------------------------------------------- */
@@ -419,7 +455,7 @@
       <a href="#moduli">Moduli</a>
       <a href="#funzioni">Funzioni</a>
       <a href="#tutorial">Tutorial</a>
-      <a href="#novita">Novità 3.0</a>
+      <a href="#novita-3-0">Novità 3.0</a>
       <a href="#licenze">Licenze</a>
       <a href="#requisiti">Requisiti</a>
     </nav>
@@ -614,23 +650,35 @@
       <div class="testa rivela">
         <div class="occhiello">Video tutorial</div>
         <h2 class="titolo" id="titolo-tutorial">Guarda come si fa, un passo alla volta.</h2>
-        <p>Un tutorial completo per ogni modulo, sul progetto d'esempio «Mario Rossi». Scegli il modulo e salta al capitolo che ti serve: un clic sul capitolo porta il video a quel punto.</p>
+        <p>Un tutorial completo per ogni modulo, sul progetto d'esempio «Mario Rossi», e sotto un video breve per ogni novità importante. Scegli il modulo e salta al capitolo che ti serve: un clic sul capitolo porta il video a quel punto.</p>
       </div>
       <div class="rivela" id="tutorial-app">
         <div class="tutorial-schede" role="tablist" aria-label="Modulo del tutorial" id="tutorial-schede"></div>
-        <div class="tutorial-corpo" id="tutorial-corpo" role="tabpanel" aria-live="polite">
+        <div class="tutorial-corpo" id="lettore-tutorial" role="tabpanel" aria-live="polite">
           <p class="rete" id="tutorial-attesa">Carico i tutorial…</p>
         </div>
         <noscript><p class="rete">Per vedere i video tutorial serve JavaScript attivo nel browser. Nel manuale d'uso trovi gli stessi passi con le schermate.</p></noscript>
       </div>
+      <!-- Novità: un video breve per ogni funzione importante, dal più recente (media/tutorial/tutorial.json → «novita» di ogni
+           modulo, gestita da tools/sito.py --novita). Un clic porta il video nel lettore qui sopra; l'ancora #novita è quella
+           che apre l'app (Impostazioni → Video tutorial) -->
+      <div class="novita-video rivela" id="novita" aria-labelledby="titolo-novita-video">
+        <div class="novita-testa">
+          <div class="occhiello">Novità · <span id="novita-modulo">Soffitti radianti</span></div>
+          <h3 id="titolo-novita-video">Le ultime novità, un video alla volta.</h3>
+          <p>Quando arriva una funzione importante c'è un video breve, dal più recente. Un clic lo porta nel lettore qui sopra, con i suoi capitoli.</p>
+        </div>
+        <div class="novita-lista" id="novita-lista" aria-live="polite"></div>
+        <noscript><p class="rete">Per vedere i video delle novità serve JavaScript attivo nel browser.</p></noscript>
+      </div>
     </div>
   </section>
 
-  <section class="blocco" id="novita" aria-labelledby="titolo-novita" style="padding-top:0">
+  <section class="blocco" id="novita-3-0" aria-labelledby="titolo-novita-3-0" style="padding-top:0">
     <div class="contenitore">
       <div class="testa rivela">
         <div class="occhiello">Novità della 3.0</div>
-        <h2 class="titolo" id="titolo-novita">Un programma, due moduli.</h2>
+        <h2 class="titolo" id="titolo-novita-3-0">Un programma, due moduli.</h2>
         <p>Il modulo Soffitti radianti è quello che conosci: regole, calcoli, prezzi ed elaborati non cambiano. Arriva il Cartongesso, con il suo percorso in otto passi. Chi ha già il programma si aggiorna da solo e ritrova licenza, listini e progetti.</p>
       </div>
       <div class="griglia rivela">
@@ -767,6 +815,8 @@
         <span><b>Aggiornamenti sempre inclusi.</b> <b>Formazione:</b> 1 h di formazione generale all'uso, in videochiamata, con la simulazione della creazione di un progetto. <b>Help Desk:</b> oltre le ore comprese 25 €/h.</span>
       </div>
       <p class="note-licenze" id="note-licenze" data-sconto-secondo-pc="−30 %">Secondo computer dello stesso studio: −30 %. Prezzi IVA esclusa. Licenza legata al computer; internet serve solo per gli aggiornamenti.</p>
+      <!-- R-233: la stessa frase del programma (csr.RICHIAMO_RESPONSABILITA); la confronta csr/tests/test_responsabilita_progettista.py -->
+      <p class="note-licenze" id="note-responsabilita">Capomastro è uno strumento di supporto: propone e segnala, il progettista decide e verifica. Le scelte e le conferme del progettista, e i risultati che ne derivano, restano sotto la sua responsabilità, come stabilisce il contratto di licenza.</p>
       <div class="attiva rivela">
         <div><b>Installa</b>Un solo setup per Windows, con ODA File Converter; sul Mac un dmg.</div>
         <div><b>Prova o attiva</b>Scegli la prova gratuita oppure invia il codice dispositivo che il programma ti mostra.</div>
@@ -985,12 +1035,17 @@
     }, { threshold: 0.2 }).observe(vivo);
   }
 
-  // --- video tutorial: media/tutorial/tutorial.json (titolo, file, locandina, durata, capitoli) -------------------------
+  // --- video tutorial: media/tutorial/tutorial.json (titolo, file, locandina, durata, capitoli, novità) -------------------
   // Un video alla volta; i capitoli portano il video al loro tempo (mai lo scorrimento della pagina). Un tutorial senza
   // file (o con il file non ancora pubblicato) è «in arrivo»: nessun collegamento rotto, e si completa da solo appena c'è.
+  // Sotto il lettore, le novità del modulo (un video breve ciascuna, dal più recente): un clic la porta nel lettore, il
+  // salto alla pagina del lettore è il collegamento stesso (#lettore-tutorial), mai uno scorrimento dello script.
   var CARTELLA_TUTORIAL = "media/tutorial/";
-  var schede = $("tutorial-schede"), corpo = $("tutorial-corpo");
+  var schede = $("tutorial-schede"), corpo = $("lettore-tutorial");
   var elenco = [], scelto = 0, video = null;
+  var sceltaNovita = -1;  // -1 = il tutorial completo; altrimenti la novità del modulo scelto nel lettore
+  var cartaNovita = [];   // i collegamenti della lista delle novità, per segnare quella nel lettore senza ridisegnarli
+  var MESI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"];
 
   function el(tag, classe, testo) {
     var e = document.createElement(tag);
@@ -1007,6 +1062,18 @@
     if (!sec) return "";
     var m = Math.round(sec / 60);
     return m < 1 ? "meno di un minuto" : m + (m === 1 ? " minuto" : " minuti");
+  }
+  function dataTesto(iso) {  // «15 novembre 2026» da 2026-11-15, senza fusi orari
+    var m = /^(\d{4})-(\d\d)-(\d\d)$/.exec(iso || "");
+    return m ? parseInt(m[3], 10) + " " + MESI[parseInt(m[2], 10) - 1] + " " + m[1] : "";
+  }
+  function ordinaNovita(a, b) {  // dal più recente; a parità di data, i video della stessa versione nell'ordine di «ordine»
+    if ((a.data || "") !== (b.data || "")) return (a.data || "") < (b.data || "") ? 1 : -1;
+    return (a.ordine || 0) - (b.ordine || 0);
+  }
+  function corrente() {  // il video nel lettore: il tutorial completo o una novità disponibile del modulo
+    var t = elenco[scelto], n = sceltaNovita >= 0 && t.novita ? t.novita[sceltaNovita] : null;
+    return n && n.disponibile ? n : t;
   }
 
   function fermaVideo() {
@@ -1027,7 +1094,7 @@
   }
 
   function disegna() {
-    var t = elenco[scelto];
+    var t = elenco[scelto], v = corrente(), novita = v !== t;
     fermaVideo();
     corpo.textContent = "";
     var colonna = el("div");
@@ -1037,17 +1104,17 @@
     var barretta = el("div", "barretta");
     barretta.setAttribute("aria-hidden", "true");
     barretta.appendChild(el("i")); barretta.appendChild(el("i")); barretta.appendChild(el("i"));
-    barretta.appendChild(el("span", "", "Capomastro · " + t.titolo + " · esempio «Mario Rossi»"));
+    barretta.appendChild(el("span", "", "Capomastro · " + t.titolo + (novita ? " · novità " + v.versione : " · esempio «Mario Rossi»")));
     finestra.appendChild(barretta);
-    if (t.disponibile) {
+    if (v.disponibile) {
       video = document.createElement("video");
       video.controls = true; video.preload = "none"; video.setAttribute("playsinline", "");
-      if (t.locandina) video.poster = CARTELLA_TUTORIAL + t.locandina;
-      video.setAttribute("aria-label", "Tutorial «" + t.titolo + "»");
-      video.src = CARTELLA_TUTORIAL + t.file;
-      if (t.sottotitoli) {
+      if (v.locandina) video.poster = CARTELLA_TUTORIAL + v.locandina;
+      video.setAttribute("aria-label", novita ? "Novità della versione " + v.versione + ": " + v.titolo : "Tutorial «" + t.titolo + "»");
+      video.src = CARTELLA_TUTORIAL + v.file;
+      if (v.sottotitoli) {
         var traccia = document.createElement("track");
-        traccia.kind = "subtitles"; traccia.srclang = "it"; traccia.label = "Italiano"; traccia.src = CARTELLA_TUTORIAL + t.sottotitoli;
+        traccia.kind = "subtitles"; traccia.srclang = "it"; traccia.label = "Italiano"; traccia.src = CARTELLA_TUTORIAL + v.sottotitoli;
         video.appendChild(traccia);
       }
       finestra.appendChild(video);
@@ -1061,16 +1128,30 @@
     figura.appendChild(finestra);
     colonna.appendChild(figura);
     var testa = el("div", "tutorial-testa");
-    testa.appendChild(el("h3", "", "Soffitti radianti" === t.titolo || "Cartongesso" === t.titolo ? "Capomastro · " + t.titolo : t.titolo));
-    var d = durataTesto(t.durata);
-    testa.appendChild(el("div", "durata", t.disponibile ? (d ? "Durata: " + d : "Video tutorial") : "In arrivo"));
-    if (t.descrizione) testa.appendChild(el("p", "", t.descrizione));
+    if (novita) {
+      testa.appendChild(el("h3", "", v.titolo));
+      testa.appendChild(el("div", "durata", "Novità della versione " + v.versione + " · " + dataTesto(v.data) + " · Durata: " + tempo(v.durata)));
+      if (v.descrizione) testa.appendChild(el("p", "", v.descrizione));
+      var torna = el("button", "pulsante piccolo torna", "Torna al tutorial completo");
+      torna.type = "button";
+      torna.addEventListener("click", function () { sceltaNovita = -1; disegna(); segnaNovita(); });
+      testa.appendChild(torna);
+    } else {
+      testa.appendChild(el("h3", "", "Soffitti radianti" === t.titolo || "Cartongesso" === t.titolo ? "Capomastro · " + t.titolo : t.titolo));
+      var d = durataTesto(t.durata);
+      testa.appendChild(el("div", "durata", t.disponibile ? (d ? "Durata: " + d : "Video tutorial") : "In arrivo"));
+      if (t.descrizione) testa.appendChild(el("p", "", t.descrizione));
+      if (t.disponibile && t.girato_su) {
+        var seguono = (t.novita || []).some(function (n) { return n.disponibile; });
+        testa.appendChild(el("p", "girato-su", "Girato sulla versione " + t.girato_su + (seguono ? ": le novità successive sono nei video qui sotto." : ".")));
+      }
+    }
     colonna.appendChild(testa);
     corpo.appendChild(colonna);
 
     var lista = el("div", "capitoli");
     lista.appendChild(el("h4", "", "Capitoli"));
-    var capitoli = t.disponibile ? (t.capitoli || []) : [];
+    var capitoli = v.disponibile ? (v.capitoli || []) : [];
     if (capitoli.length) {
       var ol = document.createElement("ol");
       var voci = capitoli.map(function (c) {
@@ -1099,8 +1180,8 @@
       });
     } else {
       var vuoto = el("p", "vuoto");
-      vuoto.appendChild(document.createTextNode(t.disponibile ? "Questo video non ha capitoli: scorri la barra del lettore." : "I capitoli compariranno con il video. Intanto, "));
-      if (!t.disponibile) {
+      vuoto.appendChild(document.createTextNode(v.disponibile ? "Questo video non ha capitoli: scorri la barra del lettore." : "I capitoli compariranno con il video. Intanto, "));
+      if (!v.disponibile) {
         var a = document.createElement("a");
         a.href = "documenti/Manuale_utente_Capomastro.pdf"; a.textContent = "apri il manuale d'uso";
         vuoto.appendChild(a); vuoto.appendChild(document.createTextNode("."));
@@ -1108,6 +1189,70 @@
       lista.appendChild(vuoto);
     }
     corpo.appendChild(lista);
+  }
+
+  // --- novità del modulo scelto: una carta per video, dal più recente ------------------------------------------------
+  function segnaNovita() {  // la carta della novità nel lettore (senza ridisegnare le carte: il clic in corso non le tocca)
+    cartaNovita.forEach(function (c, i) {
+      if (i === sceltaNovita) c.setAttribute("aria-current", "true"); else c.removeAttribute("aria-current");
+    });
+  }
+  function disegnaNovita() {
+    var contenitore = $("novita-lista"), nome = $("novita-modulo"), t = elenco[scelto];
+    if (!contenitore) return;
+    contenitore.textContent = "";
+    cartaNovita = [];
+    if (nome && t) nome.textContent = t.titolo;
+    var voci = (t && t.novita) || [];
+    if (!voci.length) {
+      var vuota = el("div", "novita-vuota");
+      vuota.appendChild(el("span", "tag", "in arrivo"));
+      vuota.appendChild(el("span", "", "Le novità del modulo " + (t ? t.titolo : "") + " arriveranno qui: un video breve per ogni funzione importante."));
+      contenitore.appendChild(vuota);
+      return;
+    }
+    voci.forEach(function (n, i) {
+      var carta;
+      if (n.disponibile) {
+        carta = document.createElement("a");
+        carta.href = "#lettore-tutorial";  // il salto al lettore lo fa il collegamento, non lo script
+        carta.addEventListener("click", function () { sceltaNovita = i; disegna(); segnaNovita(); });
+      } else {
+        carta = document.createElement("div");
+      }
+      carta.className = "novita-carta" + (n.disponibile ? "" : " in-arrivo");
+      var miniatura = el("div", "miniatura");
+      if (n.disponibile) {
+        if (n.locandina) {
+          var img = document.createElement("img");
+          img.src = CARTELLA_TUTORIAL + n.locandina; img.alt = ""; img.width = 1280; img.height = 720;
+          img.loading = "lazy"; img.decoding = "async";
+          miniatura.appendChild(img);
+        }
+        miniatura.appendChild(el("span", "minuti", tempo(n.durata)));
+        var gioca = el("span", "gioca");
+        gioca.setAttribute("aria-hidden", "true");
+        gioca.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+        miniatura.appendChild(gioca);
+      } else {
+        miniatura.appendChild(el("span", "", "In arrivo"));
+      }
+      carta.appendChild(miniatura);
+      var testo = el("div", "corpo");
+      testo.appendChild(el("div", "quando", "Versione " + n.versione + (dataTesto(n.data) ? " · " + dataTesto(n.data) : "")));
+      testo.appendChild(el("h4", "", n.titolo));
+      if (n.descrizione) testo.appendChild(el("p", "", n.descrizione));
+      carta.appendChild(testo);
+      if (n.disponibile) carta.setAttribute("aria-label", "Guarda la novità della versione " + n.versione + ": " + n.titolo + ", " + tempo(n.durata));
+      contenitore.appendChild(carta);
+      cartaNovita.push(carta);
+    });
+    segnaNovita();
+  }
+
+  function scegliModulo(i) {
+    scelto = i; sceltaNovita = -1;
+    schedeTutorial(); disegna(); disegnaNovita();
   }
 
   function schedeTutorial() {
@@ -1121,15 +1266,14 @@
       if (!t.disponibile) b.appendChild(el("span", "tag", "in arrivo"));
       b.addEventListener("click", function () {
         if (i === scelto) return;
-        scelto = i; schedeTutorial(); disegna();
+        scegliModulo(i);
         schede.querySelector('[aria-selected="true"]').focus();
       });
       b.addEventListener("keydown", function (e) {
         var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
         if (!d) return;
         e.preventDefault();
-        scelto = (scelto + d + elenco.length) % elenco.length;
-        schedeTutorial(); disegna();
+        scegliModulo((scelto + d + elenco.length) % elenco.length);
         schede.querySelector('[aria-selected="true"]').focus();
       });
       schede.appendChild(b);
@@ -1139,6 +1283,9 @@
   function esiste(url) {  // il file c'è davvero? (un tutorial annunciato nel JSON ma non ancora pubblicato è «in arrivo»)
     return fetch(url, { method: "HEAD", cache: "no-store" }).then(function (r) { return r.ok; }, function () { return false; });
   }
+  function disponibile(voce) {  // pubblicato = nel JSON ci sono file e durata (le scrive tools/sito.py); si controlla anche che il file ci sia
+    return (voce.file && voce.durata ? esiste(CARTELLA_TUTORIAL + voce.file) : Promise.resolve(false)).then(function (ok) { voce.disponibile = ok; return voce; });
+  }
 
   if (schede && corpo) {
     fetch(CARTELLA_TUTORIAL + "tutorial.json", { cache: "no-cache" })
@@ -1146,8 +1293,10 @@
       .then(function (dati) {
         var voci = (dati && dati.tutorial) || [];
         return Promise.all(voci.map(function (t) {
-          // pubblicato = nel JSON ci sono file e durata (le scrive tools/sito.py --tutorial); si controlla anche che il file ci sia
-          return (t.file && t.durata ? esiste(CARTELLA_TUTORIAL + t.file) : Promise.resolve(false)).then(function (ok) { t.disponibile = ok; return t; });
+          return disponibile(t).then(function () {
+            // le novità del modulo: «video» è il suo file; più recenti per prime
+            return Promise.all((t.novita || []).map(function (n) { n.file = n.video; return disponibile(n); }));
+          }).then(function (novita) { t.novita = novita.sort(ordinaNovita); return t; });
         }));
       })
       .then(function (voci) {
@@ -1157,7 +1306,7 @@
         var voluto = location.hash.indexOf("#tutorial-") === 0 ? location.hash.slice(10) : "";
         var k = elenco.findIndex(function (t) { return t.id === voluto; });
         scelto = k >= 0 ? k : Math.max(0, elenco.findIndex(function (t) { return t.disponibile; }));
-        schedeTutorial(); disegna();
+        schedeTutorial(); disegna(); disegnaNovita();
       })
       .catch(function () {
         corpo.textContent = "";
