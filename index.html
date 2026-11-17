@@ -2,18 +2,19 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Capomastro — Soffitti radianti e Cartongesso · Download</title>
 <meta name="description" content="Capomastro (già Configuratore Soffitti Radianti), il programma per i soffitti radianti a moduli e per pareti, contropareti e controsoffitti in cartongesso: dal DWG dell'architetto a tavole, preventivo e computo. Scarica per Windows o per Mac, prova gratuita di 3 giorni o 2 progetti.">
-<meta name="theme-color" content="#f1f4f9">
-<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f1f4f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a1120" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
 <meta property="og:title" content="Capomastro — Soffitti radianti e Cartongesso">
 <meta property="og:description" content="Dal DWG dell'architetto al soffitto radiante e al cartongesso: struttura, moduli, circuiti, pareti, controsoffitti, tavole, preventivo e computo.">
 <meta property="og:image" content="img/radius-r-1100.webp">
 <link rel="icon" type="image/png" href="img/icona-64.png">
 <link rel="apple-touch-icon" href="img/icona-180.png">
 <link rel="preload" href="font/inter-latin-opsz.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="img/radius-r-1100.webp" as="image" type="image/webp" imagesrcset="img/radius-r-640.webp 640w, img/radius-r-1100.webp 1100w" imagesizes="(max-width: 900px) 86vw, 600px">
+<link rel="preload" href="img/radius-r-640.webp" as="image" type="image/webp" imagesrcset="img/radius-r-640.webp 640w, img/radius-r-1100.webp 1100w" imagesizes="(max-width: 900px) 40vw, 240px">
 <style>
   /* Inter variabile (pesi e asse ottico), solo latino: stessa del programma (font/LICENSE-Inter.txt, OFL) */
   @font-face {
@@ -24,49 +25,84 @@
     src: url(font/inter-latin-opsz.woff2) format("woff2-variations");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
-  /* token del programma (ui/src/stili/token.css, tema chiaro) */
+
+  /* --- token: gli stessi del programma (ui/src/stili/token.css), tema chiaro; il tema scuro li ridefinisce più sotto.
+         Nessun colore fisso fuori da qui: ogni superficie, testo e ombra passa da un token ---------------------------- */
   :root {
-    color-scheme: light;
+    color-scheme: light dark;
     --font: "Inter Variable", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
     --sfondo: #f1f4f9;
     --sfondo-2: #e8edf5;
+    --banda: #e9eef6;
     --superficie: #ffffff;
     --superficie-2: #f8fafd;
+    --superficie-vetro: rgba(255, 255, 255, 0.82);
+    --vetro: rgba(244, 247, 251, 0.9);
+    --capsula: rgba(255, 255, 255, 0.7);
     --bordo: #e2e8f0;
     --bordo-2: #d3dbe7;
+    --bordo-sottile: rgba(10, 20, 38, 0.07);
     --testo: #0a1426;
     --testo-2: #45526a;
-    --testo-3: #626e85;
+    --testo-3: #5e6a81;
     --accento: #1f6fe5;
-    --accento-hover: #1a63d4;
-    --accento-press: #1655b8;
     --accento-tenue: #ebf2fe;
-    --accento-tenue-2: #d7e5fc;
     --accento-testo: #1556c0;
     --acqua: #0aa5c2;
     --acqua-tenue: #e3f6fa;
-    --acqua-testo: #087d93;
+    --acqua-testo: #077286;
+    --rame: #b4642f;
+    --rame-chiaro: #f6e3d3;
     --successo: #0f9f6e;
     --successo-tenue: #e2f6ee;
     --successo-testo: #0a7a54;
     --avviso-tenue: #fff3d9;
-    --avviso-testo: #8a5400;
-    --mandata: #ea4a3c;
+    --avviso-testo: #7a4a00;
+    --avviso-bordo: #f1d9ae;
+    --avviso-corpo: #5c4310;
+    --pdf: #c93a2c;
+    --video-fondo: #0a1426;
+    --video-testo: #cdd6e6;
+    --video-testo-2: #93a0b8;
+    --velo: rgba(8, 14, 28, 0.4);
+    --cons-1: #0f1e38;
+    --cons-2: #0a1426;
+    --cons-testo: #ffffff;
+    --cons-testo-2: #bccadf;
+    --cons-linea: rgba(255, 255, 255, 0.13);
+    --barretta-1: #fbfcfe;
+    --barretta-2: #f3f6fa;
+    --punto-finestra: #e3e7ee;
+    --alone: rgba(31, 111, 229, 0.13);
+    --alone-puntatore: rgba(31, 111, 229, 0.11);
+    --mandata: #e5443a;
     --ritorno: #2a78d6;
-    --rame: #b4642f;
-    --rame-chiaro: #f6e3d3;
-    --grad-accento: linear-gradient(180deg, #3a85f2 0%, #1f6fe5 55%, #1a62d4 100%);
-    --grad-titolo: linear-gradient(100deg, #1f6fe5 0%, #2a7df0 40%, #0aa5c2 100%);
+    --mod-240: #2f6fd6;
+    --mod-120: #d98a0b;
+    --mod-86: #16a06f;
+    --pianta-sfondo: #f8faff;
+    --pianta-loc: #ffffff;
+    --pianta-no: #eef1f6;
+    --pianta-muro: #8393ae;
+    --pianta-et: #4d5b74;
+    --grad-impianto: linear-gradient(90deg, #e5443a, #b25cd6 50%, #2a78d6);
+    --h-tot: calc(var(--h-barra) + env(safe-area-inset-top, 0px));
+    --alone-rame: rgba(214, 140, 92, 0.2);
+    --motivo: 0.38;
+    --ombra-marchio: rgba(60, 30, 10, 0.14);
+    --grad-accento: linear-gradient(180deg, #2268e0 0%, #1b5fd0 55%, #1553b8 100%);
+    --grad-titolo: linear-gradient(100deg, #1a62d4 0%, #2a7df0 42%, #0b97b3 100%);
     --grad-sfondo:
-      radial-gradient(1100px 600px at 12% -10%, rgba(31, 111, 229, 0.075), transparent 70%),
-      radial-gradient(900px 500px at 100% 110%, rgba(10, 165, 194, 0.06), transparent 70%), #f1f4f9;
+      radial-gradient(1100px 620px at 12% -8%, rgba(31, 111, 229, 0.08), transparent 70%),
+      radial-gradient(900px 520px at 100% 108%, rgba(10, 165, 194, 0.06), transparent 70%), #f1f4f9;
+    --luce-ombra: rgba(10, 20, 38, 0.06);
     --elev-1: 0 1px 1px rgba(10, 20, 38, 0.04), 0 1px 3px rgba(10, 20, 38, 0.05);
     --elev-2: 0 1px 1px rgba(10, 20, 38, 0.04), 0 3px 8px -2px rgba(10, 20, 38, 0.07), 0 10px 24px -8px rgba(10, 20, 38, 0.09);
     --elev-3: 0 1px 2px rgba(10, 20, 38, 0.05), 0 8px 18px -6px rgba(10, 20, 38, 0.1), 0 24px 48px -16px rgba(10, 20, 38, 0.16);
     --elev-4: 0 2px 4px rgba(10, 20, 38, 0.05), 0 16px 32px -10px rgba(10, 20, 38, 0.16), 0 40px 80px -24px rgba(10, 20, 38, 0.28);
     --ombra-accento: 0 1px 2px rgba(20, 70, 160, 0.25), 0 8px 22px -8px rgba(31, 111, 229, 0.6);
     --bordo-luce: inset 0 0 0 1px rgba(10, 20, 38, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
-    --anello: rgba(31, 111, 229, 0.32);
+    --anello: rgba(31, 111, 229, 0.38);
     --r-sm: 7px;
     --r-md: 10px;
     --r-lg: 14px;
@@ -75,246 +111,576 @@
     --r-full: 999px;
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
     --molla: cubic-bezier(0.22, 1.12, 0.36, 1);
-    --traccia-titolo: -0.028em;
-    --traccia-occhiello: 0.09em;
     --larga: 1180px;
     --gutter: clamp(16px, 4vw, 40px);
+    --h-barra: 68px;
+    --ritmo: clamp(64px, 9vw, 120px);
+    /* scala tipografica */
+    --t-h1: clamp(38px, 4.5vw, 62px);
+    --t-h2: clamp(30px, 4.3vw, 50px);
+    --t-h3: clamp(22px, 2.5vw, 29px);
+    --t-lead: clamp(17px, 1.5vw, 19.5px);
+    /* icone disegnate a maschera: prendono il colore del testo che le porta */
+    --ico-spunta: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.6 10.4l3 3L14.4 7' fill='none' stroke='%23000' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    --ico-scarica: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3v12M7 10l5 5 5-5M5 21h14' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    --ico-freccia: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6l6 6-6 6' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --sfondo: #0a1120;
+      --sfondo-2: #0d1627;
+      --banda: #0d1627;
+      --superficie: #121c31;
+      --superficie-2: #17233b;
+      --superficie-vetro: rgba(18, 28, 49, 0.84);
+      --vetro: rgba(10, 17, 32, 0.88);
+      --capsula: rgba(255, 255, 255, 0.05);
+      --bordo: #22314e;
+      --bordo-2: #30425f;
+      --bordo-sottile: rgba(255, 255, 255, 0.08);
+      --testo: #eaf0fa;
+      --testo-2: #b6c2d8;
+      --testo-3: #93a1bb;
+      --accento: #4a8df0;
+      --accento-tenue: #14284d;
+      --accento-testo: #8fbcff;
+      --acqua: #35c0dc;
+      --acqua-tenue: #0f2d3a;
+      --acqua-testo: #62d3ea;
+      --rame: #e08a55;
+      --rame-chiaro: #3a2417;
+      --successo: #2ec992;
+      --successo-tenue: #0f2f26;
+      --successo-testo: #5be0b2;
+      --avviso-tenue: #2c2410;
+      --avviso-testo: #f0c374;
+      --avviso-bordo: #4d3d17;
+      --avviso-corpo: #e4cd9a;
+      --pdf: #ff8478;
+      --video-fondo: #060b16;
+      --velo: rgba(2, 6, 14, 0.62);
+      --cons-1: #1b3a6f;
+      --cons-2: #12264a;
+      --cons-linea: rgba(255, 255, 255, 0.16);
+      --barretta-1: #1a2740;
+      --barretta-2: #16223a;
+      --punto-finestra: #2b3a57;
+      --alone: rgba(74, 141, 240, 0.2);
+      --alone-puntatore: rgba(120, 175, 255, 0.13);
+      --mandata: #ff6a5c;
+      --ritorno: #5da7ff;
+      --pianta-sfondo: #0b1426;
+      --pianta-loc: #101c34;
+      --pianta-no: #0c1628;
+      --pianta-muro: #5f7396;
+      --pianta-et: #a9b8d2;
+      --alone-rame: rgba(224, 138, 85, 0.2);
+      --motivo: 0.5;
+      --ombra-marchio: rgba(0, 0, 0, 0.45);
+      --grad-titolo: linear-gradient(100deg, #6fa8ff 0%, #8fc0ff 42%, #4ed2ea 100%);
+      --grad-sfondo:
+        radial-gradient(1100px 620px at 12% -8%, rgba(74, 141, 240, 0.16), transparent 70%),
+        radial-gradient(900px 520px at 88% 12%, rgba(224, 138, 85, 0.08), transparent 70%),
+        radial-gradient(900px 520px at 100% 108%, rgba(53, 192, 220, 0.08), transparent 70%), #0a1120;
+      --luce-ombra: rgba(255, 255, 255, 0.07);
+      --elev-1: 0 1px 1px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.3);
+      --elev-2: 0 1px 1px rgba(0, 0, 0, 0.3), 0 4px 10px -2px rgba(0, 0, 0, 0.35), 0 12px 28px -8px rgba(0, 0, 0, 0.4);
+      --elev-3: 0 1px 2px rgba(0, 0, 0, 0.35), 0 10px 22px -6px rgba(0, 0, 0, 0.45), 0 28px 56px -16px rgba(0, 0, 0, 0.55);
+      --elev-4: 0 2px 4px rgba(0, 0, 0, 0.35), 0 18px 36px -10px rgba(0, 0, 0, 0.55), 0 44px 88px -24px rgba(0, 0, 0, 0.7);
+      --ombra-accento: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 22px -8px rgba(31, 111, 229, 0.7);
+      --bordo-luce: inset 0 0 0 1px rgba(255, 255, 255, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      --anello: rgba(120, 175, 255, 0.55);
+    }
+  }
+
+  /* --- base -------------------------------------------------------------------------------------------------- */
   *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   body {
-    margin: 0; background: var(--grad-sfondo); color: var(--testo);
+    position: relative; margin: 0; background: var(--grad-sfondo); color: var(--testo);
     font: 16px/1.6 var(--font); font-feature-settings: "cv11", "ss01"; -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility; overflow-x: hidden;
+    text-rendering: optimizeLegibility; overflow-x: hidden; -webkit-tap-highlight-color: transparent;
   }
+  @supports (overflow: clip) { body { overflow-x: clip; } }
+  a, button { touch-action: manipulation; }
   img, video { display: block; max-width: 100%; height: auto; }
   a { color: var(--accento-testo); text-underline-offset: 3px; }
+  h1, h2, h3, h4 { text-wrap: balance; }
+  p { text-wrap: pretty; }
   :focus-visible { outline: 3px solid var(--anello); outline-offset: 3px; border-radius: 6px; }
-  .salta { position: absolute; left: 12px; top: -60px; background: var(--testo); color: #fff; padding: 10px 14px; border-radius: var(--r-md); z-index: 20; }
+  .salta {
+    position: absolute; left: 12px; top: -80px; z-index: 80; padding: 12px 18px; border-radius: var(--r-md);
+    background: var(--testo); color: var(--sfondo); font-weight: 650; text-decoration: none;
+  }
   .salta:focus { top: 12px; }
-  .contenitore { max-width: var(--larga); margin: 0 auto; padding: 0 var(--gutter); }
+  main:focus { outline: none; }
+  .contenitore { max-width: var(--larga); margin: 0 auto; padding: 0 max(var(--gutter), env(safe-area-inset-right)) 0 max(var(--gutter), env(safe-area-inset-left)); }
   .nascosto { display: none !important; }
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .cima { position: absolute; top: 0; left: 0; width: 1px; height: 10px; pointer-events: none; }
 
-  /* --- barra in alto: vetro ---------------------------------------------------------------------------------- */
+  /* --- barra in alto: sempre in vista; vetro solo quando la pagina è scorsa ------------------------------------ */
   .barra {
-    position: sticky; top: 0; z-index: 10; background: rgba(241, 244, 249, 0.72);
-    -webkit-backdrop-filter: blur(18px) saturate(1.4); backdrop-filter: blur(18px) saturate(1.4);
-    border-bottom: 1px solid rgba(10, 20, 38, 0.06);
+    position: sticky; top: 0; z-index: 50; border-bottom: 1px solid transparent; padding-top: env(safe-area-inset-top, 0px);
+    transition: background-color .25s var(--ease-out), border-color .25s var(--ease-out), box-shadow .25s var(--ease-out);
   }
-  .barra .contenitore { display: flex; align-items: center; gap: 24px; height: 64px; }
-  .marchio { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--testo); font-weight: 700; letter-spacing: -0.01em; }
-  .marchio img { width: 34px; height: 34px; }
-  .marchio small { display: block; font-size: 11.5px; font-weight: 500; color: var(--testo-3); letter-spacing: 0; line-height: 1.2; }
+  .barra.scorsa {
+    background: var(--vetro); border-bottom-color: var(--bordo-sottile); box-shadow: 0 10px 30px -22px rgba(10, 20, 38, 0.35);
+    -webkit-backdrop-filter: blur(14px) saturate(1.5); backdrop-filter: blur(14px) saturate(1.5);
+  }
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .barra.scorsa { background: var(--superficie); }
+  }
+  .barra-riga { display: flex; align-items: center; gap: 16px; height: var(--h-barra); }
+  .marchio { display: flex; align-items: center; gap: 11px; min-height: 44px; text-decoration: none; color: var(--testo); font-weight: 700; letter-spacing: -0.012em; border-radius: var(--r-md); }
+  .marchio img { width: 36px; height: 36px; }
+  .marchio small { display: block; font-size: 11.5px; font-weight: 500; color: var(--testo-3); letter-spacing: 0; line-height: 1.25; }
   .marchio span { line-height: 1.15; }
-  .menu { display: flex; gap: 4px; margin-left: auto; }
-  .menu a { color: var(--testo-2); text-decoration: none; font-weight: 550; font-size: 14.5px; padding: 8px 12px; border-radius: var(--r-full); transition: background .15s, color .15s; }
-  .menu a:hover { background: rgba(10, 20, 38, 0.05); color: var(--testo); }
+  .menu {
+    display: flex; gap: 2px; margin: 0 auto; padding: 4px; border-radius: var(--r-full); background: var(--capsula);
+    box-shadow: inset 0 0 0 1px var(--bordo-sottile);
+  }
+  .menu a {
+    position: relative; display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border-radius: var(--r-full); color: var(--testo-2);
+    text-decoration: none; font-weight: 580; font-size: 14.5px; transition: background-color .18s, color .18s;
+  }
+  .menu a::before { content: ""; position: absolute; inset: -4px -1px; }  /* l'area del tocco arriva a 44 px, la pillola ne resta 36 */
+  .menu a:hover { background: var(--bordo-sottile); color: var(--testo); }
+  .menu a[aria-current="true"] { background: var(--accento-tenue); color: var(--accento-testo); box-shadow: inset 0 0 0 1px rgba(31, 111, 229, 0.16); }
+  .scarica-barra { flex: none; }
+  .hamburger {
+    display: none; flex: none; position: relative; width: 44px; height: 44px; padding: 0; border: 0; border-radius: var(--r-lg);
+    background: var(--capsula); box-shadow: inset 0 0 0 1px var(--bordo-sottile); color: var(--testo); cursor: pointer;
+  }
+  .hamburger i {
+    position: absolute; left: 13px; right: 13px; height: 2px; border-radius: 2px; background: currentColor;
+    transition: transform .3s var(--ease-out), opacity .2s;
+  }
+  .hamburger i:nth-child(1) { top: 16px; }
+  .hamburger i:nth-child(2) { top: 21px; }
+  .hamburger i:nth-child(3) { top: 26px; }
+  .barra.aperta .hamburger i:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+  .barra.aperta .hamburger i:nth-child(2) { opacity: 0; transform: scaleX(.4); }
+  .barra.aperta .hamburger i:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+  .velo { position: fixed; inset: 0; z-index: 40; background: var(--velo); opacity: 0; visibility: hidden; transition: opacity .25s var(--ease-out), visibility 0s linear .25s; }
+  .barra.aperta ~ .velo { opacity: 1; visibility: visible; transition-delay: 0s; }
 
-  /* --- pulsanti -------------------------------------------------------------------------------------------- */
+  /* --- pulsanti ------------------------------------------------------------------------------------------------ */
   .pulsante {
     display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 12px 22px;
     border-radius: var(--r-lg); font: inherit; font-weight: 640; font-size: 16px; text-decoration: none; cursor: pointer;
     color: var(--testo); background: var(--superficie); border: 1px solid var(--bordo-2); box-shadow: var(--elev-1);
-    transition: transform .25s var(--molla), box-shadow .2s, border-color .2s, background .2s;
+    transition: transform .25s var(--molla), box-shadow .2s, border-color .2s, background-color .2s;
   }
   .pulsante:hover { transform: translateY(-1px); border-color: var(--accento); box-shadow: var(--elev-2); }
   .pulsante:active { transform: translateY(0) scale(.99); }
   .pulsante svg { flex: none; }
-  .pulsante.primario { color: #fff; background: var(--grad-accento); border-color: transparent; box-shadow: var(--ombra-accento), inset 0 1px 0 rgba(255,255,255,.25); }
-  .pulsante.primario:hover { box-shadow: 0 1px 2px rgba(20,70,160,.25), 0 14px 30px -10px rgba(31,111,229,.7), inset 0 1px 0 rgba(255,255,255,.25); }
+  .pulsante.primario { color: #fff; background: var(--grad-accento); border-color: transparent; box-shadow: var(--ombra-accento), inset 0 1px 0 rgba(255,255,255,.22); }
+  .pulsante.primario:hover { box-shadow: 0 1px 2px rgba(20,70,160,.25), 0 14px 30px -10px rgba(31,111,229,.7), inset 0 1px 0 rgba(255,255,255,.22); }
   .pulsante.grande { min-height: 58px; padding: 14px 28px; font-size: 17px; border-radius: 16px; }
-  .pulsante.piccolo { min-height: 38px; padding: 8px 16px; font-size: 14.5px; border-radius: var(--r-full); }
+  .pulsante.piccolo { min-height: 44px; padding: 8px 20px; font-size: 15px; border-radius: var(--r-full); }
   .pulsante.spento { opacity: .5; pointer-events: none; }
   .pulsante .meta { font-weight: 500; opacity: .85; }
 
-  /* --- eroe --------------------------------------------------------------------------------------------------- */
-  .eroe { position: relative; padding: clamp(36px, 7vw, 88px) 0 clamp(40px, 6vw, 72px); overflow: hidden; }
+  /* --- eroe ------------------------------------------------------------------------------------------------------ */
+  .eroe { position: relative; padding: clamp(24px, 5vw, 64px) 0 clamp(36px, 5vw, 64px); overflow: hidden; scroll-margin-top: 0; }
   .eroe::before {
     /* il motivo del serpentino: la testata vera di un modulo 240, appena accennata */
-    content: ""; position: absolute; inset: 0; background: url(img/motivo.svg) 0 0 / 96px 53px repeat; opacity: .38;
+    content: ""; position: absolute; inset: 0; background: url(img/motivo.svg) 0 0 / 96px 53px repeat; opacity: var(--motivo);
     -webkit-mask-image: radial-gradient(60% 70% at 72% 40%, #000 0%, transparent 75%); mask-image: radial-gradient(60% 70% at 72% 40%, #000 0%, transparent 75%);
     pointer-events: none;
   }
-  .eroe .griglia-eroe { position: relative; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
+  .eroe .griglia-eroe {
+    position: relative; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+    grid-template-areas: "testo visual" "card visual"; gap: clamp(22px, 3vw, 36px) clamp(28px, 4vw, 64px); align-items: start;
+  }
+  .eroe-testo { grid-area: testo; align-self: end; }
+  .eroe .scarica { grid-area: card; margin-top: 0; }
+  .eroe-visual { grid-area: visual; position: relative; align-self: center; perspective: 1500px; }
   .pillola {
-    display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px 6px 8px; border-radius: var(--r-full);
-    background: var(--superficie); box-shadow: var(--elev-1), var(--bordo-luce); font-size: 13.5px; font-weight: 600; color: var(--testo-2);
+    display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px 6px 6px; border-radius: var(--r-full);
+    background: var(--superficie-vetro); box-shadow: var(--elev-1), var(--bordo-luce); font-size: 13.5px; font-weight: 600; color: var(--testo-2);
   }
-  .pillola b { background: var(--accento-tenue); color: var(--accento-testo); border-radius: var(--r-full); padding: 2px 8px; font-size: 12px; letter-spacing: .02em; }
+  .pillola b { background: var(--grad-accento); color: #fff; border-radius: var(--r-full); padding: 3px 10px; font-size: 11.5px; letter-spacing: .08em; }
   h1 {
-    margin: 18px 0 18px; font-size: clamp(36px, 4.9vw, 62px); line-height: 1.04; letter-spacing: var(--traccia-titolo);
-    font-weight: 760; font-variation-settings: "opsz" 32;
+    margin: 20px 0 20px; font-size: var(--t-h1); line-height: 1.03; letter-spacing: -0.036em;
+    font-weight: 780; font-variation-settings: "opsz" 32;
   }
-  h1 .grad { display: block; background: var(--grad-titolo); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: .06em; }
-  .sotto { margin: 0; font-size: clamp(17px, 1.6vw, 19.5px); color: var(--testo-2); max-width: 560px; }
+  h1 .grad { display: block; background: var(--grad-titolo); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: .08em; }
+  .sotto { margin: 0; font-size: var(--t-lead); line-height: 1.62; color: var(--testo-2); max-width: 560px; }
   .scarica {
-    margin-top: 30px; padding: 22px; border-radius: var(--r-2xl); background: rgba(255, 255, 255, 0.78);
-    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); box-shadow: var(--elev-3), var(--bordo-luce); max-width: 560px;
+    margin-top: 30px; max-width: 560px; padding: 22px; border-radius: var(--r-2xl); box-shadow: var(--elev-3), var(--bordo-luce);
+    background: linear-gradient(var(--superficie-vetro), var(--superficie-vetro)) padding-box,
+                linear-gradient(140deg, rgba(31, 111, 229, 0.38), rgba(31, 111, 229, 0) 38%, rgba(214, 140, 92, 0.32)) border-box;
+    border: 1px solid transparent;
   }
   .stato { display: flex; gap: 14px; align-items: flex-start; }
-  .stato .ic { flex: none; width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--accento-tenue); color: var(--accento); }
-  .stato h2 { margin: 0; font-size: 17px; font-weight: 680; letter-spacing: -0.01em; }
-  .stato p { margin: 2px 0 0; font-size: 14.5px; color: var(--testo-2); }
-  .pulsanti { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-  .pulsanti .pulsante:not(.primario) { min-height: 48px; }
-  .versione { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--testo-3); }
-  .versione span { display: inline-flex; align-items: center; gap: 6px; }
-  .punto { width: 7px; height: 7px; border-radius: 50%; background: var(--successo); box-shadow: 0 0 0 3px var(--successo-tenue); }
+  .stato .ic { flex: none; width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center; background: var(--accento-tenue); color: var(--accento-testo); }
+  .stato h2 { margin: 0; font-size: 18px; font-weight: 700; letter-spacing: -0.012em; }
+  .stato p { margin: 3px 0 0; min-height: 3.1em; font-size: 14.5px; line-height: 1.55; color: var(--testo-2); }
+  .pulsanti { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .pulsanti .pulsante:not(.primario) { min-height: 58px; }
+  .versione { margin-top: 14px; display: grid; gap: 4px; font-size: 13px; line-height: 1.45; color: var(--testo-3); }
+  .versione > span { display: inline-flex; align-items: center; gap: 8px; }
+  .punto { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--successo); box-shadow: 0 0 0 3px var(--successo-tenue); }
 
-  /* la R in rame: luce che scorre, leggera fluttuazione e parallasse con il puntatore */
-  .oggetto { position: relative; perspective: 1200px; justify-self: center; width: min(100%, 620px); }
+  /* la finestra con la pianta vera del Progetto Rossi (tools/sito_pianta_svg.py): i moduli entrano a cascata, i tubi si disegnano
+     un circuito alla volta, un circuito si accende al passaggio del puntatore. Il disegno non ha colori: li danno questi token */
+  .finestra-hero { position: relative; transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .5s var(--ease-out); }
+  .pianta-campo { padding: 14px 16px 6px; background: var(--pianta-sfondo); }
+  .pianta { display: block; width: 100%; height: auto; }
+  .pianta .loc { fill: var(--pianta-loc); stroke: var(--pianta-muro); stroke-width: .07; stroke-linejoin: round; fill-rule: evenodd; }
+  .pianta .loc.no { fill: var(--pianta-no); }
+  .pianta .mod { stroke-width: .02; }
+  .pianta .m240 { fill: rgba(47, 111, 214, .24); stroke: var(--mod-240); }
+  .pianta .m120 { fill: rgba(217, 138, 11, .26); stroke: var(--mod-120); }
+  .pianta .m86 { fill: rgba(22, 160, 111, .26); stroke: var(--mod-86); }
+  .pianta .t { fill: none; stroke-width: .05; stroke-linejoin: round; transition: stroke-width .25s; }
+  .pianta .man { stroke: var(--mandata); stroke-linecap: round; }
+  .pianta .rit { stroke: var(--ritorno); stroke-linecap: butt; }
+  .pianta .coll { fill: var(--rame); }
+  .pianta .et-coll { fill: var(--rame); font: 700 .3px var(--font); text-anchor: middle; paint-order: stroke; stroke: var(--pianta-loc); stroke-width: .08px; }
+  .pianta .p-et text { fill: var(--pianta-et); font: 600 .27px var(--font); text-anchor: middle; paint-order: stroke; stroke: var(--pianta-loc); stroke-width: .08px; stroke-linejoin: round; }
+  .pianta .mod { transform-box: fill-box; transform-origin: center; animation: modulo .5s var(--ease-out) calc(.25s + var(--k) * .3s + var(--j) * .026s) backwards; }
+  .pianta .t { animation: traccia 1s ease-in-out calc(.75s + var(--k) * .3s) backwards; }
+  @keyframes modulo { from { opacity: 0; transform: scale(.35); } }
+  @keyframes traccia { from { stroke-dasharray: 1 1; stroke-dashoffset: 1; } to { stroke-dasharray: 1 1; stroke-dashoffset: 0; } }
+  .pianta:not(.avvia) .mod, .pianta:not(.avvia) .t { animation-play-state: paused; }  /* parte quando la pianta entra in vista (lo script mette .avvia) */
+  .pianta .cir { transition: opacity .3s; }
+  .pianta.caldo .cir { opacity: .16; }
+  .pianta.caldo .cir.acceso { opacity: 1; }
+  .pianta.caldo .cir.acceso .t { stroke-width: .085; }
+  .kpi { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--bordo); background: var(--superficie); }
+  .kpi > div { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px 13px; font-size: 11.5px; line-height: 1.3; color: var(--testo-3); }
+  .kpi > div + div { border-left: 1px solid var(--bordo); }
+  .num { display: block; font-size: 25px; line-height: 1.1; font-weight: 780; letter-spacing: -.03em; font-variant-numeric: tabular-nums; color: var(--testo); }
+  .num small { font-size: .5em; font-weight: 650; letter-spacing: 0; }
+  /* il marchio in rame galleggia sull'angolo della finestra: due movimenti continui, fermi fuori schermo, a scheda nascosta e con il movimento ridotto */
+  .oggetto { position: absolute; z-index: 3; right: -3.5%; top: -15%; width: clamp(110px, 23%, 170px); pointer-events: none; }
   .oggetto::before {
-    content: ""; position: absolute; inset: 6% 2% 0; border-radius: 50%;
-    background: radial-gradient(closest-side, rgba(255, 179, 128, .38), rgba(255, 179, 128, 0) 70%),
-                radial-gradient(closest-side at 60% 70%, rgba(31, 111, 229, .16), transparent 75%);
-    filter: blur(10px); z-index: 0;
+    content: ""; position: absolute; inset: 4% -8% -2%; border-radius: 50%;
+    background: radial-gradient(closest-side, var(--alone-rame), rgba(255, 179, 128, 0) 72%);
+    z-index: 0;
   }
-  .fluttua { position: relative; animation: fluttua 7s ease-in-out infinite; z-index: 1; }
-  .inclina { position: relative; transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transform-style: preserve-3d; transition: transform .6s var(--ease-out); will-change: transform; }
-  .inclina img { width: 100%; aspect-ratio: 1463 / 1135; filter: drop-shadow(0 30px 40px rgba(60, 30, 10, .12)); }
+  .fluttua { position: relative; z-index: 1; animation: fluttua 7s ease-in-out infinite; animation-play-state: paused; }
+  .inclina { position: relative; transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform .6s var(--ease-out); }
+  .inclina img { width: 100%; aspect-ratio: 1463 / 1135; filter: drop-shadow(0 18px 22px var(--ombra-marchio)); }
   .luce {
-    position: absolute; inset: 0; pointer-events: none; mix-blend-mode: soft-light;
-    background: linear-gradient(105deg, transparent 38%, rgba(255, 246, 236, .95) 48%, rgba(255, 255, 255, .0) 58%) 0 0 / 260% 100% no-repeat;
+    position: absolute; inset: 0; overflow: hidden; pointer-events: none; mix-blend-mode: soft-light;
     -webkit-mask: url(img/radius-r-640.webp) center / 100% 100% no-repeat; mask: url(img/radius-r-640.webp) center / 100% 100% no-repeat;
-    animation: luce 6.5s ease-in-out infinite 1.2s;
   }
-  @keyframes fluttua { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-  @keyframes luce { 0% { background-position: 130% 0; } 55%, 100% { background-position: -40% 0; } }
+  .luce i {
+    position: absolute; top: -10%; left: 0; width: 42%; height: 120%; opacity: 0;
+    background: linear-gradient(105deg, rgba(255, 246, 236, 0) 0%, rgba(255, 246, 236, .95) 50%, rgba(255, 255, 255, 0) 100%);
+    transform: translateX(-120%) skewX(-14deg); animation: luce 6.5s ease-in-out infinite 1.2s; animation-play-state: paused;
+  }
+  .oggetto.in-vista .fluttua, .oggetto.in-vista .luce i { animation-play-state: running; }
+  .oggetto.in-vista .fluttua { will-change: transform; }
+  .nascosta .fluttua, .nascosta .luce i { animation-play-state: paused !important; }
+  @keyframes fluttua { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+  @keyframes luce { 0% { transform: translateX(-120%) skewX(-14deg); opacity: 0; } 8% { opacity: 1; } 32% { transform: translateX(280%) skewX(-14deg); opacity: 0; } 100% { transform: translateX(280%) skewX(-14deg); opacity: 0; } }
   .comparsa { animation: comparsa .9s var(--ease-out) both; }
   .comparsa.d1 { animation-delay: .08s; } .comparsa.d2 { animation-delay: .16s; } .comparsa.d3 { animation-delay: .24s; }
   @keyframes comparsa { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 
-  /* --- fiducia -------------------------------------------------------------------------------------------------- */
-  .fiducia { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: clamp(28px, 4vw, 48px); }
-  .fiducia div { display: flex; gap: 12px; align-items: center; padding: 14px 16px; border-radius: var(--r-xl); background: rgba(255,255,255,.6); box-shadow: var(--bordo-luce); font-size: 14px; color: var(--testo-2); }
-  .fiducia b { display: block; color: var(--testo); font-size: 14.5px; font-weight: 650; }
-  .fiducia svg { flex: none; color: var(--accento); }
-
-  /* --- sezioni ------------------------------------------------------------------------------------------------- */
-  section.blocco { padding: clamp(56px, 8vw, 104px) 0; }
-  .testa { max-width: 760px; margin: 0 auto clamp(32px, 5vw, 56px); text-align: center; }
-  .occhiello { font-size: 12.5px; font-weight: 700; letter-spacing: var(--traccia-occhiello); text-transform: uppercase; color: var(--accento-testo); }
-  h2.titolo { margin: 10px 0 12px; font-size: clamp(30px, 4.2vw, 46px); line-height: 1.08; letter-spacing: var(--traccia-titolo); font-weight: 740; font-variation-settings: "opsz" 32; }
-  .testa p { margin: 0; color: var(--testo-2); font-size: 17.5px; }
-
-  .funzione { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
-  .funzione + .funzione { margin-top: clamp(56px, 8vw, 104px); }
-  .funzione.inversa .testo { order: 2; }
-  .funzione h3 { margin: 10px 0 12px; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.15; letter-spacing: -0.02em; font-weight: 720; }
-  .funzione p { margin: 0 0 16px; color: var(--testo-2); font-size: 16.5px; }
-  .funzione ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-  .funzione li { position: relative; padding-left: 30px; color: var(--testo-2); font-size: 15.5px; }
-  .funzione li::before {
-    content: ""; position: absolute; left: 0; top: 3px; width: 20px; height: 20px; border-radius: 50%; background: var(--accento-tenue)
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M6 10.5l2.6 2.6L14 7.6' fill='none' stroke='%231f6fe5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 20px no-repeat;
+  /* --- fiducia: quattro garanzie in una sola riga ---------------------------------------------------------------- */
+  .fiducia {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: clamp(28px, 4vw, 48px); border-radius: var(--r-2xl);
+    background: var(--superficie-vetro); box-shadow: var(--elev-2), var(--bordo-luce);
   }
-  .numero { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 10px; background: var(--grad-accento); color: #fff; font-weight: 700; font-size: 14px; box-shadow: var(--ombra-accento); }
-  .finestra { border-radius: 16px; background: var(--superficie); box-shadow: var(--elev-4), var(--bordo-luce); overflow: hidden; }
-  .finestra .barretta { display: flex; gap: 7px; align-items: center; height: 30px; padding: 0 12px; background: linear-gradient(#fbfcfe, #f3f6fa); border-bottom: 1px solid var(--bordo); }
-  .finestra .barretta i { width: 11px; height: 11px; border-radius: 50%; background: #e3e7ee; box-shadow: inset 0 0 0 1px rgba(10,20,38,.08); }
+  .fiducia > div { display: flex; gap: 14px; align-items: center; padding: 18px 20px; font-size: 13.5px; line-height: 1.4; color: var(--testo-2); }
+  .fiducia > div + div { border-left: 1px solid var(--bordo); }
+  .fiducia b { display: block; color: var(--testo); font-size: 14.5px; font-weight: 660; }
+  .fiducia svg { flex: none; color: var(--accento-testo); }
+
+  /* --- numeri: dati veri del programma, i contatori partono quando si vedono ------------------------------------------ */
+  .numeri { padding: clamp(8px, 2vw, 24px) 0 0; }
+  .numeri-riga { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .numeri-riga > div { display: flex; flex-direction: column; gap: 6px; padding: 8px clamp(14px, 2.4vw, 32px); font-size: 14px; line-height: 1.4; color: var(--testo-2); }
+  .numeri-riga > div + div { border-left: 1px solid var(--bordo); }
+  .numeri .num { font-size: clamp(38px, 5.2vw, 58px); letter-spacing: -.045em; background: var(--grad-titolo); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .numeri .num small { font-size: .36em; -webkit-text-fill-color: currentColor; }
+
+  /* --- movimento diffuso: cascata, luce e inclinazione col puntatore (solo con il mouse), tutto fermo con il movimento ridotto -- */
+  .cascata:not(.vista) > * { opacity: 0; }
+  .cascata.vista > * { animation: sali .7s var(--ease-out) backwards; animation-delay: calc(var(--i, 0) * 70ms); }
+  @keyframes sali { from { opacity: 0; transform: translateY(20px) scale(.98); } }
+  .avanza { display: none; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--grad-impianto); transform-origin: 0 50%; transform: scaleX(0); pointer-events: none; }
+  @supports (animation-timeline: scroll()) {
+    .avanza { display: block; animation: avanza linear both; animation-timeline: scroll(root block); }
+    @keyframes avanza { to { transform: scaleX(1); } }
+  }
+  @media (pointer: fine) {
+    .carta, .documento, .sistema, .novita-carta { overflow: hidden; }
+    .carta::before, .documento::before, .sistema::before, .novita-carta::before {
+      content: ""; position: absolute; z-index: 1; left: 0; top: 0; width: 340px; height: 340px; margin: -170px 0 0 -170px; border-radius: 50%; pointer-events: none;
+      opacity: 0; background: radial-gradient(closest-side, var(--alone-puntatore), transparent); transform: translate3d(var(--mx, -999px), var(--my, -999px), 0); transition: opacity .35s;
+    }
+    .carta:hover::before, .documento:hover::before, .sistema:hover::before, .novita-carta:hover::before { opacity: 1; }
+    .inclinabile:hover { transform: perspective(900px) translateY(-3px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); }
+    .finestra-hero.inclinabile:hover { transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); }
+  }
+
+  /* --- sezioni ---------------------------------------------------------------------------------------------------- */
+  section.blocco { padding: var(--ritmo) 0; scroll-margin-top: max(0px, calc(var(--h-tot) + 28px - var(--ritmo))); }
+  section.banda { background: var(--banda); border-block: 1px solid var(--bordo-sottile); }
+  .testa { max-width: 780px; margin: 0 auto clamp(36px, 5vw, 64px); text-align: center; }
+  .occhiello {
+    display: inline-flex; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accento-testo);
+  }
+  .testa .occhiello::before, .testa .occhiello::after { content: ""; width: 22px; height: 1px; background: currentColor; opacity: .45; }
+  h2.titolo { margin: 12px 0 14px; font-size: var(--t-h2); line-height: 1.07; letter-spacing: -0.032em; font-weight: 760; font-variation-settings: "opsz" 32; }
+  .testa p { margin: 0 auto; max-width: 66ch; color: var(--testo-2); font-size: var(--t-lead); line-height: 1.62; }
+
+  /* --- schede ------------------------------------------------------------------------------------------------------ */
+  .carta {
+    position: relative; padding: 24px; border-radius: var(--r-xl); background: var(--superficie); box-shadow: var(--elev-2), var(--bordo-luce);
+    transition: transform .35s var(--molla), box-shadow .35s;
+  }
+  .carta .ic { width: 44px; height: 44px; border-radius: 13px; display: grid; place-items: center; background: var(--accento-tenue); color: var(--accento-testo); margin-bottom: 16px; }
+  .carta .ic.acqua { background: var(--acqua-tenue); color: var(--acqua-testo); }
+  .carta .ic.rame { background: var(--rame-chiaro); color: var(--rame); }
+  .carta h3 { margin: 0 0 8px; font-size: 17px; line-height: 1.3; font-weight: 690; letter-spacing: -0.012em; }
+  .carta p { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--testo-2); }
+  @media (hover: hover) { .carta:hover { transform: translateY(-3px); box-shadow: var(--elev-3), var(--bordo-luce); } }
+
+  /* moduli */
+  .moduli-griglia { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+  .modulo { display: flex; flex-direction: column; padding: 30px 30px 26px; border-radius: var(--r-2xl); }
+  .modulo .ic { width: 48px; height: 48px; border-radius: 15px; margin-bottom: 18px; }
+  .modulo h3 { font-size: clamp(21px, 2.2vw, 25px); letter-spacing: -0.02em; }
+  .modulo > p { font-size: 15.5px; }
+  .modulo .modulo-nota { margin-top: 12px; padding: 10px 14px; border-radius: var(--r-md); background: var(--superficie-2); box-shadow: inset 0 0 0 1px var(--bordo); font-size: 13.5px; }
+  .chip { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 24px; padding: 0; }
+  .chip li { padding: 5px 12px; border-radius: var(--r-full); background: var(--accento-tenue); color: var(--accento-testo); font-size: 12.5px; font-weight: 640; }
+  .modulo .modulo-fondo { margin: auto 0 0; }  /* le due cornici si allineano in basso, anche se i testi sopra hanno altezze diverse */
+  .tasto { display: inline-block; min-width: 22px; padding: 0 6px; border-radius: 6px; background: var(--sfondo); box-shadow: inset 0 -1px 0 var(--bordo-2), inset 0 0 0 1px var(--bordo); font-size: 12.5px; font-weight: 600; text-align: center; color: var(--testo); }
+
+  /* finestra del programma: cornice con la sua barra */
+  .finestra { margin: 0; border-radius: 16px; background: var(--superficie); box-shadow: var(--elev-4), var(--bordo-luce); overflow: hidden; }
+  .finestra .barretta { display: flex; gap: 7px; align-items: center; height: 32px; padding: 0 12px; background: linear-gradient(var(--barretta-1), var(--barretta-2)); border-bottom: 1px solid var(--bordo); }
+  .finestra .barretta i { width: 11px; height: 11px; border-radius: 50%; background: var(--punto-finestra); box-shadow: inset 0 0 0 1px rgba(10,20,38,.08); }
   .finestra .barretta i:nth-child(1) { background: #ff6159; } .finestra .barretta i:nth-child(2) { background: #ffbd2e; } .finestra .barretta i:nth-child(3) { background: #28c941; }
   .finestra .barretta span { margin-left: 10px; font-size: 12px; color: var(--testo-3); font-weight: 550; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .finestra img { width: 100%; aspect-ratio: 16 / 10; }
 
-  /* --- video -------------------------------------------------------------------------------------------------- */
-  .video { position: relative; max-width: 1040px; margin: 0 auto; }
-  .video .finestra video { width: 100%; aspect-ratio: 16 / 10; background: #fbfcfe; }
-  .video figcaption { margin-top: 14px; text-align: center; font-size: 14px; color: var(--testo-3); }
+  /* percorso guidato: la scena (le schermate del programma e l'indicatore dei dodici passi) resta ferma mentre i testi scorrono */
+  .percorso { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: clamp(28px, 5vw, 72px); align-items: stretch; }
+  .testi { grid-column: 1; grid-row: 1; }
+  .scena { grid-column: 2; grid-row: 1; }
+  .scena-fissa { position: sticky; top: var(--h-tot); height: calc(100vh - var(--h-tot)); height: calc(100svh - var(--h-tot)); display: flex; flex-direction: column; justify-content: center; }
+  .traccia { margin-bottom: 16px; }
+  .passi12 { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 4px; margin: 0; padding: 0; list-style: none; }
+  .passi12 li { position: relative; height: 5px; border-radius: 3px; background: var(--bordo-2); }
+  .passi12 li::after {
+    content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--grad-accento); opacity: .4; transform: scaleX(0); transform-origin: 0 50%;
+    transition: transform .5s var(--ease-out) calc(var(--q, 0) * 40ms), opacity .4s;
+  }
+  .passi12 li.on::after { transform: none; }
+  .passi12 li.ora::after { opacity: 1; }
+  .cap { margin: 10px 0 0; font-size: 13.5px; font-weight: 600; color: var(--testo-2); letter-spacing: .01em; }
+  .schermi { display: grid; }
+  .schermo { grid-area: 1 / 1; align-self: start; opacity: 0; transform: translateY(18px) scale(.975); transition: opacity .55s var(--ease-out), transform .75s var(--ease-out); pointer-events: none; }
+  .schermo.attivo { opacity: 1; transform: none; pointer-events: auto; }
+  .funzione { display: flex; flex-direction: column; justify-content: center; min-height: 72vh; padding: 5vh 0; }
+  .percorso.vivo .funzione { opacity: .5; transition: opacity .5s var(--ease-out); }
+  .percorso.vivo .funzione.attivo { opacity: 1; }
+  .passo { display: flex; align-items: center; gap: 12px; }
+  .numero { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 11px; background: var(--grad-accento); color: #fff; font-weight: 720; font-size: 15px; box-shadow: var(--ombra-accento); }
+  .funzione h3 { margin: 14px 0 12px; font-size: var(--t-h3); line-height: 1.14; letter-spacing: -0.024em; font-weight: 740; }
+  .funzione p { margin: 0 0 18px; color: var(--testo-2); font-size: 16.5px; line-height: 1.65; }
+  .funzione ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .funzione li, .piano li { position: relative; padding-left: 30px; color: var(--testo-2); font-size: 15.5px; line-height: 1.5; }
+  .funzione li::before, .piano li::before { content: ""; position: absolute; left: 0; top: 2px; width: 20px; height: 20px; border-radius: 50%; background: var(--accento-tenue); }
+  .funzione li::after, .piano li::after {
+    content: ""; position: absolute; left: 0; top: 2px; width: 20px; height: 20px; background: var(--accento-testo);
+    -webkit-mask: var(--ico-spunta) center / 20px no-repeat; mask: var(--ico-spunta) center / 20px no-repeat;
+  }
 
-  /* --- novità ------------------------------------------------------------------------------------------------- */
-  .griglia { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-  .carta { padding: 22px; border-radius: var(--r-xl); background: var(--superficie); box-shadow: var(--elev-2), var(--bordo-luce); transition: transform .3s var(--molla), box-shadow .3s; }
-  .carta:hover { transform: translateY(-3px); box-shadow: var(--elev-3), var(--bordo-luce); }
-  .carta .ic { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: var(--accento-tenue); color: var(--accento); margin-bottom: 14px; }
-  .carta .ic.acqua { background: var(--acqua-tenue); color: var(--acqua-testo); }
-  .carta .ic.rame { background: var(--rame-chiaro); color: var(--rame); }
-  .griglia.due { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-  .carta .modulo-nota { margin-top: 10px; font-size: 13.5px; color: var(--testo-2); }
-  .carta h3 { margin: 0 0 6px; font-size: 16.5px; font-weight: 680; letter-spacing: -0.01em; }
-  .carta p { margin: 0; font-size: 14.5px; color: var(--testo-2); }
-  .tasto { display: inline-block; min-width: 22px; padding: 0 6px; border-radius: 6px; background: var(--sfondo); box-shadow: inset 0 -1px 0 var(--bordo-2), inset 0 0 0 1px var(--bordo); font-size: 12.5px; font-weight: 600; text-align: center; color: var(--testo); }
+  /* --- tutorial e novità ----------------------------------------------------------------------------------------------- */
+  .tutorial-schede {
+    display: flex; gap: 4px; width: max-content; max-width: 100%; min-height: 54px; margin: 0 auto 26px; padding: 5px; border-radius: var(--r-full);
+    background: var(--superficie); box-shadow: var(--elev-1), var(--bordo-luce);
+  }
+  .tutorial-schede:empty { visibility: hidden; width: 300px; }
+  .tutorial-schede button {
+    display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 22px; border: 0; border-radius: var(--r-full); background: transparent;
+    font: inherit; font-weight: 620; font-size: 15px; color: var(--testo-2); cursor: pointer; transition: background-color .2s, color .2s;
+  }
+  .tutorial-schede button:hover { background: var(--bordo-sottile); color: var(--testo); }
+  .tutorial-schede button[aria-selected="true"] { background: var(--grad-accento); color: #fff; box-shadow: var(--ombra-accento); }
+  .tutorial-schede button:focus-visible, .capitoli button:focus-visible { outline: 2px solid var(--accento); outline-offset: 2px; }
+  .tutorial-schede .tag { font-size: 11.5px; font-weight: 650; padding: 2px 8px; border-radius: var(--r-full); background: var(--avviso-tenue); color: var(--avviso-testo); }
+  .tutorial-corpo { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(260px, 1fr); gap: 24px; align-items: start; scroll-margin-top: calc(var(--h-tot) + 12px); }
+  .tutorial-corpo > div:not(.tutorial-scheletro) { animation: scheda .5s var(--ease-out) both; }
+  .tutorial-corpo > .capitoli { animation: scheda .5s var(--ease-out) .08s both; }
+  @keyframes scheda { from { opacity: 0; transform: translateY(14px); } }
+  .tutorial-video { margin: 0; }
+  .tutorial-video video, .tutorial-video .segnaposto { display: block; width: 100%; aspect-ratio: 16 / 9; background: var(--video-fondo); }
+  .tutorial-video .segnaposto { display: grid; place-items: center; padding: 24px; text-align: center; color: var(--video-testo); font-weight: 600; font-size: 18px; }
+  .tutorial-video .segnaposto small { display: block; margin-top: 6px; font-weight: 450; font-size: 14px; color: var(--video-testo-2); }
+  .tutorial-testa { margin-top: 18px; min-height: 188px; }
+  .tutorial-testa h3 { margin: 0; font-size: 22px; line-height: 1.25; letter-spacing: -0.018em; }
+  .tutorial-testa .durata { margin-top: 4px; font-size: 14px; font-weight: 600; color: var(--testo-3); }
+  .tutorial-testa p { margin: 8px 0 0; color: var(--testo-2); font-size: 15px; max-width: 62ch; }
+  .tutorial-testa .girato-su { margin-top: 10px; font-size: 14px; color: var(--testo-3); }
+  .tutorial-testa .torna { margin-top: 14px; }
+  .capitoli { max-height: 478px; padding: 10px; border-radius: var(--r-xl); background: var(--superficie); box-shadow: var(--elev-2), var(--bordo-luce); overflow-y: auto; overscroll-behavior: contain; }
+  .capitoli h4 { margin: 6px 10px 8px; font-size: 12px; font-weight: 680; letter-spacing: .09em; text-transform: uppercase; color: var(--testo-3); }
+  .capitoli ol { list-style: none; margin: 0; padding: 0; }
+  .capitoli button {
+    display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 8px; width: 100%; min-height: 44px; padding: 9px 10px; border: 0; border-radius: 12px; background: transparent;
+    text-align: left; font: inherit; font-size: 14.5px; line-height: 1.35; color: var(--testo-2); cursor: pointer; transition: background-color .15s, color .15s;
+  }
+  .capitoli button:hover { background: var(--superficie-2); color: var(--testo); }
+  .capitoli button[aria-current="true"] { background: var(--accento-tenue); color: var(--accento-testo); font-weight: 620; }
+  .capitoli .tc { font-variant-numeric: tabular-nums; font-size: 13px; font-weight: 600; color: var(--testo-3); padding-top: 1px; }
+  .capitoli button[aria-current="true"] .tc { color: var(--accento-testo); }
+  .capitoli .vuoto { margin: 6px 10px 10px; font-size: 14.5px; color: var(--testo-2); }
+  .capitoli .vuoto a { color: var(--accento-testo); font-weight: 600; }
+  /* il lettore prima del caricamento: la stessa forma di quando è pronto, così la pagina non si sposta (l'ancora #novita) */
+  .tutorial-scheletro { display: contents; }
+  .tutorial-scheletro .capitoli { height: 478px; }
+  .sk-schermo { aspect-ratio: 16 / 9; background: var(--video-fondo); }
+  .sk-riga { height: 12px; margin-top: 12px; border-radius: 6px; background: var(--bordo); }
+  .sk-riga.titolo { width: 42%; height: 18px; margin-top: 0; }
+  .sk-riga.corta { width: 64%; }
+  .novita-video { margin-top: clamp(48px, 6vw, 80px); scroll-margin-top: calc(var(--h-tot) + 12px); }
+  .novita-testa { margin-bottom: 24px; }
+  .novita-testa h3 { margin: 8px 0 0; font-size: clamp(22px, 3vw, 28px); letter-spacing: -0.02em; }
+  .novita-testa p { margin: 8px 0 0; color: var(--testo-2); font-size: 15.5px; max-width: 62ch; }
+  .novita-lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 20px; }
+  .novita-carta {
+    position: relative; display: flex; flex-direction: column; border-radius: var(--r-xl); background: var(--superficie); overflow: hidden; color: inherit; text-decoration: none;
+    box-shadow: var(--elev-2), var(--bordo-luce); transition: transform .35s var(--molla), box-shadow .35s;
+  }
+  @media (hover: hover) { a.novita-carta:hover { transform: translateY(-3px); box-shadow: var(--elev-3), var(--bordo-luce); } }
+  a.novita-carta:focus-visible { outline: 3px solid var(--anello); outline-offset: 3px; }
+  .novita-carta[aria-current="true"] { box-shadow: var(--elev-3), 0 0 0 2px var(--accento); }
+  .novita-carta .miniatura { position: relative; aspect-ratio: 16 / 9; background: var(--video-fondo); }
+  .novita-carta .miniatura img { width: 100%; height: 100%; object-fit: cover; }
+  .novita-carta .gioca {
+    position: absolute; right: 12px; bottom: 12px; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+    background: rgba(10, 20, 38, 0.76); color: #fff; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18);
+  }
+  .novita-carta .minuti {
+    position: absolute; left: 12px; bottom: 12px; padding: 2px 9px; border-radius: var(--r-full); background: rgba(10, 20, 38, 0.76); color: #fff;
+    font-size: 12.5px; font-weight: 650; font-variant-numeric: tabular-nums;
+  }
+  .novita-carta .nuovo {
+    position: absolute; left: 12px; top: 12px; padding: 3px 10px; border-radius: var(--r-full); background: var(--grad-accento); color: #fff;
+    font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; box-shadow: var(--ombra-accento);
+  }
+  .novita-carta .corpo { padding: 16px 18px 20px; min-height: 164px; }
+  .novita-carta.sk .miniatura { background: var(--bordo); }
+  .novita-video.rivela { transform: none; }  /* l'ancora #novita: il browser atterra sul riquadro con la trasformazione, che a comparsa finita sparirebbe */
+  .novita-carta .quando { font-size: 12.5px; font-weight: 700; letter-spacing: .02em; color: var(--accento-testo); }
+  .novita-carta h4 { margin: 4px 0 0; font-size: 17px; line-height: 1.3; letter-spacing: -0.01em; }
+  .novita-carta p { margin: 8px 0 0; font-size: 14px; line-height: 1.55; color: var(--testo-2); }
+  .novita-carta.in-arrivo .miniatura { display: grid; place-items: center; color: var(--video-testo-2); font-weight: 600; font-size: 15px; }
+  .novita-carta.in-arrivo .quando { color: var(--avviso-testo); }
+  .novita-vuota { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 20px 22px; border-radius: var(--r-xl); background: var(--superficie); box-shadow: var(--elev-1), var(--bordo-luce); color: var(--testo-2); font-size: 15px; grid-column: 1 / -1; }
+  .novita-vuota .tag { font-size: 11.5px; font-weight: 650; padding: 2px 8px; border-radius: var(--r-full); background: var(--avviso-tenue); color: var(--avviso-testo); }
 
-  /* --- licenze ------------------------------------------------------------------------------------------------ */
+  /* novità della 3.0: una griglia a blocchi di misure diverse */
+  .bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .bento .largo { grid-column: span 2; }
+  .bento .largo { padding: 28px; }
+  .bento .largo h3 { font-size: 20px; }
+  .bento .largo p { font-size: 15.5px; }
+
+  /* --- licenze ------------------------------------------------------------------------------------------------------- */
   .prova {
-    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; padding: 20px 24px; margin-bottom: 22px;
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; padding: 20px 24px; margin-bottom: 8px;
     border-radius: var(--r-xl); background: linear-gradient(100deg, var(--accento-tenue), var(--acqua-tenue)); box-shadow: var(--bordo-luce);
   }
-  .prova b.etichetta { display: inline-block; padding: 4px 10px; border-radius: var(--r-full); background: var(--accento); color: #fff; font-size: 12px; letter-spacing: .08em; margin-right: 10px; }
+  .prova b.etichetta { display: inline-block; padding: 4px 10px; border-radius: var(--r-full); background: #1a5fd0; color: #fff; font-size: 12px; letter-spacing: .08em; margin-right: 10px; }
   .prova span { font-weight: 600; }
   /* R-350: ogni modulo con i suoi piani, sotto il suo nome (i moduli si vendono separati) */
-  .testa-modulo { margin: 34px 0 28px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
-  .testa-modulo.primo { margin-top: 6px; }
-  .testa-modulo .nome-modulo { margin: 0; font-size: 21px; font-weight: 720; letter-spacing: -0.015em; }
+  .testa-modulo { margin: 44px 0 26px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; padding-bottom: 14px; border-bottom: 1px solid var(--bordo); }
+  .testa-modulo.primo { margin-top: 34px; }
+  .testa-modulo .nome-modulo { margin: 0; font-size: 22px; font-weight: 740; letter-spacing: -0.02em; }
   .testa-modulo p { margin: 0; color: var(--testo-2); font-size: 15px; }
   .piani { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
-  .piano { position: relative; display: flex; flex-direction: column; padding: 26px 22px 22px; border-radius: var(--r-2xl); background: var(--superficie); box-shadow: var(--elev-2), var(--bordo-luce); }
-  .piano h3 { margin: 0; font-size: 16px; font-weight: 650; color: var(--testo-2); }
-  .piano .prezzo { margin-top: 10px; font-size: 42px; line-height: 1; font-weight: 760; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
-  .piano .prezzo small { font-size: 20px; font-weight: 650; margin-left: 2px; }
+  .piano { position: relative; display: flex; flex-direction: column; padding: 28px 24px 24px; border-radius: var(--r-2xl); background: var(--superficie); box-shadow: var(--elev-2), var(--bordo-luce); }
+  .piano h3 { margin: 0; font-size: 15px; font-weight: 680; letter-spacing: .01em; color: var(--testo-2); }
+  .piano .prezzo { margin-top: 12px; font-size: 46px; line-height: 1; font-weight: 780; letter-spacing: -0.035em; font-variant-numeric: tabular-nums; }
+  .piano .prezzo small { font-size: 21px; font-weight: 660; margin-left: 2px; letter-spacing: -0.01em; }
   .piano .iva { margin-top: 6px; font-size: 12.5px; color: var(--testo-3); }
-  .piano .mese { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--bordo); display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; }
-  .risparmio { padding: 2px 8px; border-radius: var(--r-full); background: var(--accento-tenue); color: var(--accento-testo); font-size: 12.5px; font-weight: 700; }
-  .piano ul { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 8px; font-size: 14.5px; color: var(--testo-2); }
-  .piano li { position: relative; padding-left: 24px; }
-  .piano li::before { content: ""; position: absolute; left: 0; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--accento-tenue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.6 8.4l2.1 2.1L11.4 5.8' fill='none' stroke='%231f6fe5' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px no-repeat; }
-  .piano li:first-child { color: var(--testo); font-weight: 650; }
-  .piano.consigliato { background: linear-gradient(170deg, #0f1e38 0%, #0a1426 60%); color: #fff; box-shadow: var(--elev-4), 0 0 0 1px rgba(255,255,255,.06) inset; transform: translateY(-8px); }
-  .piano.consigliato h3, .piano.consigliato .iva, .piano.consigliato ul { color: #b9c6db; }
-  .piano.consigliato li:first-child { color: #fff; }
-  .piano.consigliato .mese { border-color: rgba(255,255,255,.12); }
-  .piano.consigliato .risparmio { background: var(--accento); color: #fff; }
-  .piano.consigliato li::before { background-color: rgba(31, 111, 229, .3); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.6 8.4l2.1 2.1L11.4 5.8' fill='none' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
-  .nastro { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); padding: 5px 12px; border-radius: var(--r-full); background: var(--grad-accento); color: #fff; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; white-space: nowrap; box-shadow: var(--ombra-accento); }
-  .in-tutte { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; padding: 18px 22px; border-radius: var(--r-xl); background: var(--avviso-tenue); box-shadow: inset 0 0 0 1px #f1d9ae; color: #5c4310; }
-  .in-tutte b.etichetta { font-size: 12px; letter-spacing: .12em; color: var(--avviso-testo); }
-  .note-licenze { margin-top: 16px; font-size: 14px; color: var(--testo-3); text-align: center; }
+  .piano .mese { margin-top: 16px; padding: 14px 0; border-block: 1px solid var(--bordo); display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-weight: 620; font-size: 15px; }
+  .risparmio { padding: 2px 9px; border-radius: var(--r-full); background: var(--successo-tenue); color: var(--successo-testo); font-size: 12.5px; font-weight: 700; }
+  .piano ul { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 9px; align-content: start; font-size: 14.5px; color: var(--testo-2); }
+  .piano li { padding-left: 26px; font-size: 14.5px; }
+  .piano li::before, .piano li::after { top: 3px; width: 17px; height: 17px; }
+  .piano li::after { -webkit-mask-size: 17px; mask-size: 17px; }
+  .piano li:first-child { color: var(--testo); font-weight: 680; }
+  .piano.consigliato { background: linear-gradient(170deg, var(--cons-1) 0%, var(--cons-2) 70%); color: var(--cons-testo); box-shadow: var(--elev-4), inset 0 0 0 1px var(--cons-linea); }
+  .piano.consigliato h3, .piano.consigliato .iva, .piano.consigliato ul { color: var(--cons-testo-2); }
+  .piano.consigliato li { color: var(--cons-testo-2); }
+  .piano.consigliato li:first-child { color: var(--cons-testo); }
+  .piano.consigliato .mese { border-color: var(--cons-linea); }
+  .piano.consigliato .risparmio { background: #1a5fd0; color: #fff; }
+  .piano.consigliato li::before { background: rgba(255, 255, 255, 0.14); }
+  .piano.consigliato li::after { background: #fff; }
+  .nastro { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 5px 13px; border-radius: var(--r-full); background: var(--grad-accento); color: #fff; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; white-space: nowrap; box-shadow: var(--ombra-accento); }
+  .in-tutte { margin-top: 30px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px 24px; align-items: start; padding: 22px 26px; border-radius: var(--r-xl); background: var(--avviso-tenue); box-shadow: inset 0 0 0 1px var(--avviso-bordo); color: var(--avviso-corpo); }
+  .in-tutte b.etichetta { padding-top: 3px; font-size: 12px; letter-spacing: .12em; color: var(--avviso-testo); white-space: nowrap; }
+  .pilastri { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 28px; }
+  .pilastri p { margin: 0; font-size: 14.5px; line-height: 1.55; }
+  .pilastri b { color: var(--avviso-testo); }
+  .note-licenze { margin: 18px auto 0; max-width: 78ch; font-size: 14px; color: var(--testo-3); text-align: center; }
   .note-licenze + .note-licenze { margin-top: 8px; }
-  .attiva { margin-top: 34px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; counter-reset: passo; }
-  .attiva div { counter-increment: passo; position: relative; padding: 18px 18px 18px 60px; border-radius: var(--r-xl); background: rgba(255,255,255,.6); box-shadow: var(--bordo-luce); font-size: 14.5px; color: var(--testo-2); }
-  .attiva div::before { content: counter(passo); position: absolute; left: 18px; top: 18px; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--accento-tenue); color: var(--accento-testo); font-weight: 700; font-size: 14px; }
-  .attiva b { display: block; color: var(--testo); font-size: 15px; }
-  .azioni { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .attiva { margin-top: 38px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; counter-reset: passo; }
+  .attiva div { counter-increment: passo; position: relative; padding: 20px 20px 20px 66px; border-radius: var(--r-xl); background: var(--superficie-vetro); box-shadow: var(--bordo-luce); font-size: 14.5px; color: var(--testo-2); }
+  .attiva div::before { content: counter(passo); position: absolute; left: 20px; top: 20px; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--accento-tenue); color: var(--accento-testo); font-weight: 720; font-size: 14px; }
+  .attiva b { display: block; color: var(--testo); font-size: 15.5px; }
+  .azioni { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
 
-  /* --- requisiti e installazione ----------------------------------------------------------------------------- */
-  .sistemi { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-  .sistema { position: relative; padding: 26px; border-radius: var(--r-2xl); background: var(--superficie); box-shadow: var(--elev-2), var(--bordo-luce); transition: box-shadow .3s; }
+  /* --- requisiti e installazione ------------------------------------------------------------------------------------ */
+  .sistemi { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+  .sistema { position: relative; padding: 30px; border-radius: var(--r-2xl); background: var(--superficie); box-shadow: var(--elev-2), var(--bordo-luce); transition: box-shadow .3s; }
   .sistema.tuo { box-shadow: var(--elev-3), 0 0 0 2px var(--accento); }
-  .sistema .tuo-etichetta { display: none; position: absolute; top: 22px; right: 22px; padding: 3px 10px; border-radius: var(--r-full); background: var(--accento-tenue); color: var(--accento-testo); font-size: 12px; font-weight: 700; }
+  .sistema .tuo-etichetta { display: none; position: absolute; top: 24px; right: 24px; padding: 3px 11px; border-radius: var(--r-full); background: var(--accento-tenue); color: var(--accento-testo); font-size: 12px; font-weight: 700; }
   .sistema.tuo .tuo-etichetta { display: inline-block; }
-  .sistema h3 { margin: 0 0 4px; font-size: 21px; font-weight: 720; letter-spacing: -0.015em; display: flex; align-items: center; gap: 10px; }
-  .sistema .req { margin: 0 0 18px; color: var(--testo-2); font-size: 15px; }
-  .sistema ol { margin: 0; padding: 0; list-style: none; counter-reset: p; display: grid; gap: 12px; }
-  .sistema li { counter-increment: p; position: relative; padding-left: 38px; color: var(--testo-2); font-size: 14.5px; }
+  .sistema h3 { margin: 0 0 6px; font-size: 22px; font-weight: 740; letter-spacing: -0.02em; display: flex; align-items: center; gap: 10px; }
+  .sistema .req { margin: 0 0 20px; color: var(--testo-2); font-size: 15px; }
+  .sistema ol { margin: 0; padding: 0; list-style: none; counter-reset: p; display: grid; gap: 14px; }
+  .sistema li { counter-increment: p; position: relative; padding-left: 40px; color: var(--testo-2); font-size: 14.5px; line-height: 1.55; }
   .sistema li::before { content: counter(p); position: absolute; left: 0; top: 0; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--sfondo); box-shadow: inset 0 0 0 1px var(--bordo-2); color: var(--testo); font-weight: 700; font-size: 13px; }
   .sistema li b { color: var(--testo); }
-  .nota { margin-top: 18px; padding: 14px 16px; border-radius: var(--r-lg); background: var(--avviso-tenue); color: #5c4310; font-size: 14.5px; }
-  .rete { margin-top: 18px; text-align: center; color: var(--testo-3); font-size: 14px; }
+  .nota { margin-top: 20px; padding: 14px 16px; border-radius: var(--r-lg); background: var(--avviso-tenue); color: var(--avviso-corpo); font-size: 14.5px; }
+  .rete { margin-top: 20px; text-align: center; color: var(--testo-3); font-size: 14px; }
 
-  /* --- documenti e piè di pagina ------------------------------------------------------------------------------ */
+  /* --- documenti e piè di pagina ------------------------------------------------------------------------------------- */
   .documenti { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-  .documento { display: flex; gap: 14px; align-items: center; padding: 18px 20px; border-radius: var(--r-xl); background: var(--superficie); box-shadow: var(--elev-1), var(--bordo-luce); text-decoration: none; color: var(--testo); transition: transform .3s var(--molla), box-shadow .3s; }
-  .documento:hover { transform: translateY(-2px); box-shadow: var(--elev-3), var(--bordo-luce); }
-  .documento .ic { flex: none; width: 44px; height: 52px; border-radius: 8px; display: grid; place-items: end center; padding-bottom: 7px; background: linear-gradient(#fff, #f1f4f9); box-shadow: inset 0 0 0 1px var(--bordo-2); color: #d23f31; font-size: 10.5px; font-weight: 800; letter-spacing: .04em; }
-  .documento b { display: block; font-weight: 650; color: var(--testo); }
+  .documento { position: relative; display: flex; gap: 16px; align-items: center; padding: 18px 20px; border-radius: var(--r-xl); background: var(--superficie); box-shadow: var(--elev-1), var(--bordo-luce); text-decoration: none; color: var(--testo); transition: transform .35s var(--molla), box-shadow .35s; }
+  @media (hover: hover) { .documento:hover { transform: translateY(-2px); box-shadow: var(--elev-3), var(--bordo-luce); } }
+  .documento::after { content: ""; flex: none; margin-left: auto; width: 20px; height: 20px; background: var(--testo-3); -webkit-mask: var(--ico-freccia) center / 20px no-repeat; mask: var(--ico-freccia) center / 20px no-repeat; }
+  .documento .ic { flex: none; width: 44px; height: 52px; border-radius: 8px; display: grid; place-items: end center; padding-bottom: 7px; background: linear-gradient(var(--superficie), var(--superficie-2)); box-shadow: inset 0 0 0 1px var(--bordo-2); color: var(--pdf); font-size: 10.5px; font-weight: 800; letter-spacing: .04em; }
+  .documento b { display: block; font-weight: 660; color: var(--testo); }
   .documento .desc { display: block; font-size: 13.5px; color: var(--testo-3); }
-  footer { margin-top: clamp(24px, 4vw, 40px); border-top: 1px solid var(--bordo); background: rgba(255,255,255,.55); }
-  footer .contenitore { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; justify-content: space-between; padding-top: 28px; padding-bottom: 36px; font-size: 13.5px; color: var(--testo-3); }
-  footer .marchio { font-size: 15px; }
-  footer nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
-  footer nav a { color: var(--testo-2); text-decoration: none; }
-  footer nav a:hover { color: var(--accento-testo); }
-  .credito { width: 100%; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 18px; padding-top: 14px; border-top: 1px solid var(--bordo); }
+  footer { border-top: 1px solid var(--bordo-sottile); background: var(--superficie-vetro); }
+  footer .contenitore { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr); gap: 28px 48px; align-items: start; padding-top: 44px; padding-bottom: 36px; font-size: 13.5px; color: var(--testo-3); }
+  footer .marchio { font-size: 16px; }
+  .piede-nota { margin: 14px 0 0; max-width: 40ch; line-height: 1.6; }
+  footer nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px 20px; }
+  footer nav a { display: inline-flex; align-items: center; min-height: 44px; color: var(--testo-2); text-decoration: none; font-size: 14.5px; }
+  footer nav a:hover { color: var(--accento-testo); text-decoration: underline; }
+  .credito { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; padding-top: 18px; border-top: 1px solid var(--bordo); }
 
-  /* --- comparsa allo scorrimento ------------------------------------------------------------------------------ */
+  /* --- comparsa allo scorrimento -------------------------------------------------------------------------------------- */
   .rivela { opacity: 0; transform: translateY(22px); transition: opacity .8s var(--ease-out), transform .8s var(--ease-out); }
   .rivela.vista { opacity: 1; transform: none; }
-  .js-assente .rivela { opacity: 1; transform: none; }
 
   /* --- pulsante principale vivo: un respiro e un riflesso di luce, solo trasformazioni e opacità; fermo con il movimento
          ridotto e quando non si vede (la classe .in-vista la mette lo script) ---------------------------------------- */
   .pulsante.vivo { position: relative; overflow: hidden; animation: respiro 3.8s ease-in-out infinite; animation-play-state: paused; }
   .pulsante.vivo.in-vista { animation-play-state: running; }
+  .pulsante.vivo::before {
+    content: ""; flex: none; width: 21px; height: 21px; background: currentColor;
+    -webkit-mask: var(--ico-scarica) center / contain no-repeat; mask: var(--ico-scarica) center / contain no-repeat;
+  }
   .pulsante.vivo::after {
     content: ""; position: absolute; top: -10%; left: 0; width: 34%; height: 120%; pointer-events: none; opacity: 0;
     background: linear-gradient(100deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.42) 50%, rgba(255,255,255,0) 100%);
@@ -331,179 +697,198 @@
     100% { transform: translateX(380%) skewX(-18deg); opacity: 0; }
   }
 
-  /* --- video tutorial: un video alla volta, i capitoli cliccabili (media/tutorial/tutorial.json) ------------------- */
-  .tutorial-schede { display: flex; gap: 6px; width: max-content; max-width: 100%; margin: 0 auto 24px; padding: 5px; border-radius: var(--r-full); background: var(--superficie); box-shadow: var(--elev-1), var(--bordo-luce); }
-  .tutorial-schede button {
-    display: flex; align-items: center; gap: 8px; padding: 10px 20px; border: 0; border-radius: var(--r-full); background: transparent;
-    font: inherit; font-weight: 620; font-size: 15px; color: var(--testo-2); cursor: pointer; transition: background .2s, color .2s;
+  /* --- misure ------------------------------------------------------------------------------------------------------- */
+  @media (max-width: 1180px) {
+    .barra .marchio small { display: none; }
   }
-  .tutorial-schede button:hover { background: rgba(10, 20, 38, 0.05); color: var(--testo); }
-  .tutorial-schede button[aria-selected="true"] { background: var(--grad-accento); color: #fff; box-shadow: var(--ombra-accento); }
-  .tutorial-schede button:focus-visible, .capitoli button:focus-visible { outline: 2px solid var(--accento); outline-offset: 2px; }
-  .tutorial-schede .tag { font-size: 11.5px; font-weight: 650; padding: 2px 8px; border-radius: var(--r-full); background: var(--avviso-tenue); color: var(--avviso-testo); }
-  .tutorial-corpo { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(250px, 1fr); gap: 22px; align-items: start; }
-  .tutorial-video { margin: 0; }
-  .tutorial-video video, .tutorial-video .segnaposto { display: block; width: 100%; aspect-ratio: 16 / 9; background: #0a1426; }
-  .tutorial-video .segnaposto { display: grid; place-items: center; padding: 24px; text-align: center; color: #cdd6e6; font-weight: 600; font-size: 18px; }
-  .tutorial-video .segnaposto small { display: block; margin-top: 6px; font-weight: 450; font-size: 14px; color: #93a0b8; }
-  .tutorial-testa { margin-top: 16px; }
-  .tutorial-testa h3 { margin: 0; font-size: 21px; letter-spacing: -0.01em; }
-  .tutorial-testa .durata { margin-top: 4px; font-size: 14px; font-weight: 600; color: var(--testo-3); }
-  .tutorial-testa p { margin: 8px 0 0; color: var(--testo-2); font-size: 15px; max-width: 62ch; }
-  .capitoli { padding: 10px; border-radius: var(--r-xl); background: var(--superficie); box-shadow: var(--elev-2), var(--bordo-luce); max-height: 470px; overflow-y: auto; }
-  .capitoli h4 { margin: 4px 8px 8px; font-size: 12px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; color: var(--testo-3); }
-  .capitoli ol { list-style: none; margin: 0; padding: 0; }
-  .capitoli button {
-    display: grid; grid-template-columns: 46px minmax(0, 1fr); gap: 8px; width: 100%; padding: 9px 10px; border: 0; border-radius: 12px; background: transparent;
-    text-align: left; font: inherit; font-size: 14.5px; color: var(--testo-2); cursor: pointer; transition: background .15s, color .15s;
-  }
-  .capitoli button:hover { background: var(--superficie-2); color: var(--testo); }
-  .capitoli button[aria-current="true"] { background: var(--accento-tenue); color: var(--accento-testo); font-weight: 600; }
-  .capitoli .tc { font-variant-numeric: tabular-nums; font-size: 13px; font-weight: 600; color: var(--testo-3); padding-top: 1px; }
-  .capitoli button[aria-current="true"] .tc { color: var(--accento-testo); }
-  .capitoli .vuoto { margin: 6px 8px 10px; font-size: 14.5px; color: var(--testo-2); }
-  .tutorial-corpo { scroll-margin-top: 92px; }  /* l'ancora del lettore non finisce sotto la barra fissa */
-  .tutorial-testa .girato-su { margin-top: 10px; font-size: 14px; color: var(--testo-3); }
-  .tutorial-testa .torna { margin-top: 14px; }
-  .capitoli .vuoto a { color: var(--accento-testo); font-weight: 600; }
-  /* --- novità: i video brevi, dal più recente, sotto il tutorial completo (media/tutorial/tutorial.json → «novita») ---- */
-  .novita-video { margin-top: clamp(44px, 6vw, 72px); scroll-margin-top: 92px; }
-  .novita-testa { margin-bottom: 22px; }
-  .novita-testa h3 { margin: 6px 0 0; font-size: clamp(22px, 3vw, 26px); letter-spacing: -0.015em; }
-  .novita-testa p { margin: 8px 0 0; color: var(--testo-2); font-size: 15px; max-width: 62ch; }
-  .novita-lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); gap: 18px; }
-  .novita-carta {
-    display: flex; flex-direction: column; border-radius: var(--r-xl); background: var(--superficie); overflow: hidden; color: inherit; text-decoration: none;
-    box-shadow: var(--elev-2), var(--bordo-luce); transition: transform .3s var(--molla), box-shadow .3s;
-  }
-  a.novita-carta:hover { transform: translateY(-3px); box-shadow: var(--elev-3), var(--bordo-luce); }
-  a.novita-carta:focus-visible { outline: 3px solid var(--anello); outline-offset: 3px; }
-  .novita-carta[aria-current="true"] { box-shadow: var(--elev-3), 0 0 0 2px var(--accento); }
-  .novita-carta .miniatura { position: relative; aspect-ratio: 16 / 9; background: #0a1426; }
-  .novita-carta .miniatura img { width: 100%; height: 100%; object-fit: cover; }
-  .novita-carta .gioca {
-    position: absolute; right: 12px; bottom: 12px; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center;
-    background: rgba(10, 20, 38, 0.72); color: #fff;
-  }
-  .novita-carta .minuti {
-    position: absolute; left: 12px; bottom: 12px; padding: 2px 9px; border-radius: var(--r-full); background: rgba(10, 20, 38, 0.72); color: #fff;
-    font-size: 12.5px; font-weight: 650; font-variant-numeric: tabular-nums;
-  }
-  .novita-carta .corpo { padding: 14px 16px 18px; }
-  .novita-carta .quando { font-size: 12.5px; font-weight: 700; letter-spacing: .02em; color: var(--accento-testo); }
-  .novita-carta h4 { margin: 4px 0 0; font-size: 16.5px; line-height: 1.3; letter-spacing: -0.005em; }
-  .novita-carta p { margin: 6px 0 0; font-size: 14px; color: var(--testo-2); }
-  .novita-carta.in-arrivo .miniatura { display: grid; place-items: center; color: #93a0b8; font-weight: 600; font-size: 15px; }
-  .novita-carta.in-arrivo .quando { color: var(--avviso-testo); }
-  .novita-vuota { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 20px 22px; border-radius: var(--r-xl); background: var(--superficie); box-shadow: var(--elev-1), var(--bordo-luce); color: var(--testo-2); font-size: 15px; grid-column: 1 / -1; }
-  .novita-vuota .tag { font-size: 11.5px; font-weight: 650; padding: 2px 8px; border-radius: var(--r-full); background: var(--avviso-tenue); color: var(--avviso-testo); }
-  @media (max-width: 900px) { .tutorial-corpo { grid-template-columns: minmax(0, 1fr); } .capitoli { max-height: 340px; } }
-  @media (max-width: 560px) { .tutorial-schede button { padding: 9px 14px; font-size: 14px; } .tutorial-testa h3 { font-size: 19px; } }
-  @media (prefers-reduced-motion: reduce) {
-    .pulsante.vivo, .pulsante.vivo::after { animation: none !important; }
-    .pulsante.vivo::after { opacity: 0; }
-    .tutorial-schede button, .capitoli button, .novita-carta { transition: none; }
-    a.novita-carta:hover { transform: none; }
-  }
-
-  /* --- misure ------------------------------------------------------------------------------------------------- */
   @media (max-width: 1080px) {
-    .griglia { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .piani { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 26px; }
-    .piano.consigliato { transform: none; }
+    .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .piani { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 28px; }
     .fiducia { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .fiducia > div:nth-child(3) { border-left: 0; }
+    .fiducia > div:nth-child(n+3) { border-top: 1px solid var(--bordo); }
+    .pilastri { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (min-width: 1081px) {
+    @supports (grid-template-rows: subgrid) {
+      .piani { grid-template-rows: auto auto auto auto 1fr; }
+      .piano { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; }
+      .piano ul { margin-top: 16px; }
+    }
+    .piano.consigliato { transform: translateY(-6px); }
+  }
+  @media (max-width: 980px) {
+    :root { --h-barra: 64px; }
+    .hamburger { display: block; margin-left: 0; }
+    .scarica-barra { margin-left: auto; }
+    .menu {
+      position: absolute; left: 0; right: 0; top: 100%; display: grid; gap: 2px; margin: 0; padding: 10px var(--gutter) 18px; border-radius: 0;
+      background: var(--superficie); box-shadow: var(--elev-3), inset 0 1px 0 var(--bordo); max-height: calc(100vh - var(--h-tot)); max-height: calc(100dvh - var(--h-tot)); padding-bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+      overflow-y: auto; overscroll-behavior: contain; visibility: hidden; opacity: 0; transform: translateY(-8px);
+      transition: opacity .22s var(--ease-out), transform .3s var(--ease-out), visibility 0s linear .3s;
+    }
+    .barra.aperta .menu { visibility: visible; opacity: 1; transform: none; transition-delay: 0s; }
+    .barra.aperta { background: var(--superficie); border-bottom-color: var(--bordo); }
+    .menu a { min-height: 50px; padding: 0 16px; border-radius: var(--r-lg); font-size: 17px; justify-content: space-between; }
+    .menu a::after { content: ""; width: 18px; height: 18px; background: var(--testo-3); -webkit-mask: var(--ico-freccia) center / 18px no-repeat; mask: var(--ico-freccia) center / 18px no-repeat; }
   }
   @media (max-width: 900px) {
-    .eroe .griglia-eroe { grid-template-columns: minmax(0, 1fr); }
-    .oggetto { order: -1; width: min(86%, 460px); margin-bottom: -8px; }
-    .funzione, .funzione.inversa { grid-template-columns: minmax(0, 1fr); }
-    .funzione.inversa .testo { order: 0; }
-    .sistemi, .documenti, .attiva { grid-template-columns: minmax(0, 1fr); }
-    .menu { display: none; }
-    .barra .scarica-barra { margin-left: auto; }
+    .eroe .griglia-eroe { grid-template-columns: minmax(0, 1fr); grid-template-areas: "testo" "visual" "card"; }
+    .eroe-testo { align-self: start; }
+    .oggetto { left: auto; right: -2%; bottom: auto; top: -46px; width: clamp(96px, 24%, 150px); }
+    .eroe-visual { margin-top: 14px; }
+    .percorso { display: block; }
+    .scena { position: sticky; top: var(--h-tot); z-index: 6; margin-inline: calc(var(--gutter) * -1); padding: 10px var(--gutter) 12px; background: var(--banda); box-shadow: 0 14px 18px -14px rgba(10, 20, 38, .28); }
+    .scena-fissa { position: static; height: auto; display: block; }
+    .traccia { margin-bottom: 10px; }
+    .funzione { min-height: 56vh; min-height: 56svh; padding: 4vh 0; }
+    .moduli-griglia, .sistemi, .documenti, .attiva { grid-template-columns: minmax(0, 1fr); }
+      .tutorial-corpo { grid-template-columns: minmax(0, 1fr); }
+    .tutorial-testa { min-height: 190px; }
+    .capitoli { max-height: 348px; }
+    .tutorial-scheletro .capitoli { height: 348px; }
+    footer .contenitore { grid-template-columns: minmax(0, 1fr); }
   }
   @media (max-width: 560px) {
-    .griglia, .griglia.due, .piani, .fiducia { grid-template-columns: minmax(0, 1fr); }
+    .bento, .piani, .fiducia { grid-template-columns: minmax(0, 1fr); }
+    .bento .largo { grid-column: auto; padding: 24px; }
+    .fiducia > div { padding: 14px 16px; }
+    .fiducia > div + div { border-left: 0; border-top: 1px solid var(--bordo); }
     .scarica { padding: 18px; }
+    .stato p { min-height: 6.2em; }
     .pulsanti .pulsante { flex: 1 1 100%; }
-    .marchio small { display: none; }
     .pillola { font-size: 12.5px; }
-    .oggetto { width: min(76%, 340px); }
+    .sotto { font-size: 16px; line-height: 1.55; }
+    .kpi { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .kpi > div:nth-child(3) { border-left: 0; }
+    .kpi > div:nth-child(n+3) { border-top: 1px solid var(--bordo); }
+    .numeri-riga { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 18px; }
+    .numeri-riga > div:nth-child(3) { border-left: 0; }
+    .pianta .p-et { display: none; }
+    .pianta-campo { padding: 10px 10px 4px; }
+    .modulo { padding: 24px 20px 22px; }
     .prova { padding: 18px; }
-    .sistema { padding: 22px 18px; }
+    .in-tutte { grid-template-columns: minmax(0, 1fr); padding: 20px; }
+    .sistema { padding: 24px 18px; }
     .finestra .barretta span { display: none; }
+    .tutorial-schede button { padding: 0 16px; font-size: 14px; }
+    .tutorial-testa h3 { font-size: 19px; }
+    .tutorial-testa { min-height: 232px; }
+    .piano.consigliato { margin-top: 8px; }
+    footer nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .fluttua, .luce, .comparsa { animation: none !important; }
-    .inclina { transform: none !important; transition: none; }
+    .fluttua, .luce i, .comparsa, .oggetto, .pianta .mod, .pianta .t, .cascata.vista > *, .tutorial-corpo > div { animation: none !important; }
+    .cascata:not(.vista) > * { opacity: 1; }
+    .avanza { display: none !important; }
+    .schermo, .passi12 li::after, .percorso.vivo .funzione, .finestra-hero { transition: none; }
+    .inclina, .finestra-hero, .inclinabile:hover { transform: none !important; transition: none; }
     .rivela { opacity: 1; transform: none; transition: none; }
-    .pulsante, .carta, .documento { transition: none; }
+    .pulsante, .carta, .documento, .barra, .menu, .velo, .hamburger i { transition: none; }
+    .pulsante.vivo, .pulsante.vivo::after { animation: none !important; }
+    .pulsante.vivo::after { opacity: 0; }
+    .tutorial-schede button, .capitoli button, .novita-carta { transition: none; }
+    a.novita-carta:hover, .carta:hover { transform: none; }
   }
 </style>
+<noscript>
+<!-- senza JavaScript: le sezioni si vedono subito e il menu del telefono sta aperto sotto la barra (con JavaScript queste regole non
+     contano: niente lampi alla prima schermata) -->
+<style>
+  .rivela { opacity: 1; transform: none; transition: none; }
+  .tutorial-scheletro { display: none; }
+  .cascata > * { opacity: 1; }
+  .pianta .mod, .pianta .t { animation: none; }
+  .scena-fissa { position: static; }
+  .schermi { display: block; }
+  .schermo { opacity: 1; transform: none; margin-bottom: 16px; }
+  .funzione { min-height: 0; }
+  @media (max-width: 980px) {
+    .barra { position: static; }
+    .barra-riga { flex-wrap: wrap; height: auto; padding-block: 10px; }
+    .hamburger { display: none; }
+    .menu { position: static; width: 100%; order: 5; visibility: visible; opacity: 1; transform: none; display: flex; flex-wrap: wrap; padding: 4px; box-shadow: none; max-height: none; background: transparent; }
+    .menu a::after { display: none; }
+    .menu a { min-height: 44px; font-size: 15px; }
+  }
+</style>
+</noscript>
 </head>
-<body class="js-assente">
+<body>
 <a class="salta" href="#principale-contenuto">Vai al contenuto</a>
+<div class="cima" id="cima" aria-hidden="true"></div>
 
-<header class="barra">
-  <div class="contenitore">
-    <a class="marchio" href="#">
-      <img src="img/icona-64.png" width="34" height="34" alt="">
+<header class="barra" id="barra">
+  <div class="contenitore barra-riga">
+    <a class="marchio" href="#scarica">
+      <img src="img/icona-64.png" width="36" height="36" alt="">
       <span>Capomastro<small>Soffitti radianti e Cartongesso</small></span>
     </a>
-    <nav class="menu" aria-label="Sezioni">
+    <nav class="menu" id="menu" aria-label="Sezioni">
       <a href="#moduli">Moduli</a>
       <a href="#funzioni">Funzioni</a>
       <a href="#tutorial">Tutorial</a>
-      <a href="#novita-3-0">Novità 3.0</a>
+      <a href="#novita">Novità</a>
       <a href="#licenze">Licenze</a>
       <a href="#requisiti">Requisiti</a>
     </nav>
     <a class="pulsante primario piccolo scarica-barra" href="#scarica">Scarica</a>
+    <button class="hamburger" id="apri-menu" type="button" aria-expanded="false" aria-controls="menu" aria-label="Apri il menu"><i></i><i></i><i></i></button>
   </div>
+  <div class="avanza" aria-hidden="true"></div>
 </header>
+<div class="velo" aria-hidden="true"></div>
 
-<main id="principale-contenuto">
+<main id="principale-contenuto" tabindex="-1">
   <section class="eroe" id="scarica" aria-labelledby="titolo-eroe">
     <div class="contenitore griglia-eroe">
-      <div>
+      <div class="eroe-testo">
         <div class="pillola comparsa"><b>NUOVO</b> Modulo Cartongesso · pareti, contropareti e controsoffitti</div>
         <h1 id="titolo-eroe" class="comparsa d1">Dal DWG dell'architetto <span class="grad">al progetto finito.</span></h1>
         <p class="sotto comparsa d2">Capomastro legge il disegno, progetta struttura e moduli, dimensiona i circuiti a ritorno inverso e prepara tavole, preventivo e computo. Con il Modulo Cartongesso fa lo stesso per pareti, contropareti e controsoffitti. Tutto sul tuo computer, in pochi minuti.</p>
+      </div>
 
-        <div class="scarica comparsa d3">
-          <div class="stato" aria-live="polite">
-            <div class="ic" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
-            </div>
-            <div>
-              <h2 id="titolo">Scarica Capomastro</h2>
-              <p id="testo">Riconosco il tuo sistema e ti propongo il programma giusto.</p>
-            </div>
+      <div class="scarica comparsa d3">
+        <div class="stato" aria-live="polite">
+          <div class="ic" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
           </div>
-          <div class="pulsanti">
-            <a class="pulsante primario grande vivo" id="principale" href="#scarica">Scarica</a>
-            <a class="pulsante" id="win" href="#">
-              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M3 5.1l7.4-1v7.2H3zM11.3 4l9.7-1.4v8.6h-9.7zM3 12.6h7.4v7.3L3 18.9zM11.3 12.6H21v8.7l-9.7-1.4z"/></svg>
-              Windows
-            </a>
-            <a class="pulsante" id="mac" href="#">
-              <svg width="17" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.5 0 2 .8 3.3.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.1c.7-.8 1.2-2 1-3.1-1 .1-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z"/></svg>
-              Mac
-            </a>
+          <div>
+            <h2 id="titolo">Scarica Capomastro</h2>
+            <p id="testo">Riconosco il tuo sistema e ti propongo il programma giusto.</p>
           </div>
-          <div class="versione">
-            <span><i class="punto" aria-hidden="true"></i><span id="versione">Ultima versione</span></span>
-            <span>Prova gratuita: 3 giorni o 2 progetti, tutte le funzioni</span>
-          </div>
+        </div>
+        <div class="pulsanti">
+          <a class="pulsante primario grande vivo" id="principale" href="#scarica">Scarica</a>
+          <a class="pulsante" id="win" href="#">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M3 5.1l7.4-1v7.2H3zM11.3 4l9.7-1.4v8.6h-9.7zM3 12.6h7.4v7.3L3 18.9zM11.3 12.6H21v8.7l-9.7-1.4z"/></svg>
+            Windows
+          </a>
+          <a class="pulsante" id="mac" href="#">
+            <svg width="17" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.5 0 2 .8 3.3.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM14 5.1c.7-.8 1.2-2 1-3.1-1 .1-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4z"/></svg>
+            Mac
+          </a>
+        </div>
+        <div class="versione">
+          <span><i class="punto" aria-hidden="true"></i><span id="versione">Ultima versione</span></span>
+          <span>Prova gratuita: 3 giorni o 2 progetti, tutte le funzioni</span>
         </div>
       </div>
 
-      <div class="oggetto" id="oggetto">
-        <div class="fluttua">
-          <div class="inclina" id="inclina">
-            <img src="img/radius-r-1100.webp" srcset="img/radius-r-640.webp 640w, img/radius-r-1100.webp 1100w" sizes="(max-width: 900px) 86vw, 600px" width="1100" height="853" alt="Il marchio di Capomastro: la C, un tubo in rame che si avvolge a partire dal serpentino di un modulo radiante, su un'orditura di profili a C, con gli attacchi di mandata e ritorno" fetchpriority="high">
-            <div class="luce" aria-hidden="true"></div>
+      <div class="eroe-visual comparsa d2">
+        <figure class="finestra finestra-hero" id="pianta-app">
+          <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>D4 · Collettori · Progetto_Rossi.dwg</span></div>
+          <!-- pianta:inizio -->
+<div class="pianta-campo"><svg class="pianta" viewBox="0 0 12.3 10.2" width="12.3" height="10.2" role="img" aria-label="La pianta del progetto d'esempio: i locali, i moduli radianti posati, i collettori e i tubi dei circuiti, con la mandata rossa e il ritorno blu tratteggiato" preserveAspectRatio="xMidYMid meet"><g class="p-locali"><path class="loc" d="M0.45,1.36L0.64,1.36 0.64,1.01 0.45,1.01 0.45,0.45 2.8,0.46 3.84,0.46 3.84,4.32 0.55,4.34 0.55,4.11 0.45,4.11 0.45,1.36Z"/><path class="loc" d="M4.59,4.11L3.96,4.11 3.96,1.6 5.39,1.6 5.39,1.74 5.84,1.74 5.84,4.31 4.59,4.32 4.59,4.11Z"/><path class="loc" d="M5.94,1.6L7,1.6 7,1.7 7.97,1.7 7.97,3.19 5.94,3.19 5.94,1.6Z"/><path class="loc" d="M5.94,4.3L5.94,3.29 7.97,3.29 7.97,3.49 8.27,3.49 8.27,4.08 7.97,4.08 7.97,4.3 6.74,4.3 5.94,4.3Z"/><path class="loc" d="M6.32,4.41L7.97,4.39 7.97,4.48 8.37,4.48 8.37,3.49 11.85,3.49 11.85,9.75 6.32,9.75 6.32,9.13 6.32,8.75 6.32,4.41Z"/><path class="loc" d="M3.97,9.75L3.97,7.77 6.22,7.77 6.22,9.75 3.97,9.75Z"/><path class="loc" d="M0.45,5.63L3.85,5.63 3.85,9.75 0.45,9.75 0.45,5.63Z"/><path class="loc" d="M2.06,4.45L2.06,5.51 0.45,5.51 0.45,4.47 2.06,4.45Z"/><path class="loc" d="M2.18,4.45L6.22,4.43 6.22,5.51 2.18,5.51 2.18,4.45Z"/><path class="loc" d="M3.97,7.05L3.97,5.63 6.22,5.63 6.22,7.67 5.57,7.66 4.78,7.67 3.97,7.66 3.97,7.05Z"/></g><g class="p-moduli"><g class="cir" data-c="0" style="--k:0"><rect class="mod m240" x="10.11" y="7.12" width="0.45" height="2.4" style="--j:0"/><rect class="mod m240" x="10.11" y="4.71" width="0.45" height="2.4" style="--j:1"/><rect class="mod m86" x="10.11" y="3.86" width="0.45" height="0.86" style="--j:2"/><rect class="mod m86" x="10.61" y="3.86" width="0.45" height="0.86" style="--j:3"/><rect class="mod m240" x="10.61" y="4.71" width="0.45" height="2.4" style="--j:4"/><rect class="mod m240" x="10.61" y="7.12" width="0.45" height="2.4" style="--j:5"/><rect class="mod m240" x="11.11" y="7.12" width="0.45" height="2.4" style="--j:6"/><rect class="mod m240" x="11.11" y="4.71" width="0.45" height="2.4" style="--j:7"/><rect class="mod m86" x="11.11" y="3.86" width="0.45" height="0.86" style="--j:8"/></g><g class="cir" data-c="1" style="--k:1"><rect class="mod m86" x="8.61" y="3.86" width="0.45" height="0.86" style="--j:0"/><rect class="mod m240" x="8.61" y="4.71" width="0.45" height="2.4" style="--j:1"/><rect class="mod m240" x="8.61" y="7.12" width="0.45" height="2.4" style="--j:2"/><rect class="mod m240" x="9.11" y="7.12" width="0.45" height="2.4" style="--j:3"/><rect class="mod m240" x="9.11" y="4.71" width="0.45" height="2.4" style="--j:4"/><rect class="mod m86" x="9.11" y="3.86" width="0.45" height="0.86" style="--j:5"/><rect class="mod m86" x="9.61" y="3.86" width="0.45" height="0.86" style="--j:6"/><rect class="mod m240" x="9.61" y="4.71" width="0.45" height="2.4" style="--j:7"/><rect class="mod m240" x="9.61" y="7.12" width="0.45" height="2.4" style="--j:8"/></g><g class="cir" data-c="2" style="--k:2"><rect class="mod m240" x="6.61" y="4.71" width="0.45" height="2.4" style="--j:0"/><rect class="mod m240" x="6.61" y="7.12" width="0.45" height="2.4" style="--j:1"/><rect class="mod m240" x="7.11" y="7.12" width="0.45" height="2.4" style="--j:2"/><rect class="mod m240" x="7.11" y="4.71" width="0.45" height="2.4" style="--j:3"/><rect class="mod m240" x="7.61" y="4.71" width="0.45" height="2.4" style="--j:4"/><rect class="mod m240" x="7.61" y="7.12" width="0.45" height="2.4" style="--j:5"/><rect class="mod m240" x="8.11" y="7.12" width="0.45" height="2.4" style="--j:6"/><rect class="mod m240" x="8.11" y="4.71" width="0.45" height="2.4" style="--j:7"/></g><g class="cir" data-c="3" style="--k:3"><rect class="mod m86" x="4.24" y="5.93" width="0.86" height="0.45" style="--j:0"/><rect class="mod m86" x="5.1" y="5.93" width="0.86" height="0.45" style="--j:1"/><rect class="mod m86" x="5.1" y="6.43" width="0.86" height="0.45" style="--j:2"/><rect class="mod m86" x="4.24" y="6.43" width="0.86" height="0.45" style="--j:3"/><rect class="mod m86" x="4.24" y="6.93" width="0.86" height="0.45" style="--j:4"/><rect class="mod m86" x="5.1" y="6.93" width="0.86" height="0.45" style="--j:5"/></g><g class="cir" data-c="4" style="--k:4"><rect class="mod m86" x="4.24" y="8.03" width="0.86" height="0.45" style="--j:0"/><rect class="mod m86" x="5.1" y="8.03" width="0.86" height="0.45" style="--j:1"/><rect class="mod m86" x="5.1" y="8.53" width="0.86" height="0.45" style="--j:2"/><rect class="mod m86" x="4.24" y="8.53" width="0.86" height="0.45" style="--j:3"/><rect class="mod m86" x="4.24" y="9.03" width="0.86" height="0.45" style="--j:4"/><rect class="mod m86" x="5.1" y="9.03" width="0.86" height="0.45" style="--j:5"/></g><g class="cir" data-c="5" style="--k:5"><rect class="mod m120" x="0.67" y="5.93" width="0.45" height="1.2" style="--j:0"/><rect class="mod m240" x="0.67" y="7.13" width="0.45" height="2.4" style="--j:1"/><rect class="mod m240" x="1.17" y="7.13" width="0.45" height="2.4" style="--j:2"/><rect class="mod m120" x="1.17" y="5.93" width="0.45" height="1.2" style="--j:3"/><rect class="mod m120" x="1.67" y="5.93" width="0.45" height="1.2" style="--j:4"/><rect class="mod m240" x="1.67" y="7.13" width="0.45" height="2.4" style="--j:5"/><rect class="mod m240" x="2.17" y="7.13" width="0.45" height="2.4" style="--j:6"/><rect class="mod m120" x="2.17" y="5.93" width="0.45" height="1.2" style="--j:7"/><rect class="mod m120" x="2.67" y="5.93" width="0.45" height="1.2" style="--j:8"/><rect class="mod m240" x="2.67" y="7.13" width="0.45" height="2.4" style="--j:9"/><rect class="mod m240" x="3.17" y="7.13" width="0.45" height="2.4" style="--j:10"/><rect class="mod m120" x="3.17" y="5.93" width="0.45" height="1.2" style="--j:11"/></g><g class="cir" data-c="6" style="--k:6"><rect class="mod m240" x="0.8" y="1.62" width="0.45" height="2.4" style="--j:0"/><rect class="mod m86" x="0.8" y="0.76" width="0.45" height="0.86" style="--j:1"/><rect class="mod m86" x="1.3" y="0.76" width="0.45" height="0.86" style="--j:2"/><rect class="mod m240" x="1.3" y="1.62" width="0.45" height="2.4" style="--j:3"/><rect class="mod m240" x="1.8" y="1.62" width="0.45" height="2.4" style="--j:4"/><rect class="mod m86" x="1.8" y="0.76" width="0.45" height="0.86" style="--j:5"/><rect class="mod m86" x="2.3" y="0.76" width="0.45" height="0.86" style="--j:6"/><rect class="mod m240" x="2.3" y="1.62" width="0.45" height="2.4" style="--j:7"/><rect class="mod m240" x="2.8" y="1.62" width="0.45" height="2.4" style="--j:8"/><rect class="mod m86" x="2.8" y="0.76" width="0.45" height="0.86" style="--j:9"/><rect class="mod m86" x="3.3" y="0.76" width="0.45" height="0.86" style="--j:10"/><rect class="mod m240" x="3.3" y="1.62" width="0.45" height="2.4" style="--j:11"/></g><g class="cir" data-c="7" style="--k:7"><rect class="mod m120" x="4.18" y="2.69" width="0.45" height="1.2" style="--j:0"/><rect class="mod m86" x="4.18" y="1.83" width="0.45" height="0.86" style="--j:1"/><rect class="mod m86" x="4.68" y="1.83" width="0.45" height="0.86" style="--j:2"/><rect class="mod m120" x="4.68" y="2.69" width="0.45" height="1.2" style="--j:3"/><rect class="mod m120" x="5.18" y="2.69" width="0.45" height="1.2" style="--j:4"/></g><g class="cir" data-c="8" style="--k:8"><rect class="mod m86" x="6.23" y="2.01" width="0.45" height="0.86" style="--j:0"/><rect class="mod m86" x="6.73" y="2.01" width="0.45" height="0.86" style="--j:1"/><rect class="mod m86" x="7.23" y="2.01" width="0.45" height="0.86" style="--j:2"/></g><g class="cir" data-c="9" style="--k:9"><rect class="mod m86" x="6.24" y="3.57" width="0.86" height="0.45" style="--j:0"/><rect class="mod m86" x="7.11" y="3.57" width="0.86" height="0.45" style="--j:1"/></g><g class="cir" data-c="10" style="--k:10"><rect class="mod m240" x="2.4" y="4.5" width="2.4" height="0.45" style="--j:0"/><rect class="mod m120" x="4.8" y="4.5" width="1.2" height="0.45" style="--j:1"/><rect class="mod m120" x="4.8" y="5" width="1.2" height="0.45" style="--j:2"/><rect class="mod m240" x="2.4" y="5" width="2.4" height="0.45" style="--j:3"/></g></g><g class="p-tubi"><g class="cir" data-c="0" style="--k:0"><path class="t man" pathLength="1" d="M1.82,5.29L1.97,5.29 1.97,5.28 1.78,5.28 1.78,5.17 1.62,5.17 1.62,5.72 1.88,5.72 1.88,9.67 3.82,9.67 3.82,9.72 10.29,9.72 10.29,9.51"/><path class="t rit" pathLength="1" d="M11.37,3.86L11.37,3.73M11.38,3.77L11.38,3.9M11.38,3.98L11.38,4.11M11.38,4.2L11.38,4.33M11.38,4.41L11.38,4.54M11.38,4.63L11.38,4.76M11.38,4.84L11.38,4.97M11.38,5.06L11.38,5.19M11.38,5.27L11.38,5.4M11.38,5.49L11.38,5.62M11.38,5.7L11.38,5.83M11.38,5.92L11.38,6.05M11.38,6.13L11.38,6.26M11.38,6.35L11.38,6.48M11.38,6.56L11.38,6.69M11.38,6.78L11.38,6.91M11.38,6.99L11.38,7.12M11.38,7.21L11.38,7.34M11.38,7.42L11.38,7.55M11.38,7.64L11.38,7.77M11.38,7.85L11.38,7.98M11.38,8.07L11.38,8.2M11.38,8.28L11.38,8.41M11.38,8.5L11.38,8.63M11.38,8.71L11.38,8.84M11.38,8.93L11.38,9.06M11.38,9.14L11.38,9.27M11.38,9.36L11.38,9.49M11.38,9.57L11.38,9.62 11.3,9.62M11.21,9.62L11.08,9.62M11,9.62L10.87,9.62M10.78,9.62L10.65,9.62M10.57,9.62L10.44,9.62M10.35,9.62L10.22,9.62M10.14,9.62L10.01,9.62M9.92,9.62L9.82,9.62 9.82,9.66M9.81,9.72L9.68,9.72M9.59,9.72L9.46,9.72M9.38,9.72L9.25,9.72M9.16,9.72L9.03,9.72M8.95,9.72L8.82,9.72M8.73,9.72L8.6,9.72M8.52,9.72L8.39,9.72M8.3,9.72L8.17,9.72M8.09,9.72L7.96,9.72M7.87,9.72L7.74,9.72M7.66,9.72L7.53,9.72M7.44,9.72L7.31,9.72M7.23,9.72L7.1,9.72M7.01,9.72L6.88,9.72M6.8,9.72L6.67,9.72M6.58,9.72L6.53,9.72 6.53,9.78 6.5,9.78M6.42,9.78L6.29,9.78M6.2,9.78L6.07,9.78M5.99,9.78L5.97,9.78 5.97,9.72 5.91,9.72M5.82,9.72L5.69,9.72M5.61,9.72L5.48,9.72M5.39,9.72L5.26,9.72M5.18,9.72L5.05,9.72M4.96,9.72L4.83,9.72M4.75,9.72L4.62,9.72M4.53,9.72L4.4,9.72M4.32,9.72L4.19,9.72M4.15,9.78L4.02,9.78M3.94,9.78L3.81,9.78M3.77,9.72L3.64,9.72M3.56,9.72L3.43,9.72M3.34,9.72L3.21,9.72M3.13,9.72L3,9.72M2.91,9.72L2.78,9.72M2.7,9.72L2.57,9.72M2.48,9.72L2.35,9.72M2.27,9.72L2.14,9.72M2.05,9.72L1.92,9.72M1.84,9.72L1.82,9.72 1.82,9.61M1.82,9.52L1.82,9.39M1.82,9.31L1.82,9.18M1.82,9.09L1.82,8.96M1.82,8.88L1.82,8.75M1.82,8.66L1.82,8.53M1.82,8.45L1.82,8.32M1.82,8.23L1.82,8.1M1.82,8.02L1.82,7.89M1.82,7.8L1.82,7.67M1.82,7.59L1.82,7.46M1.82,7.37L1.82,7.24M1.82,7.16L1.82,7.03M1.82,6.94L1.82,6.81M1.82,6.73L1.82,6.6M1.82,6.51L1.82,6.38M1.82,6.3L1.82,6.17M1.82,6.08L1.82,5.95M1.82,5.87L1.82,5.74M1.85,5.67L1.98,5.67M2.02,5.63L2.02,5.5M2.02,5.41L2.02,5.28M1.95,5.26L1.87,5.26"/></g><g class="cir" data-c="1" style="--k:1"><path class="t man" pathLength="1" d="M1.82,5.34L1.97,5.34 1.97,5.32 1.88,5.32 1.88,5.12 0.92,5.12 0.92,3.72 5.38,3.72 5.38,2.47 7.42,2.47 7.42,1.82 7.92,1.82 7.92,3.7 8.87,3.7 8.87,3.86"/><path class="t rit" pathLength="1" d="M9.79,9.51L9.79,9.64M9.74,9.67L9.61,9.67M9.52,9.67L9.39,9.67M9.31,9.67L9.18,9.67M9.09,9.67L8.96,9.67M8.88,9.67L8.75,9.67M8.66,9.67L8.53,9.67M8.45,9.67L8.32,9.67M8.23,9.67L8.1,9.67M8.02,9.67L7.89,9.67M7.8,9.67L7.67,9.67M7.59,9.67L7.46,9.67M7.37,9.67L7.24,9.67M7.16,9.67L7.03,9.67M6.94,9.67L6.81,9.67M6.73,9.67L6.6,9.67M6.51,9.67L6.38,9.67M6.3,9.67L6.17,9.67M6.08,9.67L5.95,9.67M5.87,9.67L5.74,9.67M5.65,9.67L5.52,9.67M5.44,9.67L5.31,9.67M5.22,9.67L5.09,9.67M5.01,9.67L4.88,9.67M4.79,9.67L4.66,9.67M4.58,9.67L4.45,9.67M4.36,9.67L4.23,9.67M4.15,9.67L4.02,9.67M3.97,9.63L3.97,9.5M3.97,9.42L3.97,9.29M3.97,9.2L3.97,9.07M3.97,8.99L3.97,8.86M3.97,8.77L3.97,8.64M3.97,8.56L3.97,8.43M3.97,8.34L3.97,8.21M3.97,8.13L3.97,8M3.97,7.91L3.97,7.78M3.9,7.78L3.77,7.78M3.68,7.78L3.55,7.78M3.47,7.78L3.34,7.78M3.25,7.78L3.12,7.78M3.04,7.78L2.91,7.78M2.82,7.78L2.69,7.78M2.61,7.78L2.48,7.78M2.39,7.78L2.26,7.78M2.18,7.78L2.05,7.78M1.96,7.78L1.92,7.78 1.92,7.68M1.92,7.6L1.92,7.47M1.92,7.38L1.92,7.25M1.92,7.17L1.92,7.04M1.92,6.95L1.92,6.82M1.92,6.74L1.92,6.61M1.92,6.52L1.92,6.39M1.92,6.31L1.92,6.18M1.92,6.09L1.92,5.96M1.92,5.88L1.92,5.75M1.92,5.66L1.92,5.53M1.92,5.45L1.92,5.32 1.93,5.32M2.02,5.32L2.02,5.31 1.9,5.31"/></g><g class="cir" data-c="2" style="--k:2"><path class="t man" pathLength="1" d="M1.82,5.39L1.97,5.39 1.97,5.32 6.17,5.32 6.17,4.56 6.87,4.56 6.87,4.71"/><path class="t rit" pathLength="1" d="M8.37,4.71L8.37,4.58M8.31,4.56L8.18,4.56M8.09,4.56L7.96,4.56M7.88,4.56L7.75,4.56M7.66,4.56L7.53,4.56M7.45,4.56L7.32,4.56M7.23,4.56L7.1,4.56M7.02,4.56L6.92,4.56 6.92,4.53M6.84,4.53L6.71,4.53M6.63,4.53L6.5,4.53M6.42,4.54L6.42,4.62 6.38,4.62M6.3,4.62L6.22,4.62 6.22,4.68M6.22,4.77L6.22,4.9M6.22,4.98L6.22,5.11M6.22,5.2L6.22,5.33M6.19,5.38L6.06,5.38M5.97,5.38L5.84,5.38M5.76,5.38L5.63,5.38M5.54,5.38L5.41,5.38M5.33,5.38L5.2,5.38M5.11,5.38L4.98,5.38M4.9,5.38L4.77,5.38M4.68,5.38L4.55,5.38M4.47,5.38L4.34,5.38M4.25,5.38L4.17,5.38 4.17,5.32 4.17,5.32M4.09,5.32L3.96,5.32M3.87,5.32L3.74,5.32M3.66,5.32L3.53,5.32M3.44,5.32L3.31,5.32M3.23,5.32L3.1,5.32M3.01,5.32L2.88,5.32M2.8,5.32L2.67,5.32M2.58,5.32L2.45,5.32M2.37,5.32L2.24,5.32M2.15,5.32L2.02,5.32M1.98,5.36L1.87,5.36"/></g><g class="cir" data-c="3" style="--k:3"><path class="t man" pathLength="1" d="M1.82,5.44L4.07,5.44 4.07,6.11 4.24,6.11"/><path class="t rit" pathLength="1" d="M5.96,7.19L6.09,7.19M6.06,7.17L5.93,7.17M5.84,7.17L5.71,7.17M5.63,7.17L5.5,7.17M5.41,7.17L5.28,7.17M5.2,7.17L5.07,7.17M4.98,7.17L4.85,7.17M4.77,7.17L4.64,7.17M4.55,7.17L4.42,7.17M4.34,7.17L4.21,7.17M4.12,7.17L4.12,7.04M4.12,6.96L4.12,6.83M4.12,6.74L4.12,6.61M4.12,6.53L4.12,6.4M4.12,6.31L4.12,6.18M4.12,6.1L4.12,5.97M4.12,5.88L4.12,5.75M4.12,5.67L4.12,5.54M4.12,5.45L4.12,5.38 4.07,5.38M3.99,5.38L3.86,5.38M3.77,5.38L3.64,5.38M3.56,5.38L3.43,5.38M3.34,5.38L3.21,5.38M3.13,5.38L3,5.38M2.91,5.38L2.78,5.38M2.7,5.38L2.57,5.38M2.48,5.38L2.35,5.38M2.27,5.38L2.14,5.38M2.05,5.38L2.02,5.38 2.02,5.41 1.96,5.41M1.88,5.41L1.87,5.41"/></g><g class="cir" data-c="4" style="--k:4"><path class="t man" pathLength="1" d="M1.82,5.49L4.03,5.49 4.03,8.22 4.24,8.22"/><path class="t rit" pathLength="1" d="M5.96,9.3L6.09,9.3M6.07,9.28L5.94,9.28M5.85,9.28L5.72,9.28M5.64,9.28L5.51,9.28M5.42,9.28L5.29,9.28M5.21,9.28L5.08,9.28M4.99,9.28L4.86,9.28M4.78,9.28L4.65,9.28M4.56,9.28L4.43,9.28M4.35,9.28L4.22,9.28M4.13,9.28L4.07,9.28 4.07,9.2M4.07,9.12L4.07,8.99M4.07,8.9L4.07,8.77M4.07,8.69L4.07,8.56M4.07,8.47L4.07,8.34M4.07,8.26L4.07,8.13M4.07,8.04L4.07,7.91M4.07,7.83L4.07,7.7M4.07,7.61L4.07,7.48M4.07,7.4L4.07,7.27M4.07,7.18L4.07,7.05M4.07,6.97L4.07,6.84M4.07,6.75L4.07,6.62M4.07,6.54L4.07,6.41M4.07,6.32L4.07,6.19M4.01,6.17L3.97,6.17 3.97,6.08M3.97,5.99L3.97,5.86M3.97,5.78L3.97,5.65M3.97,5.56L3.97,5.53 3.88,5.53M3.8,5.53L3.67,5.53M3.58,5.53L3.45,5.53M3.37,5.53L3.24,5.53M3.15,5.53L3.02,5.53M2.94,5.53L2.81,5.53M2.72,5.53L2.59,5.53M2.51,5.53L2.38,5.53M2.29,5.53L2.16,5.53M2.08,5.53L2.02,5.53 2.02,5.46 2.01,5.46M1.92,5.46L1.87,5.46"/></g><g class="cir" data-c="5" style="--k:5"><path class="t man" pathLength="1" d="M1.82,5.54L1.97,5.54 1.97,5.78 0.94,5.78 0.94,5.93"/><path class="t rit" pathLength="1" d="M3.44,5.93L3.44,5.8M3.38,5.78L3.25,5.78M3.16,5.78L3.03,5.78M2.95,5.78L2.82,5.78M2.73,5.78L2.6,5.78M2.52,5.78L2.39,5.78M2.3,5.78L2.17,5.78M2.09,5.78L2.03,5.78 2.03,5.71M2.03,5.62L2.03,5.51 2,5.51M1.92,5.51L1.87,5.51"/></g><g class="cir" data-c="6" style="--k:6"><path class="t man" pathLength="1" d="M1.82,4.82L1.97,4.82 1.97,4.82 1.78,4.82 1.78,4.47 0.98,4.47 0.98,4.02"/><path class="t rit" pathLength="1" d="M3.48,4.02L3.48,4.15M3.42,4.17L3.29,4.17M3.21,4.17L3.08,4.17M2.99,4.17L2.86,4.17M2.78,4.17L2.65,4.17M2.56,4.17L2.43,4.17M2.35,4.17L2.22,4.17M2.13,4.17L2,4.17M1.92,4.17L1.79,4.17M1.7,4.17L1.57,4.17M1.49,4.17L1.36,4.17M1.27,4.17L1.14,4.17M1.06,4.17L1.03,4.17 1.03,4.27M1.03,4.36L1.03,4.42 1.09,4.42M1.17,4.42L1.3,4.42M1.39,4.42L1.52,4.42M1.6,4.42L1.73,4.42M1.82,4.42L1.82,4.42 1.82,4.55M1.82,4.63L1.82,4.76M1.9,4.78L2.02,4.78 2.02,4.79M1.94,4.8L1.87,4.8"/></g><g class="cir" data-c="7" style="--k:7"><path class="t man" pathLength="1" d="M1.82,4.87L1.97,4.87 1.92,4.87 1.92,4.22 3.82,4.22 3.82,4.04 4.36,4.04 4.36,3.89"/><path class="t rit" pathLength="1" d="M5.44,2.69L5.44,2.56M5.42,2.59L5.42,2.72M5.42,2.8L5.42,2.93M5.42,3.02L5.42,3.15M5.42,3.23L5.42,3.36M5.42,3.45L5.42,3.58M5.42,3.66L5.42,3.79M5.42,3.88L5.42,3.97 5.39,3.97M5.31,3.97L5.18,3.97M5.09,3.97L4.96,3.97M4.88,3.97L4.75,3.97M4.66,3.97L4.53,3.97M4.45,3.97L4.32,3.97M4.23,3.97L4.1,3.97M4.02,3.97L3.89,3.97M3.8,3.97L3.78,3.97 3.78,4.08M3.78,4.16L3.78,4.29M3.72,4.32L3.59,4.32M3.51,4.32L3.38,4.32M3.29,4.32L3.16,4.32M3.08,4.32L2.95,4.32M2.86,4.32L2.73,4.32M2.65,4.32L2.52,4.32M2.43,4.32L2.3,4.32M2.22,4.32L2.09,4.32M2,4.32L1.97,4.32 1.97,4.43M1.97,4.51L1.97,4.64M1.97,4.73L1.97,4.85 1.99,4.85M1.96,4.85L1.87,4.85"/></g><g class="cir" data-c="8" style="--k:8"><path class="t man" pathLength="1" d="M1.82,4.92L2.03,4.92 2.03,4.47 6.03,4.47 6.03,3.03 6.41,3.03 6.41,2.88"/><path class="t rit" pathLength="1" d="M7.49,2.01L7.49,1.88M7.47,1.91L7.47,2.04M7.47,2.12L7.47,2.25M7.47,2.34L7.47,2.47M7.47,2.55L7.47,2.68M7.47,2.77L7.47,2.9M7.47,2.98L7.47,3.07 7.44,3.07M7.35,3.07L7.22,3.07M7.14,3.07L7.01,3.07M6.92,3.07L6.79,3.07M6.71,3.07L6.58,3.07M6.49,3.07L6.36,3.07M6.28,3.07L6.15,3.07M6.06,3.07L5.97,3.07 5.97,3.12M5.97,3.2L5.97,3.33M5.97,3.42L5.97,3.55M5.97,3.63L5.97,3.76M5.97,3.85L5.97,3.98M5.97,4.06L5.97,4.19M5.97,4.28L5.97,4.41M5.9,4.42L5.77,4.42M5.69,4.42L5.56,4.42M5.47,4.42L5.34,4.42M5.26,4.42L5.13,4.42M5.04,4.42L4.91,4.42M4.83,4.42L4.7,4.42M4.61,4.42L4.48,4.42M4.4,4.42L4.27,4.42M4.18,4.42L4.05,4.42M3.97,4.42L3.84,4.42M3.75,4.42L3.62,4.42M3.54,4.42L3.41,4.42M3.32,4.42L3.19,4.42M3.11,4.42L2.98,4.42M2.89,4.42L2.76,4.42M2.68,4.42L2.55,4.42M2.46,4.42L2.33,4.42M2.25,4.42L2.12,4.42M2.07,4.46L2.07,4.59M2.07,4.68L2.07,4.81M2.07,4.89L2.07,4.9 1.95,4.9"/></g><g class="cir" data-c="9" style="--k:9"><path class="t man" pathLength="1" d="M1.82,4.97L1.97,4.97 1.97,5.22 6.07,5.22 6.07,3.76 6.24,3.76"/><path class="t rit" pathLength="1" d="M7.97,3.84L8.1,3.84M8.12,3.89L8.12,4.02M8.09,4.07L7.96,4.07M7.88,4.07L7.75,4.07M7.66,4.07L7.53,4.07M7.45,4.07L7.32,4.07M7.23,4.07L7.1,4.07M7.02,4.07L6.89,4.07M6.8,4.07L6.67,4.07M6.59,4.07L6.46,4.07M6.37,4.07L6.24,4.07M6.16,4.07L6.12,4.07 6.12,4.17M6.12,4.26L6.12,4.39M6.12,4.47L6.12,4.6M6.12,4.69L6.12,4.82M6.12,4.9L6.12,5.03M6.12,5.12L6.12,5.25M6.07,5.28L5.94,5.28M5.85,5.28L5.72,5.28M5.64,5.28L5.51,5.28M5.42,5.28L5.29,5.28M5.21,5.28L5.08,5.28M4.99,5.28L4.86,5.28M4.78,5.28L4.65,5.28M4.56,5.28L4.43,5.28M4.35,5.28L4.22,5.28M4.13,5.28L4,5.28M3.92,5.28L3.79,5.28M3.7,5.28L3.57,5.28M3.49,5.28L3.36,5.28M3.27,5.28L3.14,5.28M3.06,5.28L2.93,5.28M2.84,5.28L2.71,5.28M2.63,5.28L2.5,5.28M2.41,5.28L2.28,5.28M2.2,5.28L2.07,5.28M1.98,5.28L1.92,5.28 1.92,5.2M1.92,5.12L1.92,4.99M1.95,4.92L2.02,4.92 2.02,4.95 1.98,4.95M1.89,4.95L1.87,4.95"/></g><g class="cir" data-c="10" style="--k:10"><path class="t man" pathLength="1" d="M1.82,5.02L1.97,5.02 1.97,4.69 2.4,4.69"/><path class="t rit" pathLength="1" d="M2.4,5.19L2.27,5.19M2.25,5.12L2.25,4.99M2.25,4.91L2.25,4.78M2.22,4.72L2.09,4.72M2.03,4.74L2.03,4.87M2.03,4.96L2.03,5 1.93,5"/></g></g><g class="p-coll"><rect class="coll" x="1.64" y="5.22" width="0.23" height="0.37" rx="0.04"/><text class="et-coll" x="1.78" y="5.08">C1</text><rect class="coll" x="1.64" y="4.75" width="0.23" height="0.37" rx="0.04"/><text class="et-coll" x="1.78" y="4.61">C2</text></g><g class="p-et"><text x="2.27" y="2.41">Camera 1</text><text x="4.66" y="2.95">Bagno</text><text x="6.87" y="2.39">WC</text><text x="7.22" y="3.89">Anti WC</text><text x="9.15" y="7.23">Cucina</text><text x="4.82" y="8.79">Ripostiglio 1</text><text x="2.11" y="7.63">Camera 2</text><text x="1.19" y="5.13">Ripostiglio 2</text><text x="4.24" y="5.02">Corridoio</text><text x="4.82" y="6.94">Cabina armadio</text></g></svg></div><div class="kpi" role="list"><div role="listitem"><b class="num"><span class="n" data-n="11" data-dec="0">11</span></b><span>circuiti a ritorno inverso</span></div><div role="listitem"><b class="num"><span class="n" data-n="76" data-dec="0">76</span></b><span>moduli posati</span></div><div role="listitem"><b class="num"><span class="n" data-n="0" data-dec="0">0</span></b><span>incroci fra i tubi</span></div><div role="listitem"><b class="num"><span class="n" data-n="54.7" data-dec="1">54,7</span></b><span>m² di superficie attiva</span></div></div>
+<!-- pianta:fine -->
+        </figure>
+        <div class="oggetto" id="oggetto">
+          <div class="fluttua">
+            <div class="inclina" id="inclina">
+              <img src="img/radius-r-640.webp" srcset="img/radius-r-640.webp 640w, img/radius-r-1100.webp 1100w" sizes="(max-width: 900px) 40vw, 240px" width="1100" height="853" alt="Il marchio di Capomastro: la C, un tubo in rame che si avvolge a partire dal serpentino di un modulo radiante, su un'orditura di profili a C, con gli attacchi di mandata e ritorno">
+              <div class="luce" aria-hidden="true"><i></i></div>
+            </div>
           </div>
         </div>
       </div>
@@ -511,37 +896,55 @@
 
     <div class="contenitore">
       <div class="fiducia" role="list">
-        <div role="listitem"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><span><b>Tutto offline</b>Disegni e progetti restano sul computer</span></div>
-        <div role="listitem"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Disegno intatto</b>Il DWG dell'architetto non si tocca</span></div>
-        <div role="listitem"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span><b>Solo prezzi veri</b>Il tuo listino e i prezzari regionali</span></div>
-        <div role="listitem"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><span><b>Si aggiorna da solo</b>Programma, ODA e prezzario, firmati</span></div>
+        <div role="listitem"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><span><b>Tutto offline</b>Disegni e progetti restano sul computer</span></div>
+        <div role="listitem"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Disegno intatto</b>Il DWG dell'architetto non si tocca</span></div>
+        <div role="listitem"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span><b>Solo prezzi veri</b>Il tuo listino e i prezzari regionali</span></div>
+        <div role="listitem"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg><span><b>Si aggiorna da solo</b>Programma, ODA e prezzario, firmati</span></div>
       </div>
     </div>
   </section>
 
-  <section class="blocco" id="moduli" aria-labelledby="titolo-moduli" style="padding-bottom:0">
+  <section class="numeri" aria-label="Il programma in numeri">
+    <div class="contenitore">
+      <div class="numeri-riga cascata">
+        <div><b class="num"><span class="n" data-n="3">3</span></b><span>formati di modulo: 240, 120 e 86</span></div>
+        <div><b class="num"><span class="n" data-n="12">12</span></b><span>passi guidati, dalla lettura al progetto</span></div>
+        <div><b class="num"><span class="n" data-n="2">2</span></b><span>moduli in un solo programma</span></div>
+        <div><b class="num"><small>da</small> <span class="n" data-n="49">49</span><small>&nbsp;€</small></b><span>al mese con la licenza di un anno, IVA esclusa</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blocco" id="moduli" aria-labelledby="titolo-moduli">
     <div class="contenitore">
       <div class="testa rivela">
         <div class="occhiello">Due moduli</div>
         <h2 class="titolo" id="titolo-moduli">Un programma, due modi di progettare.</h2>
         <p>Ogni modulo ha il suo percorso guidato, i suoi elaborati e la sua licenza. Se hai tutti e due, scegli all'avvio quale usare e puoi passare dall'uno all'altro con lo stesso disegno.</p>
       </div>
-      <div class="griglia due rivela">
-        <div class="carta">
-          <div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg></div>
+      <div class="moduli-griglia cascata">
+        <div class="carta modulo">
+          <div class="ic" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg></div>
           <h3>Capomastro · Soffitti radianti</h3>
           <p>Dal DWG dell'architetto a struttura, moduli, circuiti a ritorno inverso, collettori, centrale e regolazione: tavole A1, preventivo e computo.</p>
-          <figure class="finestra" style="margin:18px 0 0">
+          <p class="modulo-nota">Superficie attiva e copertura sempre in vista, circuiti e collettori senza incroci: lo vedi sulla pianta mentre lavori.</p>
+          <ul class="chip" aria-label="Che cosa produce">
+            <li>Struttura e moduli</li><li>Circuiti a ritorno inverso</li><li>Centrale e regolazione</li><li>Tavole A1</li><li>Preventivo e computo</li>
+          </ul>
+          <figure class="finestra modulo-fondo">
             <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>Pannelli · Posa e orientamento</span></div>
             <img src="img/pannelli-960.webp" srcset="img/pannelli-960.webp 960w, img/pannelli-1600.webp 1600w" sizes="(max-width: 900px) 86vw, 520px" width="1600" height="1000" loading="lazy" decoding="async" alt="Soffitti radianti: la posa dei moduli nei locali del progetto d'esempio, con la superficie attiva e la copertura">
           </figure>
         </div>
-        <div class="carta">
-          <div class="ic rame" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M3 12h18M3 16h18M9 8v13M15 8v13"/></svg></div>
+        <div class="carta modulo">
+          <div class="ic rame" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M3 12h18M3 16h18M9 8v13M15 8v13"/></svg></div>
           <h3>Capomastro · Cartongesso</h3>
           <p>Pareti, contropareti e controsoffitti disegnati sulla pianta o dai lati di un locale; orditura, lastre e viti dai dati del produttore, con edizione e fonte. Tavole CG-01…CG-03, preventivo e computo.</p>
           <p class="modulo-nota">Un precontrollo a tre stati sui dati documentati, mai un «conforme»: la verifica strutturale resta del progettista.</p>
-          <figure class="finestra" style="margin:18px 0 0">
+          <ul class="chip" aria-label="Che cosa produce">
+            <li>Pareti</li><li>Contropareti</li><li>Controsoffitti</li><li>Tavole CG-01…CG-03</li><li>Preventivo e computo</li>
+          </ul>
+          <figure class="finestra modulo-fondo">
             <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>Controsoffitti · Progetto_Rossi.dwg</span></div>
             <img src="img/cartongesso-960.webp" srcset="img/cartongesso-960.webp 960w, img/cartongesso-1600.webp 1600w" sizes="(max-width: 900px) 86vw, 520px" width="1600" height="1000" loading="lazy" decoding="async" alt="Cartongesso: i controsoffitti dei locali del progetto d'esempio con l'orditura e il pannello dei dati del sistema">
           </figure>
@@ -550,7 +953,7 @@
     </div>
   </section>
 
-  <section class="blocco" id="funzioni" aria-labelledby="titolo-funzioni">
+  <section class="blocco banda" id="funzioni" aria-labelledby="titolo-funzioni">
     <div class="contenitore">
       <div class="testa rivela">
         <div class="occhiello">Come funziona</div>
@@ -558,9 +961,40 @@
         <p>Rispondi a poche domande: il programma progetta, tu controlli e correggi sulla pianta. Ogni modifica si annulla con un tasto.</p>
       </div>
 
-      <article class="funzione rivela">
-        <div class="testo">
-          <span class="numero" aria-hidden="true">1</span>
+      <div class="percorso" id="percorso">
+        <div class="scena">
+          <div class="scena-fissa">
+            <div class="traccia" aria-hidden="true">
+              <ol class="passi12" aria-label="I dodici passi del percorso"><li><span class="sr">Lettura</span></li><li><span class="sr">D1</span></li><li><span class="sr">D2</span></li><li><span class="sr">D3</span></li><li><span class="sr">Pannelli</span></li><li><span class="sr">D4</span></li><li><span class="sr">D5</span></li><li><span class="sr">D6</span></li><li><span class="sr">D7</span></li><li><span class="sr">D8</span></li><li><span class="sr">Anteprima</span></li><li><span class="sr">Genera</span></li></ol>
+              <p class="cap" id="cap-passi" aria-live="polite">Passo <b>1</b> di 12 · Lettura</p>
+            </div>
+            <div class="schermi">
+          <figure class="finestra schermo attivo" data-i="0">
+          <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>Riepilogo della lettura · Progetto_Rossi.dwg</span></div>
+          <img src="img/lettura-960.webp" srcset="img/lettura-960.webp 960w, img/lettura-1600.webp 1600w" sizes="(max-width: 980px) 92vw, 700px" width="1600" height="1000" decoding="async" alt="Riepilogo della lettura: la pianta del progetto d'esempio con i locali riconosciuti, le altezze e i dati da completare">
+        </figure>
+          <figure class="finestra schermo" data-i="1">
+          <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>Pannelli · Posa e orientamento</span></div>
+          <img src="img/pannelli-960.webp" srcset="img/pannelli-960.webp 960w, img/pannelli-1600.webp 1600w" sizes="(max-width: 980px) 92vw, 700px" width="1600" height="1000" loading="lazy" decoding="async" alt="Posa dei pannelli: moduli da 240, 120 e 86 nei locali, con la copertura e l'orientamento di ogni locale">
+        </figure>
+          <figure class="finestra schermo" data-i="2">
+          <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>D4 · Collettori</span></div>
+          <img src="img/collettori-960.webp" srcset="img/collettori-960.webp 960w, img/collettori-1600.webp 1600w" sizes="(max-width: 980px) 92vw, 700px" width="1600" height="1000" loading="lazy" decoding="async" alt="Collettori: i circuiti numerati nei locali e la posa dei tubi in corso">
+        </figure>
+          <figure class="finestra schermo" data-i="3">
+          <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>D5 · Centrale e linea primaria</span></div>
+          <img src="img/centrale-960.webp" srcset="img/centrale-960.webp 960w, img/centrale-1600.webp 1600w" sizes="(max-width: 980px) 92vw, 700px" width="1600" height="1000" loading="lazy" decoding="async" alt="Centrale e linea primaria: pompa di calore, gruppo di rilancio e linea verso il collettore sulla pianta del progetto d'esempio">
+        </figure>
+          <figure class="finestra schermo" data-i="4">
+          <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>Stampa elaborati grafici</span></div>
+          <img src="img/stampa-960.webp" srcset="img/stampa-960.webp 960w, img/stampa-1600.webp 1600w" sizes="(max-width: 980px) 92vw, 700px" width="1600" height="1000" loading="lazy" decoding="async" alt="Stampa degli elaborati: scelta delle tavole, anteprima, formato e scala">
+        </figure>
+            </div>
+          </div>
+        </div>
+        <div class="testi" id="testi-passi">
+        <article class="funzione attivo" data-i="0" data-passi="1" data-nomi="Lettura">
+          <div class="passo"><span class="numero" aria-hidden="true">1</span><span class="occhiello">Lettura</span></div>
           <h3>Legge il DWG dell'architetto</h3>
           <p>Locali, superfici, altezze, travi e aree NO RADIUS riconosciuti da soli, anche su più piani. Quello che manca lo completi sulla pianta, con un clic.</p>
           <ul>
@@ -568,16 +1002,9 @@
             <li>Unità di misura e altezze controllate prima di progettare</li>
             <li>Il disegno originale resta intatto</li>
           </ul>
-        </div>
-        <figure class="finestra" style="margin:0">
-          <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>Riepilogo della lettura · Progetto_Rossi.dwg</span></div>
-          <img src="img/lettura-960.webp" srcset="img/lettura-960.webp 960w, img/lettura-1600.webp 1600w" sizes="(max-width: 900px) 92vw, 680px" width="1600" height="1000" loading="lazy" decoding="async" alt="Riepilogo della lettura: la pianta del progetto d'esempio con i locali riconosciuti, le altezze e i dati da completare">
-        </figure>
-      </article>
-
-      <article class="funzione inversa rivela">
-        <div class="testo">
-          <span class="numero" aria-hidden="true">2</span>
+        </article>
+        <article class="funzione" data-i="1" data-passi="2-5" data-nomi="D1 · D2 · D3 · Pannelli">
+          <div class="passo"><span class="numero" aria-hidden="true">2</span><span class="occhiello">Pannelli</span></div>
           <h3>Posa struttura e moduli</h3>
           <p>Moduli radianti nei formati da 240, 120 e 86 posati locale per locale, con l'orientamento migliore e le file allineate; struttura con portanti, giunti e scavalchi delle travi.</p>
           <ul>
@@ -585,16 +1012,9 @@
             <li>Orientamento per locale, automatico o scelto da te</li>
             <li>Moduli, collettori e accessori dalla tua libreria di blocchi</li>
           </ul>
-        </div>
-        <figure class="finestra" style="margin:0">
-          <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>Pannelli · Posa e orientamento</span></div>
-          <img src="img/pannelli-960.webp" srcset="img/pannelli-960.webp 960w, img/pannelli-1600.webp 1600w" sizes="(max-width: 900px) 92vw, 680px" width="1600" height="1000" loading="lazy" decoding="async" alt="Posa dei pannelli: moduli da 240, 120 e 86 nei locali, con la copertura e l'orientamento di ogni locale">
-        </figure>
-      </article>
-
-      <article class="funzione rivela">
-        <div class="testo">
-          <span class="numero" aria-hidden="true">3</span>
+        </article>
+        <article class="funzione" data-i="2" data-passi="6" data-nomi="D4 · Collettori">
+          <div class="passo"><span class="numero" aria-hidden="true">3</span><span class="occhiello">Collettori</span></div>
           <h3>Circuiti e collettori, senza incroci</h3>
           <p>Circuiti a ritorno inverso numerati a ventaglio dal collettore, tubi a fascio ordinato. Sposti un collettore e i tubi si ricalcolano in sottofondo, mentre continui a lavorare.</p>
           <ul>
@@ -602,16 +1022,9 @@
             <li>Portata e lunghezza di ogni circuito sotto controllo</li>
             <li>Calcolo in un processo separato: la pianta resta fluida</li>
           </ul>
-        </div>
-        <figure class="finestra" style="margin:0">
-          <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>D4 · Collettori</span></div>
-          <img src="img/collettori-960.webp" srcset="img/collettori-960.webp 960w, img/collettori-1600.webp 1600w" sizes="(max-width: 900px) 92vw, 680px" width="1600" height="1000" loading="lazy" decoding="async" alt="Collettori: i circuiti numerati nei locali e la posa dei tubi in corso">
-        </figure>
-      </article>
-
-      <article class="funzione inversa rivela">
-        <div class="testo">
-          <span class="numero" aria-hidden="true">4</span>
+        </article>
+        <article class="funzione" data-i="3" data-passi="7-8" data-nomi="D5 · D6">
+          <div class="passo"><span class="numero" aria-hidden="true">4</span><span class="occhiello">Centrale</span></div>
           <h3>Centrale, linea primaria e colonne</h3>
           <p>Posizioni pompa di calore, accumulo e gruppo di rilancio, tracci la linea primaria a soffitto o a pavimento; poi il dimensionamento delle colonne come il foglio «COLONNE RA», con lo schema della rete in 3D e le curve delle pompe.</p>
           <ul>
@@ -619,16 +1032,9 @@
             <li>Diametri, portate, velocità e perdite di carico spiegati</li>
             <li>Gruppo di rilancio e accumulo fra i modelli adatti</li>
           </ul>
-        </div>
-        <figure class="finestra" style="margin:0">
-          <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>D5 · Centrale e linea primaria</span></div>
-          <img src="img/centrale-960.webp" srcset="img/centrale-960.webp 960w, img/centrale-1600.webp 1600w" sizes="(max-width: 900px) 92vw, 680px" width="1600" height="1000" loading="lazy" decoding="async" alt="Centrale e linea primaria: pompa di calore, gruppo di rilancio e linea verso il collettore sulla pianta del progetto d'esempio">
-        </figure>
-      </article>
-
-      <article class="funzione rivela">
-        <div class="testo">
-          <span class="numero" aria-hidden="true">5</span>
+        </article>
+        <article class="funzione" data-i="4" data-passi="9-12" data-nomi="D7 · D8 · Anteprima · Genera">
+          <div class="passo"><span class="numero" aria-hidden="true">5</span><span class="occhiello">Elaborati</span></div>
           <h3>Elaborati pronti, stampa per squadra</h3>
           <p>DWG e DXF dell'impianto con le tavole, preventivo e studio di fattibilità in PDF per il cliente, computo Excel con le formule. Stampi dalla A0 alla A4 le tavole che servono a ogni squadra.</p>
           <ul>
@@ -636,16 +1042,13 @@
             <li>Preventivo che vende: sintesi, piante e totali</li>
             <li>Prezzi dal tuo listino e dal prezzario della tua regione</li>
           </ul>
+        </article>
         </div>
-        <figure class="finestra" style="margin:0">
-          <div class="barretta" aria-hidden="true"><i></i><i></i><i></i><span>Stampa elaborati grafici</span></div>
-          <img src="img/stampa-960.webp" srcset="img/stampa-960.webp 960w, img/stampa-1600.webp 1600w" sizes="(max-width: 900px) 92vw, 680px" width="1600" height="1000" loading="lazy" decoding="async" alt="Stampa degli elaborati: scelta delle tavole, anteprima, formato e scala">
-        </figure>
-      </article>
+      </div>
     </div>
   </section>
 
-  <section class="blocco" id="tutorial" aria-labelledby="titolo-tutorial" style="padding-top:0">
+  <section class="blocco" id="tutorial" aria-labelledby="titolo-tutorial">
     <div class="contenitore">
       <div class="testa rivela">
         <div class="occhiello">Video tutorial</div>
@@ -655,7 +1058,14 @@
       <div class="rivela" id="tutorial-app">
         <div class="tutorial-schede" role="tablist" aria-label="Modulo del tutorial" id="tutorial-schede"></div>
         <div class="tutorial-corpo" id="lettore-tutorial" role="tabpanel" aria-live="polite">
-          <p class="rete" id="tutorial-attesa">Carico i tutorial…</p>
+          <div class="tutorial-scheletro" aria-hidden="true">
+            <div>
+              <div class="finestra"><div class="barretta"><i></i><i></i><i></i></div><div class="sk-schermo"></div></div>
+              <div class="tutorial-testa"><div class="sk-riga titolo"></div><div class="sk-riga"></div><div class="sk-riga"></div><div class="sk-riga corta"></div></div>
+            </div>
+            <div class="capitoli"></div>
+          </div>
+          <p class="sr" id="tutorial-attesa">Carico i tutorial…</p>
         </div>
         <noscript><p class="rete">Per vedere i video tutorial serve JavaScript attivo nel browser. Nel manuale d'uso trovi gli stessi passi con le schermate.</p></noscript>
       </div>
@@ -668,29 +1078,24 @@
           <h3 id="titolo-novita-video">Le ultime novità, un video alla volta.</h3>
           <p>Quando arriva una funzione importante c'è un video breve, dal più recente. Un clic lo porta nel lettore qui sopra, con i suoi capitoli.</p>
         </div>
-        <div class="novita-lista" id="novita-lista" aria-live="polite"></div>
+        <div class="novita-lista" id="novita-lista" aria-live="polite"><div class="novita-carta sk" aria-hidden="true"><div class="miniatura"></div><div class="corpo"><div class="sk-riga titolo"></div><div class="sk-riga"></div><div class="sk-riga corta"></div></div></div><div class="novita-carta sk" aria-hidden="true"><div class="miniatura"></div><div class="corpo"><div class="sk-riga titolo"></div><div class="sk-riga"></div><div class="sk-riga corta"></div></div></div><div class="novita-carta sk" aria-hidden="true"><div class="miniatura"></div><div class="corpo"><div class="sk-riga titolo"></div><div class="sk-riga"></div><div class="sk-riga corta"></div></div></div></div>
         <noscript><p class="rete">Per vedere i video delle novità serve JavaScript attivo nel browser.</p></noscript>
       </div>
     </div>
   </section>
 
-  <section class="blocco" id="novita-3-0" aria-labelledby="titolo-novita-3-0" style="padding-top:0">
+  <section class="blocco banda" id="novita-3-0" aria-labelledby="titolo-novita-3-0">
     <div class="contenitore">
       <div class="testa rivela">
         <div class="occhiello">Novità della 3.0</div>
         <h2 class="titolo" id="titolo-novita-3-0">Un programma, due moduli.</h2>
         <p>Il modulo Soffitti radianti è quello che conosci: regole, calcoli, prezzi ed elaborati non cambiano. Arriva il Cartongesso, con il suo percorso in otto passi. Chi ha già il programma si aggiorna da solo e ritrova licenza, listini e progetti.</p>
       </div>
-      <div class="griglia rivela">
-        <div class="carta">
+      <div class="bento cascata">
+        <div class="carta largo">
           <div class="ic rame" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-7h6v7M3 12h18"/></svg></div>
           <h3>Modulo Cartongesso</h3>
           <p>Pareti, contropareti e controsoffitti disegnati sulla pianta o dai lati di un locale; orditura, lastre e viti dai dati del produttore, con edizione e fonte.</p>
-        </div>
-        <div class="carta">
-          <div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="8" height="16" rx="2"/><rect x="13" y="4" width="8" height="16" rx="2"/></svg></div>
-          <h3>Due moduli, una licenza per ciascuno</h3>
-          <p>Scegli il modulo all'avvio e passa all'altro con lo stesso disegno. Ogni licenza vale per un modulo: prendi solo quello che ti serve.</p>
         </div>
         <div class="carta">
           <div class="ic acqua" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
@@ -703,21 +1108,26 @@
           <p>Le tavole A1 CG-01, CG-02 e CG-03, il preventivo per il cliente senza prezzi unitari e il computo in Excel con le formule.</p>
         </div>
         <div class="carta">
+          <div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="8" height="16" rx="2"/><rect x="13" y="4" width="8" height="16" rx="2"/></svg></div>
+          <h3>Due moduli, una licenza per ciascuno</h3>
+          <p>Scegli il modulo all'avvio e passa all'altro con lo stesso disegno. Ogni licenza vale per un modulo: prendi solo quello che ti serve.</p>
+        </div>
+        <div class="carta">
           <div class="ic acqua" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
           <h3>Prezzi dal prezzario, con la tua conferma</h3>
           <p>Ogni voce viene dal prezzario della tua regione, da una tua conferma o da un prezzo scritto da te con fonte e data. Gli oneri della sicurezza li dichiari tu.</p>
         </div>
-        <div class="carta">
+        <div class="carta largo">
           <div class="ic rame" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6a8 8 0 1 0 0 12"/></svg></div>
           <h3>Capomastro, con una C nuova</h3>
           <p>Nome e icona nuovi: la C in rame che nasce dal serpentino di un modulo radiante.</p>
         </div>
-        <div class="carta">
+        <div class="carta largo">
           <div class="ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5l5 2.5-5 2.5z" fill="currentColor"/></svg></div>
           <h3>Video tutorial</h3>
           <p>Un tutorial completo per ogni modulo, con i capitoli: guardi quello che ti serve, quando ti serve.</p>
         </div>
-        <div class="carta">
+        <div class="carta largo">
           <div class="ic acqua" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/><path d="M8 9h8M8 13h6"/></svg></div>
           <h3>Manuale e standard aggiornati</h3>
           <p>Il manuale ha il capitolo del Cartongesso e c'è lo standard per l'architetto anche per il Cartongesso: il disegno arriva già pronto.</p>
@@ -726,7 +1136,7 @@
     </div>
   </section>
 
-  <section class="blocco" id="licenze" aria-labelledby="titolo-licenze" style="padding-top:0">
+  <section class="blocco" id="licenze" aria-labelledby="titolo-licenze">
     <div class="contenitore">
       <div class="testa rivela">
         <div class="occhiello">Licenze</div>
@@ -744,7 +1154,7 @@
         <h3 class="nome-modulo">Modulo Soffitti radianti</h3>
         <p>Soffitti radianti a moduli: dal DWG dell'architetto a struttura, moduli, circuiti, elaborati e preventivo.</p>
       </div>
-      <div class="piani rivela" id="piani">
+      <div class="piani cascata" id="piani">
         <article class="piano" data-modulo="radius" data-giorni="30" data-prezzo="99" data-mese="99" data-progetti="5" data-help-desk-ore="0" data-risparmio="">
           <h3>1 mese</h3>
           <div class="prezzo">99<small>&nbsp;€</small></div>
@@ -779,7 +1189,7 @@
         <h3 class="nome-modulo">Modulo Cartongesso</h3>
         <p>Pareti, contropareti e controsoffitti in cartongesso. Si acquista a parte, con la sua licenza.</p>
       </div>
-      <div class="piani rivela" id="piani-cartongesso">
+      <div class="piani cascata" id="piani-cartongesso">
         <article class="piano" data-modulo="cartongesso" data-giorni="30" data-prezzo="69" data-mese="69" data-progetti="10" data-help-desk-ore="0" data-risparmio="">
           <h3>1 mese</h3>
           <div class="prezzo">69<small>&nbsp;€</small></div>
@@ -812,12 +1222,16 @@
       </div>
       <div class="in-tutte rivela" id="in-tutte" data-formazione-ore="1" data-tariffa-help-desk="25">
         <b class="etichetta">IN TUTTE LE LICENZE</b>
-        <span><b>Aggiornamenti sempre inclusi.</b> <b>Formazione:</b> 1 h di formazione generale all'uso, in videochiamata, con la simulazione della creazione di un progetto. <b>Help Desk:</b> oltre le ore comprese 25 €/h.</span>
+        <div class="pilastri">
+          <p><b>Aggiornamenti sempre inclusi.</b></p>
+          <p><b>Formazione:</b> 1 h di formazione generale all'uso, in videochiamata, con la simulazione della creazione di un progetto.</p>
+          <p><b>Help Desk:</b> oltre le ore comprese 25 €/h.</p>
+        </div>
       </div>
       <p class="note-licenze" id="note-licenze" data-sconto-secondo-pc="−30 %">Secondo computer dello stesso studio: −30 %. Prezzi IVA esclusa. Licenza legata al computer; internet serve solo per gli aggiornamenti.</p>
       <!-- R-233: la stessa frase del programma (csr.RICHIAMO_RESPONSABILITA); la confronta csr/tests/test_responsabilita_progettista.py -->
       <p class="note-licenze" id="note-responsabilita">Capomastro è uno strumento di supporto: propone e segnala, il progettista decide e verifica. Le scelte e le conferme del progettista, e i risultati che ne derivano, restano sotto la sua responsabilità, come stabilisce il contratto di licenza.</p>
-      <div class="attiva rivela">
+      <div class="attiva cascata">
         <div><b>Installa</b>Un solo setup per Windows, con ODA File Converter; sul Mac un dmg.</div>
         <div><b>Prova o attiva</b>Scegli la prova gratuita oppure invia il codice dispositivo che il programma ti mostra.</div>
         <div><b>Ricevi la chiave</b>Incollala nel programma e lavora: la licenza resta sul tuo computer.</div>
@@ -831,14 +1245,14 @@
     </div>
   </section>
 
-  <section class="blocco" id="requisiti" aria-labelledby="titolo-requisiti" style="padding-top:0">
+  <section class="blocco banda" id="requisiti" aria-labelledby="titolo-requisiti">
     <div class="contenitore">
       <div class="testa rivela">
         <div class="occhiello">Requisiti e installazione</div>
         <h2 class="titolo" id="titolo-requisiti">Windows o Mac, in tre minuti.</h2>
         <p>Un solo file da scaricare. Internet serve solo per gli aggiornamenti: il resto funziona offline.</p>
       </div>
-      <div class="sistemi rivela">
+      <div class="sistemi cascata">
         <section class="sistema" id="passi-win" aria-labelledby="titolo-win">
           <span class="tuo-etichetta">Il tuo sistema</span>
           <h3 id="titolo-win"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M3 5.1l7.4-1v7.2H3zM11.3 4l9.7-1.4v8.6h-9.7zM3 12.6h7.4v7.3L3 18.9zM11.3 12.6H21v8.7l-9.7-1.4z"/></svg>Windows</h3>
@@ -867,13 +1281,13 @@
     </div>
   </section>
 
-  <section class="blocco" id="documenti" aria-labelledby="titolo-documenti" style="padding-top:0;padding-bottom:clamp(24px,4vw,48px)">
+  <section class="blocco" id="documenti" aria-labelledby="titolo-documenti">
     <div class="contenitore">
       <div class="testa rivela">
         <div class="occhiello">Documenti</div>
         <h2 class="titolo" id="titolo-documenti">Tutto quello che serve sapere.</h2>
       </div>
-      <div class="documenti rivela">
+      <div class="documenti cascata">
         <a class="documento" href="documenti/Manuale_utente_Capomastro.pdf">
           <span class="ic" aria-hidden="true">PDF</span>
           <span><b>Manuale d'uso</b><span class="desc">Ogni passo con le schermate, dall'installazione alla stampa</span></span>
@@ -897,16 +1311,20 @@
 
 <footer>
   <div class="contenitore">
-    <a class="marchio" href="#">
-      <img src="img/icona-64.png" width="30" height="30" alt="" loading="lazy">
-      <span>Capomastro<small>Soffitti radianti e Cartongesso</small></span>
-    </a>
+    <div>
+      <a class="marchio" href="#scarica">
+        <img src="img/icona-64.png" width="32" height="32" alt="" loading="lazy">
+        <span>Capomastro<small>Soffitti radianti e Cartongesso</small></span>
+      </a>
+      <p class="piede-nota">Dal DWG dell'architetto a tavole, preventivo e computo, sul tuo computer.</p>
+    </div>
     <nav aria-label="Piè di pagina">
       <a href="#scarica">Scarica</a>
       <a href="#moduli">Moduli</a>
       <a href="#funzioni">Funzioni</a>
       <a href="#tutorial">Tutorial</a>
       <a href="#novita">Novità</a>
+      <a href="#novita-3-0">Novità della 3.0</a>
       <a href="#licenze">Licenze</a>
       <a href="#requisiti">Requisiti</a>
       <a href="documenti/Manuale_utente_Capomastro.pdf">Manuale</a>
@@ -921,14 +1339,13 @@
 <script>
 (function () {
   "use strict";
-  document.body.classList.remove("js-assente");
   var REPO = "iannelloservass-bot/radius-project";
   var NOME_WIN = "radius-project_install.exe";
   var NOME_MAC = "radius-project_mac.dmg";
   var ULTIMA = "https://github.com/" + REPO + "/releases/latest/download/";
   var $ = function (id) { return document.getElementById(id); };
   var quieto = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  // Nessuna navigazione automatica: il download parte solo da un clic sul pulsante, la pagina non si sposta da sola.
+  // Nessuna navigazione dello script: il download parte solo da un clic sul pulsante, la pagina non si sposta da sola.
 
   function sistema() {
     var ua = navigator.userAgent || "";
@@ -939,6 +1356,15 @@
     if (/mac/i.test(piattaforma) || /mac os x|macintosh/i.test(ua)) return "mac";
     return "altro";
   }
+
+  // la scheda del download ha subito la forma definitiva (i pulsanti che il sistema nasconde lo sono già): l'arrivo della risposta
+  // di GitHub cambia solo i testi e gli indirizzi, e non sposta la pagina (neppure l'ancora #novita)
+  (function () {
+    var os = sistema();
+    if (os === "windows") $("win").classList.add("nascosto");
+    else if (os === "mac") $("mac").classList.add("nascosto");
+    else $("principale").classList.add("nascosto");
+  })();
 
   function data(iso) {
     try { return new Date(iso).toLocaleDateString("it-IT", { day: "numeric", month: "long", year: "numeric" }); }
@@ -1013,6 +1439,77 @@
     rivela.forEach(function (el) { el.classList.add("vista"); });
   }
 
+  // --- barra in alto: vetro dopo la prima schermata, menu del telefono, sezione corrente --------------------------
+  // Tutto con IntersectionObserver e con eventi di clic e tastiera: nessun ascoltatore dello scorrimento, nessuna
+  // navigazione dello script (i collegamenti a #sezione li segue il browser, con scorrimento dolce solo se il movimento
+  // non è ridotto: vedi il CSS).
+  var barra = $("barra"), apri = $("apri-menu"), menu = $("menu"), cima = $("cima");
+  var aperto = false;
+  function impostaMenu(vuoi, rendiFocus) {
+    if (!barra || !apri || !menu || vuoi === aperto) return;
+    aperto = vuoi;
+    barra.classList.toggle("aperta", vuoi);
+    apri.setAttribute("aria-expanded", vuoi ? "true" : "false");
+    apri.setAttribute("aria-label", vuoi ? "Chiudi il menu" : "Apri il menu");
+    if (vuoi) {
+      var primo = menu.querySelector("a");
+      if (primo) primo.focus({ preventScroll: true });
+    } else if (rendiFocus) {
+      apri.focus({ preventScroll: true });
+    }
+  }
+  if (barra && apri && menu) {
+    apri.addEventListener("click", function () { impostaMenu(!aperto, true); });
+    menu.addEventListener("click", function (e) { if (e.target.closest && e.target.closest("a")) impostaMenu(false, false); });
+    document.addEventListener("click", function (e) { if (aperto && !barra.contains(e.target)) impostaMenu(false, false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && aperto) impostaMenu(false, true); });
+    barra.addEventListener("focusout", function (e) { if (aperto && e.relatedTarget && !barra.contains(e.relatedTarget)) impostaMenu(false, false); });
+    var largo = window.matchMedia ? window.matchMedia("(min-width: 981px)") : null;
+    if (largo && largo.addEventListener) largo.addEventListener("change", function () { if (largo.matches) impostaMenu(false, false); });
+  }
+  if (barra) {
+    if (osserva && cima) {
+      new IntersectionObserver(function (voci) { barra.classList.toggle("scorsa", !voci[0].isIntersecting); }).observe(cima);
+    } else {
+      barra.classList.add("scorsa");
+    }
+  }
+
+  // la sezione che si sta leggendo: una banda sottile a un terzo dell'altezza; fra i bersagli che la toccano vince l'ultimo
+  // in ordine di documento (#novita sta dentro #tutorial); l'eroe e i documenti non hanno una voce
+  var SEZIONI = [["scarica", ""], ["moduli", "moduli"], ["funzioni", "funzioni"], ["tutorial", "tutorial"], ["novita", "novita"],
+                 ["novita-3-0", "novita"], ["licenze", "licenze"], ["requisiti", "requisiti"], ["documenti", ""]];
+  var vociMenu = {}, dentro = {}, evidenziata = null, fermoFino = 0;
+  if (menu) {
+    [].forEach.call(menu.querySelectorAll('a[href^="#"]'), function (a) { vociMenu[a.getAttribute("href").slice(1)] = a; });
+  }
+  function evidenzia(link) {
+    if (link === evidenziata) return;
+    if (evidenziata) evidenziata.removeAttribute("aria-current");
+    evidenziata = link;
+    if (link) link.setAttribute("aria-current", "true");
+  }
+  function calcolaSezione() {
+    var scelta = null;
+    SEZIONI.forEach(function (s) { if (dentro[s[0]]) scelta = s[1] ? vociMenu[s[1]] || null : null; });
+    evidenzia(scelta);
+  }
+  if (osserva && menu) {
+    var spia = new IntersectionObserver(function (voci) {
+      voci.forEach(function (v) { dentro[v.target.id] = v.isIntersecting; });
+      if (Date.now() >= fermoFino) calcolaSezione();
+    }, { rootMargin: "-32% 0px -64% 0px" });
+    SEZIONI.forEach(function (s) { var e = $(s[0]); if (e) spia.observe(e); });
+    // dopo un clic la voce scelta resta accesa mentre la pagina scorre, senza passare per tutte quelle in mezzo
+    menu.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest("a");
+      if (!a) return;
+      fermoFino = Date.now() + 900;
+      evidenzia(a);
+      setTimeout(calcolaSezione, 950);
+    });
+  }
+
   var inclina = $("inclina"), oggetto = $("oggetto");
   if (!quieto && window.matchMedia("(pointer: fine)").matches) {
     var attesa = 0, px = 0, py = 0;
@@ -1033,6 +1530,135 @@
     new IntersectionObserver(function (voci) {
       voci.forEach(function (v) { vivo.classList.toggle("in-vista", v.isIntersecting); });
     }, { threshold: 0.2 }).observe(vivo);
+  }
+
+  // --- movimento diffuso (tutto con IntersectionObserver e puntatore: niente ascoltatori dello scorrimento) ---------------
+  var fine = !!(window.matchMedia && window.matchMedia("(pointer: fine)").matches);
+  var segui = function (fn) {  // chiama fn quando l'elemento entra in vista, una volta sola (subito se non c'è l'osservatore o il movimento è ridotto)
+    return function (el, soglia) {
+      if (!osserva || quieto) { fn(el); return; }
+      var o = new IntersectionObserver(function (voci) {
+        voci.forEach(function (v) { if (v.isIntersecting) { o.unobserve(v.target); fn(v.target); } });
+      }, { threshold: soglia || 0.2, rootMargin: "0px 0px -6% 0px" });
+      o.observe(el);
+    };
+  };
+  // a scheda nascosta le due animazioni continue dell'eroe si fermano
+  document.addEventListener("visibilitychange", function () { document.documentElement.classList.toggle("nascosta", document.hidden); });
+  // le animazioni continue della R girano solo mentre si vede
+  if (oggetto && osserva && !quieto) {
+    new IntersectionObserver(function (voci) {
+      voci.forEach(function (v) { oggetto.classList.toggle("in-vista", v.isIntersecting); });
+    }, { threshold: 0.1 }).observe(oggetto);
+  }
+  // cascata: ogni figlio entra con il suo ritardo
+  [].forEach.call(document.querySelectorAll(".cascata"), function (c) {
+    [].forEach.call(c.children, function (f, k) { f.style.setProperty("--i", k); });
+    segui(function (e) { e.classList.add("vista"); })(c, 0.15);
+  });
+  // contatori: solo numeri veri (data-n), dallo zero al valore quando si vedono
+  var contatore = segui(function (el) {
+    var fin = parseFloat(el.getAttribute("data-n")), dec = parseInt(el.getAttribute("data-dec") || "0", 10), t0 = 0;
+    if (isNaN(fin) || quieto || !window.requestAnimationFrame) return;
+    var testo = function (v) { return v.toLocaleString("it-IT", { minimumFractionDigits: dec, maximumFractionDigits: dec }); };
+    var passo = function (ts) {
+      if (!t0) t0 = ts;
+      var q = Math.min(1, (ts - t0) / 1100);
+      el.textContent = testo(fin * (1 - Math.pow(1 - q, 3)));
+      if (q < 1) requestAnimationFrame(passo);
+    };
+    el.textContent = testo(0);
+    requestAnimationFrame(passo);
+  });
+  [].forEach.call(document.querySelectorAll(".n[data-n]"), function (el) { contatore(el, 0.6); });
+  // la pianta dell'eroe: un circuito si accende al passaggio del puntatore (o al tocco) e gli altri si attenuano
+  var pianta = document.querySelector(".pianta");
+  if (pianta) {
+    segui(function (e) { e.classList.add("avvia"); })(pianta, 0.3);
+    var gruppi = pianta.querySelectorAll(".cir"), spegni = 0;
+    var accendi = function (c) {
+      pianta.classList.toggle("caldo", c !== null);
+      [].forEach.call(gruppi, function (g) { g.classList.toggle("acceso", c !== null && g.getAttribute("data-c") === c); });
+    };
+    pianta.addEventListener("pointerover", function (e) {
+      var g = e.target.closest && e.target.closest(".cir");
+      clearTimeout(spegni);
+      if (g) {
+        accendi(g.getAttribute("data-c"));
+        if (e.pointerType !== "mouse") spegni = setTimeout(function () { accendi(null); }, 2800);
+      } else {
+        spegni = setTimeout(function () { accendi(null); }, 140);
+      }
+    });
+    // col dito il «pointerleave» arriva appena si solleva: il circuito resta acceso per qualche secondo (il timer sopra)
+    pianta.addEventListener("pointerleave", function (e) { if (e.pointerType !== "mouse") return; clearTimeout(spegni); accendi(null); });
+  }
+  // luce che segue il puntatore e inclinazione leggera delle schede: solo con il mouse (pointer: fine)
+  if (fine && !quieto) {
+    var SCHEDE = ".carta, .documento, .sistema, .novita-carta, .finestra-hero";
+    [].forEach.call(document.querySelectorAll(".carta, .finestra-hero"), function (e) { e.classList.add("inclinabile"); });
+    var ultimo = null, richiesta = 0, evento = null;
+    var azzera = function (e) { if (e) { e.style.removeProperty("--rx"); e.style.removeProperty("--ry"); } };
+    document.addEventListener("pointermove", function (e) {
+      evento = e;
+      if (richiesta) return;
+      richiesta = requestAnimationFrame(function () {
+        richiesta = 0;
+        var el = evento.target.closest && evento.target.closest(SCHEDE);
+        if (ultimo && ultimo !== el) azzera(ultimo);
+        ultimo = el;
+        if (!el) return;
+        var r = el.getBoundingClientRect(), x = evento.clientX - r.left, y = evento.clientY - r.top;
+        el.style.setProperty("--mx", x.toFixed(0) + "px");
+        el.style.setProperty("--my", y.toFixed(0) + "px");
+        if (el.classList.contains("inclinabile")) {
+          var k = el.classList.contains("finestra-hero") ? 3.2 : 5;
+          el.style.setProperty("--ry", ((x / r.width - 0.5) * k).toFixed(2) + "deg");
+          el.style.setProperty("--rx", (-(y / r.height - 0.5) * k).toFixed(2) + "deg");
+        }
+      });
+    }, { passive: true });
+    document.documentElement.addEventListener("pointerleave", function () { azzera(ultimo); });
+  }
+  // il percorso guidato: la scena resta ferma, il passo che si legge porta la sua schermata e fa avanzare l'indicatore dei dodici
+  var percorso = $("percorso");
+  if (percorso) {
+    var articoli = percorso.querySelectorAll(".funzione"), schermi = percorso.querySelectorAll(".schermo");
+    var tacche = percorso.querySelectorAll(".passi12 li"), cap = $("cap-passi"), passoAttivo = -1;
+    var mostraPasso = function (k) {
+      if (k === passoAttivo || !articoli[k]) return;
+      passoAttivo = k;
+      var intervallo = articoli[k].getAttribute("data-passi").split("-"), da = parseInt(intervallo[0], 10), a = parseInt(intervallo[1] || intervallo[0], 10);
+      [].forEach.call(articoli, function (e, i) { e.classList.toggle("attivo", i === k); });
+      [].forEach.call(schermi, function (e, i) { e.classList.toggle("attivo", i === k); e.setAttribute("aria-hidden", i === k ? "false" : "true"); });
+      [].forEach.call(tacche, function (e, i) {
+        e.classList.toggle("on", i + 1 <= a);
+        e.classList.toggle("ora", i + 1 >= da && i + 1 <= a);
+        e.style.setProperty("--q", Math.max(0, i + 1 - Math.min(da, 3)));
+      });
+      if (cap) cap.textContent = (da === a ? "Passo " + da : "Passi " + da + "–" + a) + " di 12 · " + articoli[k].getAttribute("data-nomi");
+    };
+    if (osserva) {
+      percorso.classList.add("vivo");
+      mostraPasso(0);
+      var passi = null, stretto = window.matchMedia ? window.matchMedia("(max-width: 980px)") : null;
+      var osservaPassi = function () {
+        if (passi) passi.disconnect();
+        // desktop: la banda sta a metà schermo; telefono: subito sotto il bordo della scena fissa, in pixel (la finestra di Safari è bassa)
+        var alto = innerHeight, margine = "-48% 0px -48% 0px";
+        if (stretto && stretto.matches) {
+          var scena = percorso.querySelector(".scena"), sotto = Math.round(scena.offsetHeight + (parseFloat(getComputedStyle(scena).top) || 0));
+          margine = "-" + Math.min(alto - 80, sotto + 16) + "px 0px -" + Math.max(0, alto - sotto - 16 - 36) + "px 0px";
+        }
+        passi = new IntersectionObserver(function (voci) {
+          voci.forEach(function (v) { if (v.isIntersecting) mostraPasso(parseInt(v.target.getAttribute("data-i"), 10)); });
+        }, { rootMargin: margine });
+        [].forEach.call(articoli, function (e) { passi.observe(e); });
+      };
+      osservaPassi();
+      var rifai = 0;
+      window.addEventListener("resize", function () { clearTimeout(rifai); rifai = setTimeout(osservaPassi, 200); });
+    }
   }
 
   // --- video tutorial: media/tutorial/tutorial.json (titolo, file, locandina, durata, capitoli, novità) -------------------
@@ -1097,6 +1723,7 @@
     var t = elenco[scelto], v = corrente(), novita = v !== t;
     fermaVideo();
     corpo.textContent = "";
+    corpo.removeAttribute("aria-busy");
     var colonna = el("div");
     var figura = el("figure", "tutorial-video");
     figura.style.margin = "0";
@@ -1229,6 +1856,7 @@
           img.loading = "lazy"; img.decoding = "async";
           miniatura.appendChild(img);
         }
+        if (i === 0) miniatura.appendChild(el("span", "nuovo", "Più recente"));
         miniatura.appendChild(el("span", "minuti", tempo(n.durata)));
         var gioca = el("span", "gioca");
         gioca.setAttribute("aria-hidden", "true");
@@ -1288,6 +1916,7 @@
   }
 
   if (schede && corpo) {
+    corpo.setAttribute("aria-busy", "true");
     fetch(CARTELLA_TUTORIAL + "tutorial.json", { cache: "no-cache" })
       .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("tutorial.json")); })
       .then(function (dati) {
@@ -1310,6 +1939,7 @@
       })
       .catch(function () {
         corpo.textContent = "";
+        corpo.removeAttribute("aria-busy");
         corpo.appendChild(el("p", "rete", "I video tutorial non si caricano in questo momento: riprova fra poco. Nel manuale d'uso trovi gli stessi passi con le schermate."));
       });
   }
