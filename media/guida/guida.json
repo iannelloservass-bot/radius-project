@@ -1,0 +1,100 @@
+{
+ "clip": [
+  {
+   "id": "benvenuto",
+   "file": "benvenuto.m4a",
+   "durata": 20.15,
+   "testo": "Ciao, ti do il benvenuto in Capomastro. Io sono la tua guida: ti accompagno in questa visita, una sezione alla volta. Capomastro legge il disegno dell'architetto e lo trasforma in un progetto completo, con struttura, circuiti, tavole e preventivo. Scorri con calma. Se preferisci il silenzio, tocca il pulsante in basso."
+  },
+  {
+   "id": "pianta",
+   "file": "pianta.m4a",
+   "durata": 14.15,
+   "testo": "Guarda questa pianta: è un progetto vero, calcolato dal programma. Undici circuiti, settantasei moduli, nessun incrocio fra i tubi. Tutto resta sul tuo computer: i disegni non lasciano mai il tuo studio."
+  },
+  {
+   "id": "moduli",
+   "file": "moduli.m4a",
+   "durata": 14.75,
+   "testo": "Capomastro è fatto a moduli. Soffitti radianti e Cartongesso sono due programmi distinti, ciascuno con la sua licenza, ma con lo stesso modo di lavorare: un percorso guidato, una pianta sempre davanti, e ogni modifica si annulla con un tasto."
+  },
+  {
+   "id": "radius",
+   "file": "radius.m4a",
+   "durata": 16.35,
+   "testo": "Il modulo Soffitti radianti parte dal disegno dell'architetto. Posa struttura e moduli, dimensiona i circuiti a ritorno inverso, sceglie la centrale e la regolazione. Ottieni le tavole in formato A uno, il preventivo e il computo con le formule."
+  },
+  {
+   "id": "cartongesso",
+   "file": "cartongesso.m4a",
+   "durata": 19.85,
+   "testo": "Il modulo Cartongesso progetta pareti, contropareti e controsoffitti. Orditura, lastre e viti arrivano dai dati del produttore, con edizione e fonte. Il programma non dice mai conforme: ti indica cosa è compatibile, cosa no, e cosa non può verificare. La verifica strutturale resta tua."
+  },
+  {
+   "id": "percorso",
+   "file": "percorso.m4a",
+   "durata": 18.95,
+   "testo": "Ora scorri lentamente: il percorso ha dodici passi. Dalla lettura del disegno alla posa dei pannelli, dai collettori alla centrale, fino agli elaborati. Tu rispondi a poche domande, il programma progetta, e tu controlli e correggi direttamente sulla pianta."
+  },
+  {
+   "id": "funzioni",
+   "file": "funzioni.m4a",
+   "durata": 16.15,
+   "testo": "Ecco le funzioni che fanno la differenza. I tubi cercano il percorso più breve, e ogni tratto lo confermi tu. Il lavoro si salva in qualsiasi punto e riparte da dove eri. E i prezzi arrivano solo dal tuo listino e dai prezzari regionali: mai un numero inventato."
+  },
+  {
+   "id": "tutorial",
+   "file": "tutorial.m4a",
+   "durata": 9.35,
+   "testo": "Preferisci vedere come si fa? Qui trovi un tutorial completo per ogni modulo, con i capitoli: tocca quello che ti serve e il video salta a quel punto."
+  },
+  {
+   "id": "novita",
+   "file": "novita.m4a",
+   "durata": 8.25,
+   "testo": "E per ogni aggiornamento importante c'è un video breve, dal più recente. Così resti al passo senza rivedere tutto da capo."
+  },
+  {
+   "id": "licenze",
+   "file": "licenze.m4a",
+   "durata": 13.65,
+   "testo": "Veniamo alle licenze. Ogni modulo ha la sua: scegli il modulo, poi la durata. Un progetto è un disegno diverso, e gli aggiornamenti sono sempre inclusi. Nessun pacchetto obbligato: prendi solo quello che ti serve."
+  },
+  {
+   "id": "licenze-radius",
+   "file": "licenze-radius.m4a",
+   "durata": 11.85,
+   "testo": "Soffitti radianti: da un mese a un anno, con cinque, dieci, venti o cento progetti. L'anno è il piano più conveniente, con sei ore di assistenza incluse."
+  },
+  {
+   "id": "licenze-cartongesso",
+   "file": "licenze-cartongesso.m4a",
+   "durata": 10.55,
+   "testo": "Cartongesso: stesse durate, con dieci, venti, quaranta o duecento progetti. Se ti servono tutti e due i moduli, scegli una licenza per ciascuno."
+  },
+  {
+   "id": "prova",
+   "file": "prova.m4a",
+   "durata": 8.95,
+   "testo": "Prima di scegliere, prova. La prova gratuita comprende tutti i moduli e tutte le funzioni: tre giorni, oppure due progetti."
+  },
+  {
+   "id": "scarica",
+   "file": "scarica.m4a",
+   "durata": 12.55,
+   "testo": "Per iniziare, scarica Capomastro. Funziona su Windows dieci e undici, e su macOS quattordici punto quattro o successivo. L'installazione richiede pochi minuti, e poi il programma si aggiorna da solo."
+  },
+  {
+   "id": "documenti",
+   "file": "documenti.m4a",
+   "durata": 8.65,
+   "testo": "Nei documenti trovi il manuale d'uso e lo standard di disegno per l'architetto: gli dai quello, e il disegno arriva già pronto per Capomastro."
+  },
+  {
+   "id": "chiusura",
+   "file": "chiusura.m4a",
+   "durata": 7.25,
+   "testo": "È tutto. Se ti serve riascoltare una sezione, tocca la mia icona. Grazie per la visita, e buon lavoro."
+  }
+ ]
+}
