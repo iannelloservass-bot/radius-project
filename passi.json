@@ -1,0 +1,172 @@
+{
+  "passi": [
+    {
+      "n": 1,
+      "id": "passo-1",
+      "sigla": "Lettura",
+      "etichetta": "Lettura",
+      "titolo": "Legge il DWG dell'architetto",
+      "testo": "Locali, superfici, altezze, travi e aree NO RADIUS riconosciuti da soli, anche su più piani. Quello che manca lo completi sulla pianta, con un clic.",
+      "punti": [
+        "DWG e DXF, con ODA File Converter installato dal programma",
+        "Unità di misura e altezze controllate prima di progettare",
+        "Il disegno originale resta intatto"
+      ],
+      "alt": "Riepilogo della lettura: la pianta del progetto d'esempio con i locali riconosciuti, le altezze e i dati da completare"
+    },
+    {
+      "n": 2,
+      "id": "passo-2",
+      "sigla": "D1",
+      "etichetta": "D1 · Altezza di posa",
+      "titolo": "Una quota di posa per ogni locale",
+      "testo": "Il programma propone la quota del controsoffitto lasciando lo spazio che serve ai tubi: tu la confermi o la cambi, locale per locale.",
+      "punti": [
+        "Una quota generale e quella di ogni locale",
+        "Minimo di 2,60 m negli abitabili e di 2,40 m nei servizi",
+        "Se un locale è troppo basso te lo dice e ti suggerisce come correggerlo"
+      ],
+      "alt": "Altezza di posa: la quota proposta di 291 cm, la quota di ogni locale e gli avvisi del programma"
+    },
+    {
+      "n": 3,
+      "id": "passo-3",
+      "sigla": "D2",
+      "etichetta": "D2 · Travi e scavalchi",
+      "titolo": "Travi, scavalchi e circuiti separati",
+      "testo": "Dove una trave sporge sotto la quota di posa scegli se i tubi la attraversano con uno scavalco o se i circuiti restano separati.",
+      "punti": [
+        "Una risposta generale oppure trave per trave",
+        "Gli scavalchi li posizioni tu, direttamente sulla pianta",
+        "Con uno scavalco indicato i tubi attraversano solo le travi che hai scelto"
+      ],
+      "alt": "Travi e scavalchi: le travi con il loro franco, la risposta per ogni trave e gli scavalchi sulla pianta"
+    },
+    {
+      "n": 4,
+      "id": "passo-4",
+      "sigla": "D3",
+      "etichetta": "D3 · Controsoffitto nei NO RADIUS",
+      "titolo": "Cosa fare dove non ci sono moduli",
+      "testo": "Per ogni zona senza moduli decidi come trattarla: solo controsoffitto, un vuoto nel soffitto come un vano scala, oppure lo spazio sotto un soppalco.",
+      "punti": [
+        "Anche solo una porzione di locale, disegnata sulla pianta",
+        "Una quota di posa propria per ogni locale non radiante",
+        "Un avviso se la quota resta sotto i minimi di normativa"
+      ],
+      "alt": "Controsoffitto nei NO RADIUS: l'elenco dei locali senza moduli e la scelta per ciascuno"
+    },
+    {
+      "n": 5,
+      "id": "passo-5",
+      "sigla": "Pannelli",
+      "etichetta": "Pannelli · Posa e orientamento",
+      "titolo": "Posa struttura e moduli",
+      "testo": "Moduli radianti nei formati da 240, 120 e 86 posati locale per locale, con l'orientamento migliore e le file allineate; struttura con portanti, giunti e scavalchi delle travi.",
+      "punti": [
+        "Superficie attiva e copertura sempre in vista",
+        "Orientamento per locale, automatico o scelto da te",
+        "Posa dei moduli a mano, quando serve"
+      ],
+      "alt": "Posa dei pannelli: moduli da 240, 120 e 86 nei locali, con la copertura e l'orientamento di ogni locale"
+    },
+    {
+      "n": 6,
+      "id": "passo-6",
+      "sigla": "D4",
+      "etichetta": "D4 · Collettori",
+      "titolo": "Circuiti e collettori, senza incroci",
+      "testo": "Circuiti a ritorno inverso numerati a ventaglio dal collettore, tubi a fascio ordinato. Sposti un collettore e i tubi si ricalcolano in sottofondo, mentre continui a lavorare.",
+      "punti": [
+        "Mandata rossa, ritorno blu tratteggiato, come nelle tavole",
+        "Portata e lunghezza di ogni circuito sotto controllo",
+        "Calcolo in un processo separato: la pianta resta fluida"
+      ],
+      "alt": "Collettori: i circuiti numerati nei locali e la posa dei tubi in corso"
+    },
+    {
+      "n": 7,
+      "id": "passo-7",
+      "sigla": "D5",
+      "etichetta": "D5 · Centrale e linea primaria",
+      "titolo": "Centrale, linea primaria e colonne",
+      "testo": "Posizioni pompa di calore, accumulo e gruppo di rilancio, tracci la linea primaria a soffitto o a pavimento; poi il dimensionamento come il foglio «COLONNE RA», con lo schema della rete in 3D.",
+      "punti": [
+        "Linea primaria con i nodi, tracciata sulla pianta",
+        "Diametri, portate, velocità e perdite di carico spiegati",
+        "Gruppo di rilancio e accumulo fra i modelli adatti"
+      ],
+      "alt": "Centrale e linea primaria: pompa di calore, gruppo di rilancio e linea verso il collettore sulla pianta del progetto d'esempio"
+    },
+    {
+      "n": 8,
+      "id": "passo-8",
+      "sigla": "D6",
+      "etichetta": "D6 · Regolazione",
+      "titolo": "Regolazione: quadro, sonde e linea bus",
+      "testo": "Il quadro, il display e le sonde a soffitto si posizionano sulla pianta, e il programma collega ogni sonda ai circuiti del suo ambiente.",
+      "punti": [
+        "Una sonda a soffitto per ambiente, fino a tre circuiti ciascuna",
+        "Linea bus RS485 in entra-esci e linee F+N",
+        "La sigla del collettore sulla targhetta di ogni sonda"
+      ],
+      "alt": "Regolazione: quadro, display, sonde e linea bus sulla pianta con i circuiti di ogni ambiente"
+    },
+    {
+      "n": 9,
+      "id": "passo-9",
+      "sigla": "D7",
+      "etichetta": "D7 · Prezzi",
+      "titolo": "Prezzi dal tuo listino e dal prezzario",
+      "testo": "Ogni voce viene dal tuo Listino personale o dal prezzario della tua regione: mai un numero inventato. Applichi il ribasso, scegli l'utile e vedi subito il totale.",
+      "punti": [
+        "Il Listino personale e il prezzario regionale, voce per voce",
+        "Ribasso, ricarica e utile d'impresa a portata di mano",
+        "Totale e costo al metro quadro che si aggiornano mentre scrivi"
+      ],
+      "alt": "Prezzi: le fonti del computo, l'utile d'impresa stimato, il totale e il costo al metro quadro"
+    },
+    {
+      "n": 10,
+      "id": "passo-10",
+      "sigla": "D8",
+      "etichetta": "D8 · Documento",
+      "titolo": "Il documento e gli elaborati da produrre",
+      "testo": "Inserisci committente, cantiere, progettista e il tuo logo, e scegli quali elaborati produrre: sono i dati che compaiono nel cartiglio delle tavole e nel preventivo.",
+      "punti": [
+        "Committente e cantiere obbligatori, progettista e logo facoltativi",
+        "Cartella di uscita e nome dei file a tua scelta",
+        "Preventivo, studio di fattibilità, computo Excel e materiale da ordinare"
+      ],
+      "alt": "Documento: i dati del committente e del cantiere, la cartella di uscita e gli elaborati da produrre"
+    },
+    {
+      "n": 11,
+      "id": "passo-11",
+      "sigla": "Anteprima",
+      "etichetta": "Anteprima",
+      "titolo": "Tutto l'impianto, prima di generare",
+      "testo": "Vedi l'impianto completo, un piano alla volta, esattamente come uscirà. Sei ancora in tempo per tornare indietro e cambiare qualcosa, senza perdere nulla.",
+      "punti": [
+        "La pianta con zoom e un piano alla volta",
+        "Il computo per categorie e i totali aggiornati",
+        "Si torna indietro quando vuoi, senza perdere il lavoro fatto"
+      ],
+      "alt": "Anteprima: la pianta dell'impianto, i numeri del progetto e il computo per categorie"
+    },
+    {
+      "n": 12,
+      "id": "passo-12",
+      "sigla": "Genera",
+      "etichetta": "Genera",
+      "titolo": "Elaborati pronti, stampa per squadra",
+      "testo": "DWG e DXF dell'impianto con le tavole, preventivo e studio di fattibilità in PDF per il cliente, computo Excel con le formule. Stampi dalla A0 alla A4 le tavole che servono a ogni squadra.",
+      "punti": [
+        "Tavole per gruppi di layer, con cartiglio e legenda",
+        "Preventivo che vende: sintesi, piante e totali",
+        "L'elenco del materiale da ordinare, in PDF e in Excel"
+      ],
+      "alt": "Genera gli elaborati: i file prodotti, la cartella del progetto e il pulsante per stampare"
+    }
+  ]
+}
