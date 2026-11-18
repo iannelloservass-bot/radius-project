@@ -90,6 +90,44 @@
    ],
    "novita": [
     {
+     "id": "il-percorso-piu-breve",
+     "versione": "3.2.3",
+     "data": "2026-11-18",
+     "titolo": "Il percorso più breve",
+     "descrizione": "I tubi sul percorso più breve dove il plenum basta, salva quando vuoi e riprendi da dove eri, e i tutorial dentro l'applicazione.",
+     "durata": 50.2,
+     "video": "Novita_Capomastro_Soffitti_radianti_3_2_3_il_percorso_piu_breve_web.mp4",
+     "sottotitoli": "Novita_Capomastro_Soffitti_radianti_3_2_3_il_percorso_piu_breve.vtt",
+     "locandina": "locandina_novita_soffitti_radianti_3_2_3_il_percorso_piu_breve.webp",
+     "capitoli": [
+      {
+       "titolo": "Il percorso più breve",
+       "inizio": 0.0
+      },
+      {
+       "titolo": "Dove il plenum basta",
+       "inizio": 8.74
+      },
+      {
+       "titolo": "Salva e riprendi",
+       "inizio": 17.47
+      },
+      {
+       "titolo": "Meno da ordinare",
+       "inizio": 27.3
+      },
+      {
+       "titolo": "Manuale e tutorial",
+       "inizio": 32.74
+      },
+      {
+       "titolo": "Aggiorna ora",
+       "inizio": 43.65
+      }
+     ],
+     "ordine": 1
+    },
+    {
      "id": "moduli-e-circuiti-a-mano",
      "versione": "3.2.0",
      "data": "2026-11-15",
