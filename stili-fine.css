@@ -197,3 +197,10 @@ html:not(.js) .piede-gigante span { transform: none; opacity: 1; }
   .p-passo { opacity: 1; }
   .caricamento { display: none !important; }
 }
+
+/* 18/11/2026: sul telefono ogni carta delle funzioni che fanno la differenza ha il suo spazio di scorrimento, così la voce (tre clip: titolo,
+   percorso più breve, salvataggio) riesce a seguirle senza saltare. */
+@media (max-width: 759px) {
+  #funzioni-chiave .bento { gap: 26px; }
+  #funzioni-chiave .carta { min-height: 50svh; display: flex; flex-direction: column; justify-content: center; }
+}

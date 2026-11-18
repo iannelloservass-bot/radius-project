@@ -127,6 +127,24 @@
    "testo": "Tutto qui: dodici passi, una pianta sempre davanti, e tu che hai l'ultima parola su ogni scelta."
   },
   {
+   "id": "funzioni",
+   "file": "funzioni.m4a",
+   "durata": 3.55,
+   "testo": "Prima di salutarci, le funzioni che fanno la differenza."
+  },
+  {
+   "id": "funzione-tubi",
+   "file": "funzione-tubi.m4a",
+   "durata": 13.95,
+   "testo": "La prima: il percorso più breve. I tubi cercano la strada più corta che il disegno consente, e dove non si può, il programma te lo segnala. Ogni tratto particolare lo confermi tu: l'ultima parola resta al progettista."
+  },
+  {
+   "id": "funzione-salva",
+   "file": "funzione-salva.m4a",
+   "durata": 11.55,
+   "testo": "La seconda: salvi ovunque. Il lavoro si salva in qualsiasi passo, e riparti da dove eri. E ogni modifica si annulla con un tasto: provi, correggi, torni indietro."
+  },
+  {
    "id": "tutorial",
    "file": "tutorial.m4a",
    "durata": 9.25,
