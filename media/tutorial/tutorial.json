@@ -90,6 +90,56 @@
    ],
    "novita": [
     {
+     "id": "versione-3-3",
+     "versione": "3.3.0",
+     "data": "2026-11-21",
+     "titolo": "Le novità della 3.3",
+     "descrizione": "Vista immersiva 3D, circuiti al collettore, tendine con la voce intera, pompa di calore e Linea P, una sonda per più locali, muretti bassi, computo e tavole",
+     "durata": 321.9,
+     "video": "Novita_Capomastro_Soffitti_radianti_3_3_0_versione_3_3_web.mp4",
+     "sottotitoli": "Novita_Capomastro_Soffitti_radianti_3_3_0_versione_3_3.vtt",
+     "locandina": "locandina_novita_soffitti_radianti_3_3_0_versione_3_3.webp",
+     "capitoli": [
+      {
+       "titolo": "Apertura",
+       "inizio": 0.0
+      },
+      {
+       "titolo": "Vista immersiva 3D",
+       "inizio": 9.09
+      },
+      {
+       "titolo": "D4 · Circuiti al collettore",
+       "inizio": 91.93
+      },
+      {
+       "titolo": "D5 · Tendine con la voce intera",
+       "inizio": 116.78
+      },
+      {
+       "titolo": "Listino e D5 · Pompa di calore e Linea P",
+       "inizio": 140.44
+      },
+      {
+       "titolo": "D6 · Display e una sonda per più locali",
+       "inizio": 207.52
+      },
+      {
+       "titolo": "Riepilogo · Muretti bassi",
+       "inizio": 243.26
+      },
+      {
+       "titolo": "Genera · Computo e tavole",
+       "inizio": 280.95
+      },
+      {
+       "titolo": "Chiusura",
+       "inizio": 311.14
+      }
+     ],
+     "ordine": 1
+    },
+    {
      "id": "il-percorso-piu-breve",
      "versione": "3.2.3",
      "data": "2026-11-18",
