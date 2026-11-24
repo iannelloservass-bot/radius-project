@@ -301,8 +301,8 @@
         var f = usc(prog(a, i, n, 0.5));
         if (f <= 0) return;
         ctx.globalAlpha = Math.min(1, f * 4);
-        // il ritorno: blu a tratteggio piccolo; la mandata: rossa continua (R-163)
-        ctx.strokeStyle = pal.ritorno; ctx.lineWidth = lw(1.5); ctx.setLineDash([lw(3.2), lw(2.6)]); ctx.beginPath();
+        // il ritorno: blu a tratteggio piccolo (R-163) o, nel nuovo stile dei tubi (d.continuo), blu pieno; la mandata: rossa continua
+        ctx.strokeStyle = pal.ritorno; ctx.lineWidth = lw(1.5); ctx.setLineDash(d.continuo ? [] : [lw(3.2), lw(2.6)]); ctx.beginPath();
         c.rit.forEach(function (pl) { polilinea(pl, z, f); });
         ctx.stroke();
         ctx.setLineDash([]); ctx.strokeStyle = pal.mandata; ctx.lineWidth = lw(2); ctx.beginPath();

@@ -683,6 +683,17 @@
     if (video.readyState >= 1) parti();
     else { video.addEventListener("loadedmetadata", parti, { once: true }); video.preload = "metadata"; video.load(); }
   }
+  // un manuale d'uso per modulo (23/11/2026): il tutorial di un modulo rimanda al manuale di quel modulo (id come in tutorial.json)
+  var MANUALI = {
+    "soffitti-radianti": { file: "documenti/Manuale_utente_Capomastro_Soffitti_radianti.pdf", nome: "Soffitti radianti" },
+    "cartongesso": { file: "documenti/Manuale_utente_Capomastro_Cartongesso.pdf", nome: "Cartongesso" }
+  };
+  function manualeDi(id) { return MANUALI[id] || MANUALI["soffitti-radianti"]; }
+  function linkManuale(id, testo) {
+    var m = manualeDi(id), a = document.createElement("a");
+    a.href = m.file; a.className = "link-testo"; a.textContent = testo || ("Manuale d'uso · " + m.nome);
+    return a;
+  }
   function disegna() {
     var t = elenco[scelto], v = corrente(), novita = v !== t;
     fermaVideo();
@@ -716,7 +727,10 @@
     } else {
       var segnaposto = el("div", "segnaposto");
       var testo = el("div", "", "Il tutorial del modulo " + t.titolo + " è in arrivo");
-      testo.appendChild(el("small", "", "Nel frattempo trovi tutti i passi, con le schermate, nel manuale d'uso."));
+      var intanto = el("small", "", "Nel frattempo trovi tutti i passi, con le schermate, nel ");
+      intanto.appendChild(linkManuale(t.id, "manuale d'uso del modulo " + manualeDi(t.id).nome));
+      intanto.appendChild(document.createTextNode("."));
+      testo.appendChild(intanto);
       segnaposto.appendChild(testo);
       finestra.appendChild(segnaposto);
     }
@@ -740,6 +754,10 @@
         var seguono = (t.novita || []).some(function (n) { return n.disponibile; });
         testa.appendChild(el("p", "girato-su", "Girato sulla versione " + t.girato_su + (seguono ? ": le novità successive sono nei video qui sotto." : ".")));
       }
+      // il manuale in PDF dello stesso modulo, con gli stessi passi e le schermate
+      var pm = el("p", "manuale-del-modulo");
+      pm.appendChild(linkManuale(t.id));
+      testa.appendChild(pm);
     }
     colonna.appendChild(testa);
     corpoTut.appendChild(colonna);
@@ -778,7 +796,7 @@
       vuoto.appendChild(document.createTextNode(v.disponibile ? "Questo video non ha capitoli: scorri la barra del lettore." : "I capitoli compariranno con il video. Intanto, "));
       if (!v.disponibile) {
         var a = document.createElement("a");
-        a.href = "documenti/Manuale_utente_Capomastro.pdf"; a.textContent = "apri il manuale d'uso";
+        a.href = manualeDi(t.id).file; a.textContent = "apri il manuale d'uso del modulo " + manualeDi(t.id).nome;
         vuoto.appendChild(a); vuoto.appendChild(document.createTextNode("."));
       }
       lista.appendChild(vuoto);
@@ -932,7 +950,7 @@
       .catch(function () {
         corpoTut.textContent = "";
         corpoTut.removeAttribute("aria-busy");
-        corpoTut.appendChild(el("p", "rete", "I video tutorial non si caricano in questo momento: riprova fra poco. Nel manuale d'uso trovi gli stessi passi con le schermate."));
+        corpoTut.appendChild(el("p", "rete", "I video tutorial non si caricano in questo momento: riprova fra poco. Nei manuali d'uso (uno per modulo) trovi gli stessi passi con le schermate."));
       });
   }
 
