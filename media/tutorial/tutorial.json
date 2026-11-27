@@ -90,6 +90,44 @@
    ],
    "novita": [
     {
+     "id": "versione-3-4",
+     "versione": "3.4.0",
+     "data": "2026-11-27",
+     "titolo": "Le novità della 3.4",
+     "descrizione": "Vista 3D con porte e finestre, Modifica a mano della regolazione, disegno CAD ordinato per disciplina, lastre e scavalchi.",
+     "durata": 139.3,
+     "video": "Novita_Capomastro_Soffitti_radianti_3_4_0_versione_3_4_web.mp4",
+     "sottotitoli": "Novita_Capomastro_Soffitti_radianti_3_4_0_versione_3_4.vtt",
+     "locandina": "locandina_novita_soffitti_radianti_3_4_0_versione_3_4.webp",
+     "capitoli": [
+      {
+       "titolo": "Apertura",
+       "inizio": 0.0
+      },
+      {
+       "titolo": "La casa in 3D, con porte e finestre",
+       "inizio": 8.86
+      },
+      {
+       "titolo": "Regolazione · Modifica a mano",
+       "inizio": 41.15
+      },
+      {
+       "titolo": "Il disegno CAD, ordinato",
+       "inizio": 71.81
+      },
+      {
+       "titolo": "Lastre e scavalchi",
+       "inizio": 99.13
+      },
+      {
+       "titolo": "Chiusura",
+       "inizio": 130.56
+      }
+     ],
+     "ordine": 1
+    },
+    {
      "id": "versione-3-3",
      "versione": "3.3.0",
      "data": "2026-11-21",
